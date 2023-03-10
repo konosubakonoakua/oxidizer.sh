@@ -133,6 +133,7 @@ ipall() {
 }
 
 iiox() {
+    echo "Installing Required packages...\n"
     for pkg in $(cat ${OXIDIZER}/defaults/Brewfile.txt); do
         case $pkg in
         ripgrep)
@@ -160,12 +161,15 @@ iiox() {
 # update Oxidizer
 upox() {
     cd ${OXIDIZER}
+    echo "Updating Oxidizer...\n"
     git fetch origin master
     git reset --hard origin/master
 
     if [ ! -d ${OXIDIZER}/oxplugins-zsh ]; then
+        echo "Cloning Oxidizer Plugins...\n"
         git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git
     else
+        echo "Updating Oxidizer Plugins...\n"
         cd ${OXIDIZER}/oxplugins-zsh
         git fetch origin main
         git reset --hard origin/main

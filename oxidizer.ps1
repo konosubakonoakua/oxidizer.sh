@@ -105,8 +105,8 @@ function ipall {
 
 # initialize Oxidizer
 function iiox {
+    echo "Installing Required packages...\n"
     $pkgs = cat "$env:OXIDIZER\defaults\Scoopfile.txt"
-
     ForEach ( $pkg in $pkgs ) {
         Switch ( $pkg ) {
             bottom { $cmd = 'btm' }
@@ -128,14 +128,17 @@ function iiox {
 # update Oxidizer
 function upox {
     cd $env:OXIDIZER
+    echo "Updating Oxidizer...\n"
     git fetch origin master
     git reset --hard origin/master
 
     if (!(Test-Path -Path "$env:OXIDIZER\oxplugins-pwsh")) {
+        echo "Cloning Oxidizer Plugins...\n"
         git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git
     }
     else {
         cd "$env:OXIDIZER\oxplugins-pwsh"
+        echo "Updating Oxidizer Plugins...\n"
         git fetch origin main
         git reset --hard origin/main
     }
