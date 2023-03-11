@@ -41,7 +41,6 @@ declare -A OX_ELEMENT=(
     [wz]=${HOME}/.config/wezterm/wezterm.lua
     [zs]=${HOME}/.zshrc
     [bs]=${HOME}/.bash_profile
-    [fs]=${HOME}/.config/fish/config.fish
     [vi]=${HOME}/.vimrc
 )
 
@@ -188,9 +187,6 @@ if test "$(command -v starship)"; then
         ;;
     *bash)
         eval "$(starship init bash)"
-        ;;
-    *fish)
-        eval "$(starship init fish)"
         ;;
     esac
 fi
