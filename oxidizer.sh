@@ -166,10 +166,10 @@ upox() {
     git reset --hard origin/master
 
     if [ ! -d ${OXIDIZER}/oxplugins-zsh ]; then
-        echo "Cloning Oxidizer Plugins...\n"
+        echo "\n\nCloning Oxidizer Plugins...\n"
         git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git
     else
-        echo "Updating Oxidizer Plugins...\n"
+        echo "\n\nUpdating Oxidizer Plugins...\n"
         cd ${OXIDIZER}/oxplugins-zsh
         git fetch origin main
         git reset --hard origin/main

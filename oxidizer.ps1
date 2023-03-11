@@ -139,12 +139,12 @@ function upox {
     git reset --hard origin/master
 
     if (!(Test-Path -Path "$env:OXIDIZER\oxplugins-pwsh")) {
-        echo "Cloning Oxidizer Plugins...\n"
+        echo "\n\nCloning Oxidizer Plugins...\n"
         git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git
     }
     else {
         cd "$env:OXIDIZER\oxplugins-pwsh"
-        echo "Updating Oxidizer Plugins...\n"
+        echo "\n\nUpdating Oxidizer Plugins...\n"
         git fetch origin main
         git reset --hard origin/main
     }
