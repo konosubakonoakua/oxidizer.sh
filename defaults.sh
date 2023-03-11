@@ -189,7 +189,7 @@ case ${SHELL} in
     # test
     alias tt="hyperfine --warmup 3 --shell zsh 'source ${HOME}/.zshrc'"
     # clean history
-    alias ccc="local HISTSIZE=0 && history -p && reset echo >$OX_ELEMENT[zshst]"
+    alias ccc="local HISTSIZE=0 && history -p && reset && echo > ~/.zsh_history"
     ;;
 *bash)
     # turn case sensitivity off
@@ -200,7 +200,7 @@ case ${SHELL} in
     # test
     alias tt="hyperfine --warmup 3 --shell bash 'source ${HOME}/.bash_profile'"
     # clean history
-    alias ccc="local HISTSIZE=0 && history -p && reset echo >$OX_ELEMENT[bshst]"
+    alias ccc="local HISTSIZE=0 && history -p && reset && echo > ~/.bash_history"
     ;;
 esac
 
