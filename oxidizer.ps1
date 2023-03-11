@@ -3,7 +3,7 @@ if ([string]::IsNullOrEmpty($env:OXIDIZER)) {
 }
 
 ##########################################################
-# Oxidizer configuration files
+# Oxidizer Configuration Files
 ##########################################################
 
 # plugins
@@ -33,25 +33,18 @@ $Global:OX_OXYGEN = @{
 }
 
 ##########################################################
-# System configuration files
+# System Configuration Files
 ##########################################################
 
 $Global:OX_ELEMENT = @{
     'ox' = "$env:OXIDIZER\custom.ps1"
-    'wz' = "$env:SCOOP\persist\wezterm\wezterm.lua"
-    'ps' = $PROFILE
 }
 
 $Global:OX_OXIDE = @{}
 $Global:OX_APPHOME = @{}
 
-# use rust alternatives
-function ls { lsd $args }
-function cat { bat $args }
-function du { dust $args }
-
 ##########################################################
-# PowerShell & Plugins
+# Load Plugins
 ##########################################################
 
 # load system plugin
@@ -64,11 +57,6 @@ ForEach ($plugin in $Global:OX_PLUGINS) {
     . $Global:OX_OXYGEN.$($plugin)
 }
 
-if (!(Test-Path -Path "$env:OX_BACKUP\shell")) {
-    mkdir $env:OX_BACKUP\shell
-}
-$Global:OX_OXIDE.bkps = "$env:OX_BACKUP\shell\Profile.ps1"
-
 # load core plugins
 $Global:OX_CORE_PLUGINS = @('oxps', 'oxput', 'oxppu')
 
@@ -76,8 +64,21 @@ ForEach ($core_plugin in $Global:OX_CORE_PLUGINS) {
     . $Global:OX_OXYGEN.$($core_plugin)
 }
 
+
 ##########################################################
-# Oxidizer management
+# PowerShell Settings
+##########################################################
+
+# use rust alternatives
+function ls { lsd $args }
+function cat { bat $args }
+function du { dust $args }
+
+$Global:OX_ELEMENT.ps = $PROFILE
+$Global:OX_OXIDE.bkps = "$env:OX_BACKUP\shell\Profile.ps1"
+
+##########################################################
+# Oxidizer Management
 ##########################################################
 
 # update packages

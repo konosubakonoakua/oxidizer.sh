@@ -57,11 +57,11 @@ OX_OXIDE[bkox]=${OX_BACKUP}/shell/custom.sh
 # OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
 
 # terminal
-
 # OX_OXIDE[bkwz]=${OX_BACKUP}/terminal/wezterm.lua
 # OX_OXIDE[bkal]=${OX_BACKUP}/terminal/alacritty.yml
 
 # system file
+OX_ELEMENT[wz]=${HOME}/.config/wezterm/wezterm.lua
 # OX_ELEMENT[al]=${HOME}/.config/alacritty/alacritty.yml
 
 ##########################################################

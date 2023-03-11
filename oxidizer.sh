@@ -2,7 +2,7 @@
 export OXIDIZER=${OXIDIZER:-"${HOME}/oxidizer"}
 
 ##########################################################
-# Oxidizer configuration files
+# Oxidizer Configuration Files
 ##########################################################
 
 # plugins
@@ -33,28 +33,18 @@ declare -A OX_OXYGEN=(
 )
 
 ##########################################################
-# System configuration files
+# System Configuration Files
 ##########################################################
 
 declare -A OX_ELEMENT=(
     [ox]=${OXIDIZER}/custom.sh
-    [wz]=${HOME}/.config/wezterm/wezterm.lua
-    [zs]=${HOME}/.zshrc
-    [bs]=${HOME}/.bash_profile
     [vi]=${HOME}/.vimrc
 )
 
 declare -A OX_OXIDE
 
-export SHELLS=/private/etc/shells
-
-# use rust alternatives
-alias ls="lsd"
-alias cat="bat"
-alias du="dust"
-
 ##########################################################
-# Zsh & Plugins
+# Load Plugins
 ##########################################################
 
 # load system plugin
@@ -76,15 +66,6 @@ for plugin in ${OX_PLUGINS[@]}; do
     . ${OX_OXYGEN[$plugin]}
 done
 
-# shell backup
-if [ ! -d ${OX_BACKUP}/shell ]; then
-    mkdir -p ${OX_BACKUP}/shell
-fi
-
-OX_OXIDE[bkzs]=${OX_BACKUP}/shell/.zshrc
-OX_OXIDE[bkbs]=${OX_BACKUP}/shell/.bash_profile
-OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
-
 declare -a OX_CORE_PLUGINS
 OX_CORE_PLUGINS=(oxpb oxput oxppu)
 
@@ -94,7 +75,33 @@ for core_plugin in ${OX_CORE_PLUGINS[@]}; do
 done
 
 ##########################################################
-# Oxidizer management
+# Shell Settings
+##########################################################
+
+export SHELLS=/private/etc/shells
+
+# use rust alternatives
+alias ls="lsd"
+alias cat="bat"
+alias du="dust"
+
+case ${SHELL} in
+*zsh)
+    OX_ELEMENT[zs]=${HOME}/.zshrc
+    OX_ELEMENT[zshst]=${HOME}/.zsh_history
+    OX_OXIDE[bkzs]=${OX_BACKUP}/shell/.zshrc
+    ;;
+*bash)
+    [bs]=${HOME}/.bash_profile
+    [bshst]=${HOME}/.bash_history
+    OX_OXIDE[bkbs]=${OX_BACKUP}/shell/.bash_profile
+    ;;
+esac
+
+OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
+
+##########################################################
+# Oxidizer Management
 ##########################################################
 
 # update all packages
