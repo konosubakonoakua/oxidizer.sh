@@ -90,21 +90,24 @@ case ${SHELL} in
     OX_ELEMENT[zs]=${HOME}/.zshrc
     OX_ELEMENT[zshst]=${HOME}/.zsh_history
     OX_OXIDE[bkzs]=${OX_BACKUP}/shell/.zshrc
-
-    zscl() {
-        rm $OX_ELEMENT[zshst]
-    }
     ;;
 *bash)
     [bs]=${HOME}/.bash_profile
     [bshst]=${HOME}/.bash_history
     OX_OXIDE[bkbs]=${OX_BACKUP}/shell/.bash_profile
-
-    bscl() {
-        rm $OX_ELEMENT[bshst]
-    }
     ;;
 esac
+
+hstcl() {
+    case ${SHELL} in
+    *zsh)
+        rm $OX_ELEMENT[zshst]
+        ;;
+    *bash)
+        rm $OX_ELEMENT[bshst]
+        ;;
+    esac
+}
 
 OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
 
