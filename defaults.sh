@@ -171,7 +171,6 @@ alias lla="ls -la"
 alias e="echo"
 alias rr="rm -rf"
 alias c="clear"
-alias ccc="local HISTSIZE=0 && history -p && reset"
 alias own="sudo chown -R $(whoami)"
 alias shell="echo ${SHELL}"
 alias shells="cat ${SHELLS}"
@@ -189,6 +188,8 @@ case ${SHELL} in
     zstyle ':completion:' insert-tab pending
     # test
     alias tt="hyperfine --warmup 3 --shell zsh 'source ${HOME}/.zshrc'"
+    # clean history
+    alias ccc="local HISTSIZE=0 && history -p && reset echo >$OX_ELEMENT[zshst]"
     ;;
 *bash)
     # turn case sensitivity off
@@ -198,6 +199,8 @@ case ${SHELL} in
     echo 'set completion-ignore-case On' >>${HOME}/.inputrc
     # test
     alias tt="hyperfine --warmup 3 --shell bash 'source ${HOME}/.bash_profile'"
+    # clean history
+    alias ccc="local HISTSIZE=0 && history -p && reset echo >$OX_ELEMENT[bshst]"
     ;;
 esac
 

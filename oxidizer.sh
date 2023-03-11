@@ -98,17 +98,6 @@ case ${SHELL} in
     ;;
 esac
 
-hstcl() {
-    case ${SHELL} in
-    *zsh)
-        rm $OX_ELEMENT[zshst]
-        ;;
-    *bash)
-        rm $OX_ELEMENT[bshst]
-        ;;
-    esac
-}
-
 OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
 
 ##########################################################
