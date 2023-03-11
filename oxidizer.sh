@@ -47,18 +47,12 @@ declare -A OX_ELEMENT=(
 
 declare -A OX_OXIDE
 
-##########################################################
-# Shell
-##########################################################
+export SHELLS=/private/etc/shells
 
-SHELLS=/private/etc/shells
-
-add_shell() {
-    echo $1 | sudo tee -a ${SHELLS}
-}
-
-alias shell="echo ${SHELL}"
-alias shells="cat ${SHELLS}"
+# use rust alternatives
+alias ls="lsd"
+alias cat="bat"
+alias du="dust"
 
 ##########################################################
 # Zsh & Plugins

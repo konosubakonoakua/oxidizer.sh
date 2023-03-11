@@ -164,26 +164,42 @@ upp() {
 # common aliases
 ##########################################################
 
-# alternatives
-alias ls="lsd"
+# shortcuts
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
-alias cat="bat"
-alias man="tldr"
-alias du="dust"
-
-# shortcuts
 alias e="echo"
-alias ev="eval"
 alias rr="rm -rf"
-alias own="sudo chown -R $(whoami)"
 alias c="clear"
 alias ccc="local HISTSIZE=0 && history -p && reset"
+alias own="sudo chown -R $(whoami)"
+alias shell="echo ${SHELL}"
+alias shells="cat ${SHELLS}"
 
 # tools
-alias zz="z -"
+alias man="tldr"
 alias hf="hyperfine"
+alias zz="z -"
+
+case ${SHELL} in
+*zsh)
+    # turn case sensitivity off
+    zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+    # pasting with tabs doesn't perform completion
+    zstyle ':completion:' insert-tab pending
+    # test
+    alias tt="hyperfine --warmup 3 --shell zsh 'source ${HOME}/.zshrc'"
+    ;;
+*bash)
+    # turn case sensitivity off
+    if [ ! -e ${HOME}/.inputrc ]; then
+        echo '$include /etc/inputrc' >${HOME}/.inputrc
+    fi
+    echo 'set completion-ignore-case On' >>${HOME}/.inputrc
+    # test
+    alias tt="hyperfine --warmup 3 --shell bash 'source ${HOME}/.bash_profile'"
+    ;;
+esac
 
 ##########################################################
 # startup commands

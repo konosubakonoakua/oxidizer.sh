@@ -136,22 +136,16 @@ $Global:OX_OXIDE.bkvs = "$env:OX_BACKUP\vscode\settings.json"
 # common aliases
 ##########################################################
 
-# alternatives
-function ls { lsd $args }
+# shortcuts
 function ll { lsd -l $args }
 function la { lsd -a $args }
 function lla { lsd -la $args }
-function cat { bat $args }
-function man { tldr $args }
-function du { dust $args }
-
-# shortcuts
 function e { echo $args }
 function rr { rm -rf $args }
 function c { clear }
 
 # tools
-function zz { z - }
+function man { tldr $args }
 function hf { hyperfine $args }
 function tt { hyperfine --warmup 3 --shell powershell '. $PROFILE' }
 

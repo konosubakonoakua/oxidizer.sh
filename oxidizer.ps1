@@ -45,6 +45,11 @@ $Global:OX_ELEMENT = @{
 $Global:OX_OXIDE = @{}
 $Global:OX_APPHOME = @{}
 
+# use rust alternatives
+function ls { lsd $args }
+function cat { bat $args }
+function du { dust $args }
+
 ##########################################################
 # PowerShell & Plugins
 ##########################################################
