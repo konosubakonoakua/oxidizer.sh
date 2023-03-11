@@ -186,33 +186,6 @@ alias zz="z -"
 alias hf="hyperfine"
 
 ##########################################################
-# shell
-##########################################################
-
-weather() {
-    case $2 in
-    -a)
-        curl wttr.in/$1
-        ;;
-    -d)
-        curl v2d.wttr.in/$1
-        ;;
-    -n)
-        curl v2n.wttr.in/$1
-        ;;
-    -g)
-        curl v3.wttr.in/$1
-        ;;
-    -h)
-        printf "param 1:\n city: new+york\n airport(codes): muc \n resort: %sEiffel+Tower\n ip address: @github.com\n help: :help\n" \
-            "${HOME}" && printf "%s" \
-            "param 2:\n a: all\n d/n: day/night\n g: geographical\n f: format\n"
-        ;;
-    *) curl "v2.wttr.in/$1" ;;
-    esac
-}
-
-##########################################################
 # startup commands
 ##########################################################
 

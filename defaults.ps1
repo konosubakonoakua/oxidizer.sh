@@ -156,29 +156,6 @@ function hf { hyperfine $args }
 function tt { hyperfine --warmup 3 --shell powershell '. $PROFILE' }
 
 ##########################################################
-# weather
-##########################################################
-
-# -a: all, -g: geographical, -d: day, -n: night
-function weaher {
-    param ( $loc, $mode )
-    case $mode in
-    -a
-    { Invoke-WebRequest wttr.in/$loc }
-    -d
-    { Invoke-WebRequest v2d.wttr.in/$loc }
-    -n
-    { Invoke-WebRequest v2d.wttr.in/$loc }
-    -g
-    { Invoke-WebRequest v3.wttr.in/$loc }
-    -h {
-        echo "param 1:`n city: new+york`n airport(codes): muc `n resort: ~Eiffel+Tower`n ip address: @github.com`n help: :help"
-        echo "param 2:`n a: all`n d: day `n n: night`n g: {geographical`n f: format"
-    }
-    default { Invoke-WebRequest v2.wttr.in/$loc }
-}
-
-##########################################################
 # startup & daily commands
 ##########################################################
 
