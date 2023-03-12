@@ -64,11 +64,11 @@ To keep up the updates, simply use `upox` function.
 
 Oxidizer is originally designed for **non-administrator** users. It saves your time from repetitive and tedious setups of coding environments, and it aims to provide with following features:
 
-- Cross-Platform (Mainly Rust Tool chains)
+- Cross-Platform (mainly Rust toolchains)
 - Minimal Dependencies & Minimal Installation
 - Extensible Architecture
 - Unified Interface & Smooth Usage
-- Super-Fast! (Loading time < 1 s)
+- Super-Fast! (loading time < 1 s)
 
 ### 2.1. CLI Tools Replacement
 
@@ -96,21 +96,23 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
 
 - [x] Use [bottom](https://github.com/ClementTsang/bottom) instead of `top` or `htop`
 - [x] Use [gitui](https://github.com/extrawurst/gitui) instead of `lazygit`
-- [ ] Use `helix` instead of `neovim`
-- [ ] Use `navi` instead of `cheat.sh`
-- [ ] Use `zellij` instead of `tmux` (Not support Windows yet)
+- [ ] Use [helix](https://github.com/helix-editor/helix) instead of `neovim`
+- [ ] Use [zellij](https://github.com/zellij-org/zellij) instead of `tmux` (Not support Windows yet)
 
 ### 2.3. GUI Tools Replacement
 
-- [ ] Use `wezTerm` or `alacritty` instead of `iterm2` or `windows terminal`
+- [ ] Use [WezTerm](https://github.com/wez/wezterm) or [alacritty](https://github.com/alacritty/alacritty) instead of `iterm2` or `windows terminal`
+
+> `WezTerm` is more recommended because it has a built-in multiplexer.
 
 ### 2.4. Other Useful Rust Tools
 
 - [x] [ouch](https://github.com/ouch-org/ouch): Painless compression and decompression tool
 - [x] [pueue](https://github.com/Nukesor/pueue): Command-line task management tool for sequential and parallel execution of long-running tasks.
-- [ ] `espanso`: Text Expander written in Rust (try it for fun!)
-- [ ] `onefetch`: Command-line Git information tool
-- [ ] `kondo`: A tool to clean dependencies and build artefacts from your projects.
+- [ ] [espanso](https://github.com/espanso/espanso): Text Expander written in Rust (try it for fun!)
+- [ ] [kondo](https://github.com/tbillington/kondo): A tool to clean dependencies and build artefacts from your projects.
+- [ ] [navi](https://github.com/denisidoro/navi): An interactive cheatsheet tool for the command-line
+- [ ] [onefetch](https://github.com/o2sh/onefetch): Command-line Git information tool
 
 ### 2.5. Summary of Plugins
 

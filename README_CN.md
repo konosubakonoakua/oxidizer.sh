@@ -84,20 +84,23 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 
 - [x] 使用 [bottom](https://github.com/ClementTsang/bottom) 替换 `top` 和 `htop`
 - [x] 使用 [gitui](https://github.com/extrawurst/gitui) 替换 `lazygit`
-- [ ] 使用 `helix` 替换 `neovim`
-- [ ] 使用 `navi`：替换 `cheat.sh`
-- [ ] 使用 `zellij` 替换 `tmux`（目前不支持 Windows）
+- [ ] 使用 [helix](https://github.com/helix-editor/helix) 替换 `neovim`
+- [ ] 使用 [zellij](https://github.com/zellij-org/zellij) 替换 `tmux`（目前不支持 Windows）
 
 ### 2.3. GUI 工具替换
 
-- [ ] 使用 `wezTerm` 或 `alacritty` 替换 `iterm2` 和 `windows terminal`
+- [ ] 使用 [WezTerm](https://github.com/wez/wezterm) 或 [alacritty](https://github.com/alacritty/alacritty) 替换 `iterm2` 和 `windows terminal`
+
+> 更推荐 `WezTerm`，自带分屏器
 
 ### 2.4. 其他实用的 Rust 工具
 
-- [x] [ouch](https://github.com/ouch-org/ouch)：终端无痛压缩&解压工具
+- [x] [ouch](https://github.com/ouch-org/ouch)：终端无痛压缩 & 解压工具
 - [x] [pueue](https://github.com/Nukesor/pueue)：命令行并行任务管理器
-- [ ] `espanso`：输入法扩展器（推荐尝试）
-- [ ] `onefetch`：命令行 Git 信息工具
+- [ ] [espanso](https://github.com/espanso/espanso)：输入法扩展器（推荐尝试）
+- [ ] [kondo](https://github.com/tbillington/kondo)：项目依赖清理命令行工具
+- [ ] [navi](https://github.com/denisidoro/navi)：交互式 cheatsheet 命令行
+- [ ] [onefetch](https://github.com/o2sh/onefetch)：命令行 Git 信息工具
 
 ### 2.5. 插件总结
 
