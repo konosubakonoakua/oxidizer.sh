@@ -175,10 +175,11 @@ upox() {
         git reset --hard origin/main
     fi
 
-    local ox_change=$(git diff ${OXIDIZER}/defaults.sh)
+    cd ${OXIDIZER}
+    local ox_change=$(git diff defaults.sh)
     if [ -n $ox_change ]; then
         echo "\n\nDefaults changed, don't forget to change your custom.sh accordingly...\n"
-        git diff ${OXIDIZER}/defaults.sh
+        git diff defaults.sh
     fi
     cd ${HOME}
 }
