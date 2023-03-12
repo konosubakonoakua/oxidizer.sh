@@ -208,9 +208,9 @@ esac
 # startup commands
 ##########################################################
 
-# donwload path: works for function `bdl()`
+# installer donwloaded path: works for function `brp()`
+# use `which brp` to chech `brp()` in details
 export OX_DOWNLOAD=${HOME}/Desktop
-
 export OX_STARTUP=1
 
 startup() {
