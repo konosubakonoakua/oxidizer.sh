@@ -80,13 +80,13 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
   - [x] Use `dust` instead of `du`
   - [x] Use `lsd` instead of `ls`
 - non-coreutils
+  - [x] Use `fd` instead of `find`
   - [x] Use `hyperfine` instead of `time`
   - [x] Use `ripgrep` instead of `grep`
   - [x] Use `sd` instead of `sed`
   - [x] Use `tealdeer` instead of `tldr` or `man`
   - [x] Use `tre` instead of `tree`
   - [x] Use `zoxide` instead of `cd` or `z`
-  - [ ] Use `fd` instead of `find`
   - [ ] Use `tokei` instead of `cloc`
   - [ ] Use `starship` instead of `powerline10k` or `ohmyposh`
 

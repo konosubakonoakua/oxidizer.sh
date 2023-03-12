@@ -68,13 +68,13 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
   - [x] 使用 `dust` 替换 `du`
   - [x] 使用 `lsd` 替换 `ls`
 - non-coreutils
+  - [x] 使用 `fd` 替换 `find`
   - [x] 使用 `hyperfine` 替换 `time`
   - [x] 使用 `ripgrep` 替换 `grep`
   - [x] 使用 `sd` 替换 `sed`
   - [x] 使用 `tealdeer` 替换 `tldr` 和 `man`
   - [x] 使用 `tre` 替换 `tree`
   - [x] 使用 `zoxide` 替换 `cd` 和 `z`
-  - [ ] 使用 `fd` 替换 `find`
   - [ ] 使用 `tokei` 替换 `cloc`
   - [ ] 使用 `starship` 替换 `powerline10k` 和 `ohmyposh`
 
