@@ -75,28 +75,27 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
 > ☑️ means required in the installation.
 
 - coreutils
-  - [x] Use `uutils-coreutils` instead of `coreutils`
-  - [x] Use `bat` instead of `cat`
-  - [x] Use `dust` instead of `du`
-  - [x] Use `lsd` instead of `ls`
+  - [x] Use [uutils-coreutils](https://github.com/uutils/coreutils) instead of `coreutils`
+  - [x] Use [bat](https://github.com/sharkdp/bat) instead of `cat`
+  - [x] Use [lsd](https://github.com/Peltoche/lsd) instead of `ls`
 - non-coreutils
-  - [x] Use `fd` instead of `find`
-  - [x] Use `hyperfine` instead of `time`
-  - [x] Use `ripgrep` instead of `grep`
-  - [x] Use `sd` instead of `sed`
-  - [x] Use `tealdeer` instead of `tldr` or `man`
-  - [x] Use `zoxide` instead of `cd` or `z`
-  - [ ] Use `tokei` instead of `cloc`
-  - [ ] Use `tre` instead of `tree`
-  - [ ] Use `starship` instead of `powerline10k` or `ohmyposh`
+  - [x] Use [fd](https://github.com/sharkdp/fd) instead of `find`
+  - [x] Use [hyperfine](https://github.com/sharkdp/hyperfine) instead of `time`
+  - [x] Use [ripgrep](https://github.com/BurntSushi/ripgrep) instead of `grep`
+  - [x] Use [sd](https://github.com/chmln/sd) instead of `sed`
+  - [x] Use [tealdeer](https://github.com/dbrgn/tealdeer) instead of `tldr` or `man`
+  - [x] Use [zoxide](https://github.com/ajeetdsouza/zoxide) instead of `cd` or `z`
+  - [ ] Use [dust](https://github.com/bootandy/dust) instead of `du`
+  - [ ] Use [tokei](https://github.com/XAMPPRocky/tokei) instead of `cloc`
+  - [ ] Use [tre](https://github.com/dduan/tre) instead of `tree`
+  - [ ] Use [starship](https://github.com/starship/starship) instead of `powerline10k` or `ohmyposh`
 
 > `Nushell` is a cross-platform written in Rust, but it doesn't support dynamical path for the moment.
 
 ### 2.2. TUI Tools Replacement
 
-- [x] Use `bottom` instead of `top` or `htop`
-- [x] Use `gitui` instead of `lazygit`
-- [ ] Use `broot` instead of `ranger`
+- [x] Use [bottom](https://github.com/ClementTsang/bottom) instead of `top` or `htop`
+- [x] Use [gitui](https://github.com/extrawurst/gitui) instead of `lazygit`
 - [ ] Use `helix` instead of `neovim`
 - [ ] Use `navi` instead of `cheat.sh`
 - [ ] Use `zellij` instead of `tmux` (Not support Windows yet)
@@ -107,10 +106,11 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
 
 ### 2.4. Other Useful Rust Tools
 
-- [x] `onefetch`: Command-line Git information tool
-- [x] `ouch`: Painless compression and decompression tool
-- [x] `pueue`: Command-line task management tool for sequential and parallel execution of long-running tasks.
+- [x] [ouch](https://github.com/ouch-org/ouch): Painless compression and decompression tool
+- [x] [pueue](https://github.com/Nukesor/pueue): Command-line task management tool for sequential and parallel execution of long-running tasks.
 - [ ] `espanso`: Text Expander written in Rust (try it for fun!)
+- [ ] `onefetch`: Command-line Git information tool
+- [ ] `kondo`: A tool to clean dependencies and build artefacts from your projects.
 
 ### 2.5. Summary of Plugins
 
@@ -226,7 +226,7 @@ Oxidizer uses [ouch](https://github.com/ouch-org/ouch/releases/tag/0.4.0)(option
 
 ## 4. Software Information Management
 
-`back_*` and `up_*` work for `brew`, `scoop`, `conda`, `vscode`, `julia`, `texlive`, `node`. `clean_*` only works for `brew`.
+`back_*` and `up_*` work for `brew`, `scoop`, `conda`, `vscode`, `julia`, `texlive`, `node`. `clean_*` works for `brew` and `conda`.
 
 - `back_*`
   - file: export package/extension info to `$OX_BACKUP` folder

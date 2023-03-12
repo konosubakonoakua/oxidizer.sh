@@ -63,28 +63,27 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 ☑️ 表示默认安装
 
 - coreutils
-  - [x] 使用 `uutils-coreutils` 替换 `coreutils`
-  - [x] 使用 `bat` 替换 `cat`
-  - [x] 使用 `dust` 替换 `du`
-  - [x] 使用 `lsd` 替换 `ls`
+  - [x] 使用 [uutils-coreutils](https://github.com/uutils/coreutils) 替换 `coreutils`
+  - [x] 使用 [bat](https://github.com/sharkdp/bat) 替换 `cat`
+  - [x] 使用 [lsd](https://github.com/Peltoche/lsd) 替换 `ls`
 - non-coreutils
-  - [x] 使用 `fd` 替换 `find`
-  - [x] 使用 `hyperfine` 替换 `time`
-  - [x] 使用 `ripgrep` 替换 `grep`
-  - [x] 使用 `sd` 替换 `sed`
-  - [x] 使用 `tealdeer` 替换 `tldr` 和 `man`
-  - [x] 使用 `zoxide` 替换 `cd` 和 `z`
-  - [ ] 使用 `tokei` 替换 `cloc`
-  - [ ] 使用 `tre` 替换 `tree`
-  - [ ] 使用 `starship` 替换 `powerline10k` 和 `ohmyposh`
+  - [x] 使用 [fd](https://github.com/sharkdp/fd) 替换 `find`
+  - [x] 使用 [hyperfine](https://github.com/sharkdp/hyperfine) 替换 `time`
+  - [x] 使用 [ripgrep](https://github.com/BurntSushi/ripgrep) 替换 `grep`
+  - [x] 使用 [sd](https://github.com/chmln/sd) 替换 `sed`
+  - [x] 使用 [tealdeer](https://github.com/dbrgn/tealdeer) 替换 `tldr` 和 `man`
+  - [x] 使用 [zoxide](https://github.com/ajeetdsouza/zoxide) 替换 `cd` 和 `z`
+  - [ ] 使用 [dust](https://github.com/bootandy/dust) 替换 `du`
+  - [ ] 使用 [tokei](https://github.com/XAMPPRocky/tokei) 替换 `cloc`
+  - [ ] 使用 [tre](https://github.com/dduan/tre) 替换 `tree`
+  - [ ] 使用 [starship](https://github.com/starship/starship) 替换 `powerline10k` 和 `ohmyposh`
 
 > `Nushell` 是一个 Rust 编写的全平台 Shell，但其目前不支持动态地址，而且其插件只支持 Rust 和 Python，而不是其内置的 Nu 语言。
 
 ### 2.2. TUI 工具替换
 
-- [x] 使用 `gitui` 替换 `lazygit`
-- [x] 使用 `bottom` 替换 `top` 和 `htop`
-- [ ] 使用 `broot` 替换 `ranger`
+- [x] 使用 [bottom](https://github.com/ClementTsang/bottom) 替换 `top` 和 `htop`
+- [x] 使用 [gitui](https://github.com/extrawurst/gitui) 替换 `lazygit`
 - [ ] 使用 `helix` 替换 `neovim`
 - [ ] 使用 `navi`：替换 `cheat.sh`
 - [ ] 使用 `zellij` 替换 `tmux`（目前不支持 Windows）
@@ -95,10 +94,10 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 
 ### 2.4. 其他实用的 Rust 工具
 
-- [x] `onefetch`：命令行 Git 信息工具
-- [x] `ouch`：终端无痛压缩&解压工具
-- [x] `pueue`：命令行并行任务管理器
+- [x] [ouch](https://github.com/ouch-org/ouch)：终端无痛压缩&解压工具
+- [x] [pueue](https://github.com/Nukesor/pueue)：命令行并行任务管理器
 - [ ] `espanso`：输入法扩展器（推荐尝试）
+- [ ] `onefetch`：命令行 Git 信息工具
 
 ### 2.5. 插件总结
 
@@ -214,7 +213,7 @@ Oxidizer 使用 [ouch](https://github.com/ouch-org/ouch)（需要自行安装）
 - `clean_*`
   - 文件：根据自定义文件夹 `$OX_BACKUP` 中的配置文件清理
 
-`back_*` 和 `up_*` 适用于 `brew`，`scoop`，`conda`，`vscode`，`espanso`，`julia`，`texlive`，`node`；`clean_*` 只适用于 `brew`。
+`back_*` 和 `up_*` 适用于 `brew`，`scoop`，`conda`，`vscode`，`espanso`，`julia`，`texlive`，`node`；`clean_*` 适用于 `brew`，`conda`。
 
 ## 5. 包管理
 
