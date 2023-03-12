@@ -201,7 +201,7 @@ Oxidizer 通过 Homebrew 或 Scoop 管理包和软件，以绕过管理员权限
 
 > `_` 表示文件夹
 
-Oxidizer 使用 [ouch](https://github.com/ouch-org/ouch)（需要自行安装）压缩或解压缩文件，提供 3 个快捷命令
+Oxidizer 使用 `ouch` 压缩或解压缩文件，提供 3 个快捷命令
 
 - `zpf`：压缩
 - `uzpf`：解压缩
@@ -283,7 +283,6 @@ bss pu
 - `ox-macos` `oxpm`：自启动，包含 `mas`
 - `ox-debians` `oxpd`：自启动，包含 `apt`
 - `ox-windows` `oxpw`：自启动，包含 `winget`、`wsl`·
-- `ox-flatpak` `oxpf`：可选
 
 |  后缀  |  对应操作   | mas `m` | apt `a` | flatpak `f` | winget `w` | wsl `wl` |
 | :----: | :---------: | :-----: | :-----: | :---------: | :--------: | :------: |
@@ -303,9 +302,6 @@ bss pu
 
 ### 5.1. Homebrew 管理
 
-- [x] 使用 `aria2` 下载 brew cask（需自行安装 `aria2` ）
-- [x] 使用预下载器安装 Homebrew Casks
-
 - `bris`：brew reinstall 重装
 - `bup`：brew upgrade 更新
 
@@ -314,13 +310,8 @@ bss pu
 - `bisc`：安装 cask
 - `brisc`：重装 cask
 - `bupc`：升级 cask
+- `bupg`：brew upgrade --greedy
 
-后缀 `a` 是 `all` 的简写，用来使 brew 升级每个 cask（包括含有 `auto_update` 的 cask）
-
-- `bupa`：brew upgrade --greedy
-
-- `bdl`：使用 `aria2` 下载 brew cask
-  - `$1`：cask name
 - `brp`：适用于下载文件替换缓存中的 brew cask
   - `$1`：cask name
 - `bmr`：using brew mirror 使用 brew 镜像

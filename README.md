@@ -120,7 +120,7 @@ Oxidizer is designed to be extensible, you can personalize `OX_PLUGINS` in `cust
 
 Of course, you are allowed to write your own plugins, see [Writing A Plugin](https://github.com/ivaquero/oxidizer/blob/master/docs/plugins.md) for details.
 
-The plugins are hosted in [OxPlugins-Zsh](https://github.com/ivaquero/oxplugins-zsh)和[OxPlugins-PowerShell](https://github.com/ivaquero/oxplugins-pwsh)
+The plugins are hosted in [OxPlugins-Zsh](https://github.com/ivaquero/oxplugins-zsh) and [OxPlugins-PowerShell](https://github.com/ivaquero/oxplugins-pwsh)
 
 |                      Plugin                       | Linux | macOS | Windows | Autoload? |
 | :-----------------------------------------------: | :---: | :---: | :-----: | :-------: |
@@ -162,16 +162,16 @@ Oxidizer uses Homebrew or Scoop to manage packages and software programs to bypa
 - `frf`
   - refresh file by `source`
 - `edf`
-  - file: edit by `$EDITOR` (default: VSCode)
+  - edit file by `$EDITOR` (default: VSCode)
 - `brf`
   - file: browse by `bat` / `cat`
   - folder: browse by `lsd` / `ls`
 - `ipf`
-  - file: overwrite system configurations by customized (backup) files
+  - overwrite system configurations by customized (backup) files
 - `epf`
-  - file: export system configurations to back up folder
+  - export system configurations to back up folder
 - `iif`
-  - file: overwrite system configurations in by Oxidizer defaults.
+  - overwrite system configurations in by Oxidizer defaults.
 
 For example, if you want to edit `~/.zshrc`, you can type `edf zs`.
 
@@ -220,7 +220,7 @@ The table below lists the information of specific configuration files:
 
 > `_` denotes a folder
 
-Oxidizer uses [ouch](https://github.com/ouch-org/ouch/releases/tag/0.4.0)(optional, needs manual installation) to deal with compression and decompression, and provides with 3 shortcuts
+Oxidizer uses `ouch` to deal with compression and decompression, and provides with 3 shortcuts
 
 - `zpf`: compress file
 - `uzpf`: decompress file
@@ -231,11 +231,11 @@ Oxidizer uses [ouch](https://github.com/ouch-org/ouch/releases/tag/0.4.0)(option
 `back_*` and `up_*` work for `brew`, `scoop`, `conda`, `vscode`, `julia`, `texlive`, `node`. `clean_*` works for `brew` and `conda`.
 
 - `back_*`
-  - file: export package/extension info to `$OX_BACKUP` folder
+  - file: export package/extension info into `$OX_BACKUP` folder
 - `up_*`
   - file: install packages/extensions by predefined files in `$OX_BACKUP`
 - `clean_*`
-  - file: clean package/extension info by predefined files `$OX_BACKUP` folder
+  - file: clean package/extension info by predefined files in `$OX_BACKUP` folder
 
 ## 5. Package Management
 
@@ -324,9 +324,6 @@ Some of the package managers shortcuts are included in corresponding system plug
 
 ### 5.1. Homebrew
 
-- [x] Integrated `aria2` to download Homebrew Casks (require `aria2` installed)
-- [x] Enable Homebrew installation by using pre-download installers
-
 - `bis`: brew install
 - `bris`: brew reinstall
 
@@ -335,12 +332,8 @@ suffix `c` is a flag to specify brew commands only work on casks
 - `bisc`: brew install --cask
 - `brisc`: brew reinstall --cask
 - `bupc`: brew upgrade --cask
+- `bupg`: brew upgrade --greedy
 
-suffix `a` is for `all` which will force brew to upgrade every cask including ones with `auto_update` flags
-
-- `bupa`: brew upgrade --greedy
-
-- `bdl`: download brew cask by `aria2`
 - `brp`: replace brew cache file by pre-downloaded file
 - `bmr`: using brew mirror
 - `bmrq`: reset brew git source to official repositories, `q` is for quit.
