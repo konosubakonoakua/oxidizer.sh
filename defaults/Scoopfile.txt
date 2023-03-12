@@ -11,13 +11,6 @@ pueue
 ripgrep
 sd
 tealdeer
-tre-command
-uutils-coreutils
 zoxide
-scoop-completion
 winget
-posh-git
-psreadline
-dark
-innounp
 sudo

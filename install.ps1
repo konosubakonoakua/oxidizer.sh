@@ -53,6 +53,7 @@ ForEach ( $pkg in $pkgs ) {
         echo "Installing $pkg"
         scoop install $pkg
     }
+    scoop install uutils-coreutils scoop-completion posh-git psreadline dark innounp
 }
 
 ###################################################

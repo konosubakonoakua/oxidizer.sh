@@ -65,6 +65,7 @@ for pkg in $(cat ${OXIDIZER}/defaults/Brewfile.txt); do
     if test ! "$(command -v $cmd)"; then
         brew install $pkg
     fi
+    brew install uutils-coreutils
 done
 
 ###################################################

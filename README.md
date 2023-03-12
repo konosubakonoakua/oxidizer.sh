@@ -85,9 +85,9 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
   - [x] Use `ripgrep` instead of `grep`
   - [x] Use `sd` instead of `sed`
   - [x] Use `tealdeer` instead of `tldr` or `man`
-  - [x] Use `tre` instead of `tree`
   - [x] Use `zoxide` instead of `cd` or `z`
   - [ ] Use `tokei` instead of `cloc`
+  - [ ] Use `tre` instead of `tree`
   - [ ] Use `starship` instead of `powerline10k` or `ohmyposh`
 
 > `Nushell` is a cross-platform written in Rust, but it doesn't support dynamical path for the moment.
