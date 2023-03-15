@@ -14,7 +14,12 @@ jobs:
   # This workflow contains a single job called "build"
   job1:
     name: Test Oxidizer on macOS
-    runs-on: macos-11
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, macos-arm64]
+
     steps:
       - uses: actions/checkout@v3
       - name: Set up Homebrew

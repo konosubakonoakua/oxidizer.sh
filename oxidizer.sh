@@ -1,6 +1,3 @@
-# set default value for OXIDIZER
-export OXIDIZER=${OXIDIZER:-"${HOME}/oxidizer"}
-
 ##########################################################
 # Oxidizer Configuration Files
 ##########################################################
