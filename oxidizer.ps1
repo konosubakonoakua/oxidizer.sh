@@ -111,7 +111,7 @@ function ipall {
 
 # initialize Oxidizer
 function iiox {
-    echo "Installing Required packages...\n"
+    echo "Installing Required packages...`n"
     $pkgs = cat "$env:OXIDIZER\defaults\Scoopfile.txt"
     ForEach ( $pkg in $pkgs ) {
         Switch ( $pkg ) {
@@ -134,17 +134,17 @@ function iiox {
 # update Oxidizer
 function upox {
     cd $env:OXIDIZER
-    echo "Updating Oxidizer...\n"
+    echo "Updating Oxidizer...`n"
     git fetch origin master
     git reset --hard origin/master
 
     if (!(Test-Path -Path "$env:OXIDIZER\oxplugins-pwsh")) {
-        echo "\n\nCloning Oxidizer Plugins...\n"
+        echo "`n`nCloning Oxidizer Plugins...`n"
         git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git
     }
     else {
         cd "$env:OXIDIZER\oxplugins-pwsh"
-        echo "\n\nUpdating Oxidizer Plugins...\n"
+        echo "`n`nUpdating Oxidizer Plugins...`n"
         git fetch origin main
         git reset --hard origin/main
     }
@@ -152,7 +152,7 @@ function upox {
     cd $env:OXIDIZER
     $ox_change=$(git diff defaults.ps1)
     if ([string]::IsNullOrEmpty($ox_change)) {
-        echo "\n\nDefaults changed, don't forget to change your custom.ps1 accordingly...\n"
+        echo "`n`nDefaults changed, don't forget to change your custom.ps1 accordingly...`n"
         git diff defaults.ps1
     }
     cd $HOME
