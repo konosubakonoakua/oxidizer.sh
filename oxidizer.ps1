@@ -1,3 +1,7 @@
+if ([string]::IsNullOrEmpty($env:OXIDIZER)) {
+    $env:OXIDIZER = "$HOME\oxidizer"
+}
+
 ##########################################################
 # Oxidizer Configuration Files
 ##########################################################
