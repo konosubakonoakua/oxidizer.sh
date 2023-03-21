@@ -27,13 +27,17 @@ else
 end
 
 -- Title
-function basename( s ) return string.gsub( s, '(.*[/\\])(.*)', '%2' ) end
+function basename( s )
+    return string.gsub( s, '(.*[/\\])(.*)', '%2' )
+end
 
 wezterm.on( 'format-tab-title', function( tab, tabs, panes, config, hover, max_width )
     local pane = tab.active_pane
 
     local index = ""
-    if #tabs > 1 then index = string.format( "%d: ", tab.tab_index + 1 ) end
+    if #tabs > 1 then
+        index = string.format( "%d: ", tab.tab_index + 1 )
+    end
 
     local process = basename( pane.foreground_process_name )
 
@@ -72,10 +76,9 @@ local config = {
 
     -- Font
     font = wezterm.font_with_fallback { {
-        family = 'FiraCode Nerd Font'
-     }, 'FiraCode NF' },
+        family = 'FiraCode Nerd Font Mono'
+     }, 'FiraCode NF Mono' },
     font_size = 16,
-    normalize_to_nfc = false,
 
     -- Tab bar
     enable_tab_bar = true,
