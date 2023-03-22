@@ -152,7 +152,7 @@ function upox {
     cd $env:OXIDIZER
     $ox_change=$(git diff defaults.ps1)
     if ([string]::IsNullOrEmpty($ox_change)) {
-        echo "`n`nDefaults changed, don't forget to change your custom.ps1 accordingly...`n"
+        echo "`n`nDefaults changed, don't forget to update your custom.ps1 accordingly...`n"
         git diff defaults.ps1
     }
     cd $HOME
