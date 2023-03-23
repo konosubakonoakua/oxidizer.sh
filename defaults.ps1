@@ -53,7 +53,7 @@ $env:OX_BACKUP = "$HOME\Documents\backup"
 $Global:OX_OXIDE.bkox = "$env:OX_BACKUP\custom.ps1"
 
 # terminal
-$Global:OX_ELEMENT.wz = "$env:SCOOP\persist\wezterm\wezterm.lua"
+$Global:OX_ELEMENT.wz = "$env:APPDATA\wezterm\wezterm.lua"
 # $Global:OX_ELEMENT.al = "$env:APPDATA\alacritty\alacritty.yml"
 
 # $Global:OX_OXIDE.bkal = "$env:OX_BACKUP\terminal\alacritty.yml"
