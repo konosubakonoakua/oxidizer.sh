@@ -109,4 +109,5 @@ if (Get-Command code -ErrorAction SilentlyContinue) {
 }
 
 echo "Oxidizer installation complete!"
-echo "Don't forget to restart your terminal and run \'upox\' function"
+echo "Don't forget to restart your terminal and hit 'edf ox' to tweak your preferences.\n"
+echo "Finally, run 'upox' function to activate the plugins. Enjoy\!"

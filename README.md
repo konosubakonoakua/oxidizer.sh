@@ -14,7 +14,7 @@ Simple & Extensible Dotfile Manager using Rust Toolchains (PRs and Forks are wel
 
 Let's Oxidize Development Environments
 
-![oxidizer](https://raw.githubusercontent.com/ivaquero/blog-bio/master/tutorials/images/cmd/oxidizer.png)
+![oxidizer](https://raw.githubusercontent.com/ivaquero/backup/main/docs/oxidizer.png)
 
 ## 1. Get Started
 
@@ -157,7 +157,7 @@ Oxidizer uses Homebrew or Scoop to manage packages and software programs to bypa
 
 ## 3. File Management
 
-![design](https://raw.githubusercontent.com/ivaquero/backup/master/design.png)
+![design](https://raw.githubusercontent.com/ivaquero/backup/master/docs/design.drawio.png)
 
 - `frf`
   - refresh file by `source`

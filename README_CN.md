@@ -12,6 +12,8 @@
 <a href="https://github.com/ivaquero/oxidizer/blob/master/README_CN.md">简体中文</a>
 </p>
 
+![oxidizer](https://raw.githubusercontent.com/ivaquero/backup/main/docs/oxidizer.png)
+
 ## 1. 从这里开始
 
 对 macOS / Linux (Intel)
@@ -141,7 +143,7 @@ Oxidizer 通过 Homebrew 或 Scoop 管理包和软件，以绕过管理员权限
 
 ## 3. 文件管理
 
-![design](https://raw.githubusercontent.com/ivaquero/blog-bio/master/tutorials/images/cmd/oxidizer-design.png)
+![design](https://raw.githubusercontent.com/ivaquero/backup/master/docs/design.drawio.png)
 
 - `frf`
   - 通过 `source` 刷新
