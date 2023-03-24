@@ -144,6 +144,11 @@ function c { clear }
 # tools
 function man { tldr $args }
 function hf { hyperfine $args }
+
+##########################################################
+# powershell
+##########################################################
+
 function tt { hyperfine --warmup 3 --shell powershell '. $PROFILE' }
 
 ##########################################################

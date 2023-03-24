@@ -180,16 +180,41 @@ alias man="tldr"
 alias hf="hyperfine"
 alias zz="z -"
 
+##########################################################
+# shell
+##########################################################
+
+# test profile loading time
+tt() {
+    case ${SHELL} in
+    *zsh)
+        hyperfine --warmup 3 --shell zsh "source ${OX_ELEMENT[zs]}"
+        ;;
+    *bash)
+        hyperfine --warmup 3 --shell bash "source ${OX_ELEMENT[bs]}"
+        ;;
+    esac
+}
+
+# clean history
+ccc() {
+    case ${SHELL} in
+    *zsh)
+        local HISTSIZE=0 && history -p && reset && echo >${OX_ELEMENT[zshst]}
+        ;;
+    *bash)
+        local HISTSIZE=0 && history -c && reset && echo >${OX_ELEMENT[bshst]}
+        ;;
+    esac
+}
+
+# configuration
 case ${SHELL} in
 *zsh)
     # turn case sensitivity off
     zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
     # pasting with tabs doesn't perform completion
     zstyle ':completion:' insert-tab pending
-    # test
-    alias tt="hyperfine --warmup 3 --shell zsh 'source ${HOME}/.zshrc'"
-    # clean history
-    alias ccc="local HISTSIZE=0 && history -p && reset && echo > ~/.zsh_history"
     ;;
 *bash)
     # turn case sensitivity off
@@ -197,10 +222,6 @@ case ${SHELL} in
         echo '$include /etc/inputrc' >${HOME}/.inputrc
     fi
     echo 'set completion-ignore-case On' >>${HOME}/.inputrc
-    # test
-    alias tt="hyperfine --warmup 3 --shell bash 'source ${HOME}/.bash_profile'"
-    # clean history
-    alias ccc="local HISTSIZE=0 && history -p && reset && echo > ~/.bash_history"
     ;;
 esac
 
