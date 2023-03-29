@@ -177,7 +177,7 @@ Oxidizer 通过 Homebrew 或 Scoop 管理包和软件，以绕过管理员权限
 |     conan      | `cnr`  |        `remotes.json`        |
 |     conan      | `cnd`  |      `profiles/default`      |
 |    espanso     |  `es`  |        `default.yml`         |
-|    espanso     | `esx`  |       `match/base.yml`       |
+|    espanso     | `esb`  |       `match/base.yml`       |
 |    espanso     | `esx_` |       `match/packages`       |
 |     helix      |  `hx`  |        `config.toml`         |
 |     helix      | `hxl`  |       `languages.toml`       |

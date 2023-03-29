@@ -193,7 +193,7 @@ The table below lists the information of specific configuration files:
 |     conan      |    `cnr`     |        `remotes.json`        |
 |     conan      |    `cnd`     |      `profiles/default`      |
 |    espanso     |     `es`     |        `default.yml`         |
-|    espanso     |    `esx`     |       `match/base.yml`       |
+|    espanso     |    `esb`     |       `match/base.yml`       |
 |    espanso     |    `esx_`    |       `match/packages`       |
 |     helix      |     `hx`     |        `config.toml`         |
 |     helix      |    `hxl`     |       `languages.toml`       |
