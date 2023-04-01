@@ -224,13 +224,13 @@ local config = {
          }
      }, {
         key = 'LeftArrow',
-        mods = 'CMD',
+        mods = 'ALT|CMD',
         action = wezterm.action {
             ActivateTabRelative = -1
          }
      }, {
         key = 'RightArrow',
-        mods = 'CMD',
+        mods = 'ALT|CMD',
         action = wezterm.action {
             ActivateTabRelative = 1
          }
