@@ -78,9 +78,7 @@ local config = {
      },
 
     -- Font
-    font = wezterm.font_with_fallback { {
-        family = 'FiraCode Nerd Font Mono'
-     }, 'FiraCode NF Mono' },
+    font = wezterm.font_with_fallback { 'FiraCode Nerd Font Mono', 'FiraCode NF Mono', 'Arial' },
     font_size = 16,
 
     -- Tab bar
