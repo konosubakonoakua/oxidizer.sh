@@ -6,21 +6,24 @@ local set_environment_variables = {}
 
 -- Shell
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    term = ''
     table.insert( launch_menu, {
         label = 'PowerShell',
-        args = { 'pwsh.exe', '-NoLogo' }
+        args = { 'powershell.exe', '-NoLogo' }
      } )
-    default_prog = { 'pwsh.exe', '-NoLogo' }
+    table.insert( launch_menu, {
+        label = "WSL",
+        args = { "wsl.exe", "--cd", "/home/" }
+     } )
+    default_prog = { 'powershell.exe', '-NoLogo' }
 elseif wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
     table.insert( launch_menu, {
-        label = 'bash',
+        label = 'Bash',
         args = { 'bash', '-l' }
      } )
     default_prog = { 'bash', '-l' }
 else
     table.insert( launch_menu, {
-        label = 'zsh',
+        label = 'Zsh',
         args = { 'zsh', '-l' }
      } )
     default_prog = { 'zsh', '-l' }

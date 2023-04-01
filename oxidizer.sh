@@ -188,7 +188,7 @@ upox() {
 ##########################################################
 
 if test "$(command -v starship)"; then
-    # config files
+    # system files
     export STARSHIP_CONFIG=${HOME}/.config/starship.toml
     OX_ELEMENT[ss]=${STARSHIP_CONFIG}
     # backup files

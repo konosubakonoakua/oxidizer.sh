@@ -163,7 +163,7 @@ function upox {
 ##########################################################
 
 if (Get-Command starship -ErrorAction SilentlyContinue) {
-    # config files
+    # system files
     $env:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
     $Global:OX_ELEMENT.ss = $env:STARSHIP_CONFIG
     # backup files

@@ -1,3 +1,7 @@
+[user]
+name = yourname
+email = youremail@outlook.com
+
 [credential]
 helper = store
 
