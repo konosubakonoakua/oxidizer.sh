@@ -209,9 +209,7 @@ local config = {
      }, {
         key = 't',
         mods = 'CTRL',
-        action = wezterm.action.CloseCurrentPane {
-            confirm = true
-         }
+        action = wezterm.action.SpawnTab 'CurrentPaneDomain'
      }, {
         key = 'w',
         mods = 'CTRL',
@@ -221,7 +219,7 @@ local config = {
      }, {
         key = 'd',
         mods = 'CTRL',
-        action = wezterm.action.CloseCurrentTab {
+        action = wezterm.action.CloseCurrentPane {
             confirm = true
          }
      }, {
