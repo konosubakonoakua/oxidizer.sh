@@ -53,11 +53,11 @@ $env:OX_BACKUP = "$HOME\Documents\backup"
 $Global:OX_OXIDE.bkox = "$env:OX_BACKUP\custom.ps1"
 
 # terminal
-$Global:OX_ELEMENT.wz = "$env:SCOOP\persist\wezterm\wezterm.lua"
+$Global:OX_ELEMENT.wz = "$HOME\.wezterm.lua"
 # $Global:OX_ELEMENT.al = "$env:APPDATA\alacritty\alacritty.yml"
 
+$Global:OX_OXIDE.bkwz = "$env:OX_BACKUP\terminal\wezterm.lua"
 # $Global:OX_OXIDE.bkal = "$env:OX_BACKUP\terminal\alacritty.yml"
-# $Global:OX_OXIDE.bkwz = "$env:OX_BACKUP\terminal\wezterm.lua"
 
 ##########################################################
 # register proxy ports
