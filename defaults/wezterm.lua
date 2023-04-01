@@ -207,13 +207,23 @@ local config = {
             ActivateTab = 8
          }
      }, {
-        key = 'n',
-        mods = 'CMD',
-        action = 'ShowTabNavigator'
+        key = 't',
+        mods = 'CTRL',
+        action = wezterm.action.CloseCurrentPane {
+            confirm = true
+         }
      }, {
-        key = 'b',
-        mods = 'CMD',
-        action = 'ActivateLastTab'
+        key = 'w',
+        mods = 'CTRL',
+        action = wezterm.action.CloseCurrentTab {
+            confirm = true
+         }
+     }, {
+        key = 'd',
+        mods = 'CTRL',
+        action = wezterm.action.CloseCurrentTab {
+            confirm = true
+         }
      }, {
         key = 'LeftArrow',
         mods = 'CMD',
