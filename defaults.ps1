@@ -33,6 +33,7 @@ $env:EDITOR_T = 'vi'
 # oxpvs: ox-vscode
 # oxpfm: ox-formats
 # oxpwr: ox-weather
+# oxpwr: ox-notes
 
 $Global:OX_PLUGINS = @(
     'oxpwr',
@@ -165,3 +166,9 @@ $Global:OX_STARTUP = 1
 function startup {
     cd "$HOME\Desktop"
 }
+
+##########################################################
+# notes apps
+##########################################################
+
+# $Global:OX_OXIDIAN = ""

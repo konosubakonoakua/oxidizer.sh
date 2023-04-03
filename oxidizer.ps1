@@ -19,7 +19,6 @@ $Global:OX_OXYGEN = @{
     'oxpcn' = "$env:OXIDIZER\oxplugins-pwsh\ox-conan.ps1"
     'oxpdk' = "$env:OXIDIZER\oxplugins-pwsh\ox-docker.ps1"
     'oxpes' = "$env:OXIDIZER\oxplugins-pwsh\ox-espanso.ps1"
-    'oxpfm' = "$env:OXIDIZER\oxplugins-pwsh\ox-formats.ps1"
     'oxphx' = "$env:OXIDIZER\oxplugins-pwsh\ox-helix.ps1"
     'oxpjl' = "$env:OXIDIZER\oxplugins-pwsh\ox-julia.ps1"
     'oxpjn' = "$env:OXIDIZER\oxplugins-pwsh\ox-jupyter.ps1"
@@ -30,7 +29,9 @@ $Global:OX_OXYGEN = @{
     'oxptl' = "$env:OXIDIZER\oxplugins-pwsh\ox-texlive.ps1"
     'oxput' = "$env:OXIDIZER\oxplugins-pwsh\ox-utils.ps1"
     'oxpvs' = "$env:OXIDIZER\oxplugins-pwsh\ox-vscode.ps1"
+    'oxpfm' = "$env:OXIDIZER\oxplugins-pwsh\ox-formats.ps1"
     'oxpwr' = "$env:OXIDIZER\oxplugins-pwsh\ox-weather.ps1"
+    'oxpns' = "$env:OXIDIZER\oxplugins-pwsh\ox-notes.ps1"
 }
 
 ##########################################################
@@ -156,7 +157,7 @@ function upox {
     $ox_change=$(git diff defaults.ps1)
     if ([string]::IsNullOrEmpty($ox_change)) {
         echo "`n`nDefaults changed, don't forget to update your custom.ps1 accordingly...`n"
-        git diff defaults.ps1
+        echo "See the changes using 'git diff $env:OXIDIZER\defaults.ps1'"
     }
     cd $HOME
 }

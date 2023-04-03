@@ -34,6 +34,7 @@ export EDITOR_T='vi'
 # oxpvs: ox-vscode
 # oxpfm: ox-format
 # oxpwr: ox-weather
+# oxpwr: ox-notes
 
 OX_PLUGINS=(
     oxpwr
@@ -240,3 +241,9 @@ startup() {
     # start directory
     cd ${HOME}/Desktop
 }
+
+##########################################################
+# notes apps
+##########################################################
+
+# OX_OXIDIAN=""

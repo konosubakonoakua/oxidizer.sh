@@ -18,7 +18,6 @@ declare -A OX_OXYGEN=(
     [oxpcn]=${OXIDIZER}/oxplugins-zsh/ox-conan.sh
     [oxpct]=${OXIDIZER}/oxplugins-zsh/ox-container.sh
     [oxpes]=${OXIDIZER}/oxplugins-zsh/ox-espanso.sh
-    [oxpfm]=${OXIDIZER}/oxplugins-zsh/ox-formats.sh
     [oxphx]=${OXIDIZER}/oxplugins-zsh/ox-helix.sh
     [oxpjl]=${OXIDIZER}/oxplugins-zsh/ox-julia.sh
     [oxpjn]=${OXIDIZER}/oxplugins-zsh/ox-jupyter.sh
@@ -30,7 +29,9 @@ declare -A OX_OXYGEN=(
     [oxput]=${OXIDIZER}/oxplugins-zsh/ox-utils.sh
     [oxpvs]=${OXIDIZER}/oxplugins-zsh/ox-vscode.sh
     [oxpzj]=${OXIDIZER}/oxplugins-zsh/ox-zellij.sh
+    [oxpfm]=${OXIDIZER}/oxplugins-zsh/ox-formats.sh
     [oxpwr]=${OXIDIZER}/oxplugins-zsh/ox-weather.sh
+    [oxpns]=${OXIDIZER}/oxplugins-zsh/ox-notes.sh
 )
 
 ##########################################################
@@ -181,7 +182,7 @@ upox() {
     local ox_change=$(git diff defaults.sh)
     if [ -n $ox_change ]; then
         echo "\n\nDefaults changed, don't forget to update your custom.sh accordingly...\n"
-        git diff defaults.sh
+        echo "See the changes using 'git diff ${OXIDIZER}/defaults.ps1'"
     fi
     cd ${HOME}
 }
