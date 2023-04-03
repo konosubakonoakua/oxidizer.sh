@@ -135,14 +135,16 @@ The plugins are hosted in [OxPlugins-Zsh](https://github.com/ivaquero/oxplugins-
 |      [Conda](https://github.com/conda/conda)      |   ✅   |   ✅   |    ✅    |           |
 |    [Julia](https://github.com/JuliaLang/julia)    |   ✅   |   ✅   |    🚧    |           |
 |   [Jupyter](https://github.com/jupyter/jupyter)   |   ✅   |   ✅   |    ✅    |           |
-|      [Node](https://github.com/nodejs/node)       |   ✅   |   ✅   |    🚧    |           |
+|      [Node](https://github.com/nodejs/node)       |   ✅   |   ✅   |    ✅    |           |
 |     [Rust](https://github.com/rust-lang/rust)     |   ✅   |   ✅   |    ✅    |           |
 |   [Espanso](https://github.com/espanso/espanso)   |   ✅   |   ✅   |    ✅    |           |
 |        [TeXLive](https://tug.org/texlive/)        |   ✅   |   ✅   |    ✅    |           |
 |   [VSCode](https://github.com/microsoft/vscode)   |   ✅   |   ✅   |    ✅    |           |
 |                    Container²                     |   ✅   |   ✅   |    ✅    |           |
-|                      Formats                      |   🕒   |   🕒   |    🕒    |           |
 |  [Helix](https://github.com/helix-editor/helix)   |   🕒   |   🕒   |    🕒    |           |
+|                      Formats                      |   🕒   |   🕒   |    🕒    |           |
+|                      Weather                      |   🕒   |   🕒   |    🕒    |           |
+|                       Notes                       |   🕒   |   🕒   |    🕒    |           |
 
 ✅: complete functionality
 🚧: partial functionality

@@ -121,14 +121,16 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 |      [Conda](https://github.com/conda/conda)      |   ✅   |   ✅   |    ✅    |            |
 |    [Julia](https://github.com/JuliaLang/julia)    |   ✅   |   ✅   |    🚧    |            |
 |   [Jupyter](https://github.com/jupyter/jupyter)   |   ✅   |   ✅   |    ✅    |            |
-|      [Node](https://github.com/nodejs/node)       |   ✅   |   ✅   |    🚧    |            |
+|      [Node](https://github.com/nodejs/node)       |   ✅   |   ✅   |    ✅    |            |
 |     [Rust](https://github.com/rust-lang/rust)     |   ✅   |   ✅   |    ✅    |            |
 |   [Espanso](https://github.com/espanso/espanso)   |   ✅   |   ✅   |    ✅    |            |
 |        [TeXLive](https://tug.org/texlive/)        |   ✅   |   ✅   |    ✅    |            |
 |   [VSCode](https://github.com/microsoft/vscode)   |   ✅   |   ✅   |    ✅    |            |
 |                    Container²                     |   ✅   |   ✅   |    ✅    |            |
-|                      Formats                      |   🕒   |   🕒   |    🕒    |            |
 |  [Helix](https://github.com/helix-editor/helix)   |   🕒   |   🕒   |    🕒    |            |
+|                      Formats                      |   🕒   |   🕒   |    🕒    |           |
+|                      Weather                      |   🕒   |   🕒   |    🕒    |           |
+|                       Notes                       |   🕒   |   🕒   |    🕒    |           |
 
 ✅：完整功能
 🚧：部分功能
