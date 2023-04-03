@@ -21,7 +21,6 @@ $env:EDITOR_T = 'vi'
 # oxpg: ox-git
 # oxpc: ox-conda
 # oxpcn: ox-conan
-# oxpfm: ox-formats
 # oxphx: ox-helix
 # oxpjl: ox-julia
 # oxpnj: ox-nodejs
@@ -32,9 +31,11 @@ $env:EDITOR_T = 'vi'
 # oxpjn: ox-jupyter
 # oxptl: ox-texlive
 # oxpvs: ox-vscode
+# oxpfm: ox-formats
+# oxpwr: ox-weather
 
 $Global:OX_PLUGINS = @(
-    'oxpfm',
+    'oxpwr',
     'oxpvs'
 )
 

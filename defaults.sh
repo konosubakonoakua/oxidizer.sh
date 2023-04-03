@@ -21,7 +21,6 @@ export EDITOR_T='vi'
 # oxpg: ox-git
 # oxpc: ox-conda
 # oxpcn: ox-conan
-# oxpfm: ox-format
 # oxphx: ox-helix
 # oxpjl: ox-julia
 # oxpnj: ox-nodejs
@@ -33,9 +32,11 @@ export EDITOR_T='vi'
 # oxpjn: ox-jupyter
 # oxptl: ox-texlive
 # oxpvs: ox-vscode
+# oxpfm: ox-format
+# oxpwr: ox-weather
 
 OX_PLUGINS=(
-    oxpfm
+    oxpwr
 )
 
 ##########################################################

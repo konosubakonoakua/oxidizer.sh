@@ -30,6 +30,7 @@ declare -A OX_OXYGEN=(
     [oxput]=${OXIDIZER}/oxplugins-zsh/ox-utils.sh
     [oxpvs]=${OXIDIZER}/oxplugins-zsh/ox-vscode.sh
     [oxpzj]=${OXIDIZER}/oxplugins-zsh/ox-zellij.sh
+    [oxpwr]=${OXIDIZER}/oxplugins-zsh/ox-weather.sh
 )
 
 ##########################################################

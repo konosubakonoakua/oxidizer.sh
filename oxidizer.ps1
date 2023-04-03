@@ -30,6 +30,7 @@ $Global:OX_OXYGEN = @{
     'oxptl' = "$env:OXIDIZER\oxplugins-pwsh\ox-texlive.ps1"
     'oxput' = "$env:OXIDIZER\oxplugins-pwsh\ox-utils.ps1"
     'oxpvs' = "$env:OXIDIZER\oxplugins-pwsh\ox-vscode.ps1"
+    'oxpwr' = "$env:OXIDIZER\oxplugins-pwsh\ox-weather.ps1"
 }
 
 ##########################################################
