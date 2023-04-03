@@ -182,7 +182,7 @@ upox() {
     local ox_change=$(git diff defaults.sh)
     if [ -n $ox_change ]; then
         echo "\n\nDefaults changed, don't forget to update your custom.sh accordingly...\n"
-        echo "See the changes using 'git diff ${OXIDIZER}/defaults.ps1'"
+        echo "Compare the difference using 'edf oxd'"
     fi
     cd ${HOME}
 }
