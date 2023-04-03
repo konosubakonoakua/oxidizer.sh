@@ -50,7 +50,8 @@ $Global:OX_BACKUP_PROG = @('scoop')
 $env:OX_BACKUP = "$HOME\Documents\backup"
 
 # shell
-$Global:OX_OXIDE.bkox = "$env:OX_BACKUP\custom.ps1"
+$Global:OX_OXIDE.bkox = "$env:OX_BACKUP\shell\custom.ps1"
+# $Global:OX_OXIDE.bkpx = "$env:OX_BACKUP\verge.yaml"
 
 # terminal
 $Global:OX_ELEMENT.wz = "$HOME\.wezterm.lua"

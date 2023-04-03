@@ -9,8 +9,8 @@ if ([string]::IsNullOrEmpty($env:OXIDIZER)) {
 # plugins
 $Global:OX_OXYGEN = @{
     'oxd' = "$env:OXIDIZER\defaults.ps1"
-    'oxz' = "$env:OXIDIZER\oxidizer.ps1"
     'oxwz' = "$env:OXIDIZER\defaults\wezterm.lua"
+    'oxpx' = "$env:OXIDIZER\defaults\verge.yaml"
     'oxps' = "$env:OXIDIZER\oxplugins-pwsh\ox-scoop.ps1"
     'oxpw' = "$env:OXIDIZER\oxplugins-pwsh\ox-windows.ps1"
     'oxpg' = "$env:OXIDIZER\oxplugins-pwsh\ox-git.ps1"
@@ -38,6 +38,8 @@ $Global:OX_OXYGEN = @{
 
 $Global:OX_ELEMENT = @{
     'ox' = "$env:OXIDIZER\custom.ps1"
+    'vi' = "$HOME\.vimrc"
+    'px' = "$HOME\.config\clash-verge\verge.yaml"
 }
 
 $Global:OX_OXIDE = @{}

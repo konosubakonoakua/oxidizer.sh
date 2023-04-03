@@ -55,6 +55,7 @@ export OX_BACKUP=${HOME}/Documents/backup
 # shell backups
 OX_OXIDE[bkox]=${OX_BACKUP}/shell/custom.sh
 # OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
+# OX_OXIDE[bkpx]=${OX_BACKUP}/verge.yaml
 
 # system file
 OX_ELEMENT[wz]=${HOME}/.config/wezterm/wezterm.lua

@@ -8,6 +8,7 @@ export OXIDIZER=${OXIDIZER:-"${HOME}/oxidizer"}
 declare -A OX_OXYGEN=(
     [oxd]=${OXIDIZER}/defaults.sh
     [oxwz]=${OXIDIZER}/defaults/wezterm.lua
+    [oxpx]=${OXIDIZER}/defaults/verge.yaml
     [oxpm]=${OXIDIZER}/oxplugins-zsh/ox-macos.sh
     [oxpd]=${OXIDIZER}/oxplugins-zsh/ox-debians.sh
     [oxpb]=${OXIDIZER}/oxplugins-zsh/ox-brew.sh
@@ -38,6 +39,7 @@ declare -A OX_OXYGEN=(
 declare -A OX_ELEMENT=(
     [ox]=${OXIDIZER}/custom.sh
     [vi]=${HOME}/.vimrc
+    [px]=${HOME}/.config/clash-verge/verge.yaml
 )
 
 declare -A OX_OXIDE
