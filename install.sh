@@ -133,7 +133,7 @@ sd "source OXIDIZER=.*" "source OXIDIZER=${OXIDIZER}/oxidizer.sh" ${OX_SHELL}
 # Load Plugins
 ###################################################
 
-git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git
+git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git ${OXIDIZER}/oxplugins-zsh
 
 ###################################################
 # Editor

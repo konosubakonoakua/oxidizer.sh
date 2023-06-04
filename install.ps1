@@ -99,7 +99,7 @@ sd '= .*\\oxidizer.ps1' "= $env:OXIDIZER\oxidizer.ps1" $PROFILE
 # Load Plugins
 ###################################################
 
-git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git
+git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git $env:OXIDIZER\oxplugins-pwsh
 
 . $PROFILE
 
