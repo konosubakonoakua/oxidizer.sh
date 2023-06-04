@@ -86,6 +86,7 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
   - [x] Use [tealdeer](https://github.com/dbrgn/tealdeer) instead of `tldr` or `man`
   - [x] Use [zoxide](https://github.com/ajeetdsouza/zoxide) instead of `cd` or `z`
   - [ ] Use [dust](https://github.com/bootandy/dust) instead of `du`
+  - [ ] Use [procs](https://github.com/dalance/procs) instead of `ps`
   - [ ] Use [tokei](https://github.com/XAMPPRocky/tokei) instead of `cloc`
   - [ ] Use [tre](https://github.com/dduan/tre) instead of `tree`
   - [ ] Use [starship](https://github.com/starship/starship) instead of `powerline10k` or `ohmyposh`
