@@ -73,11 +73,6 @@ ForEach ($core_plugin in $Global:OX_CORE_PLUGINS) {
 # PowerShell Settings
 ##########################################################
 
-# use rust alternatives
-function ls { lsd $args }
-function cat { bat $args }
-function du { dust $args }
-
 $Global:OX_ELEMENT.ps = $PROFILE
 $Global:OX_OXIDE.bkps = "$env:OX_BACKUP\shell\Profile.ps1"
 

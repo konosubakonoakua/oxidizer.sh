@@ -83,11 +83,6 @@ done
 
 export SHELLS=/private/etc/shells
 
-# use rust alternatives
-alias ls="lsd"
-alias cat="bat"
-alias du="dust"
-
 case ${SHELL} in
 *zsh)
     OX_ELEMENT[zs]=${HOME}/.zshrc

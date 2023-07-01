@@ -137,6 +137,8 @@ $Global:OX_OXIDE.bkvs = "$env:OX_BACKUP\vscode\settings.json"
 ##########################################################
 
 # shortcuts
+function cat { bat $args }
+function ls { lsd $args }
 function ll { lsd -l $args }
 function la { lsd -a $args }
 function lla { lsd -la $args }
