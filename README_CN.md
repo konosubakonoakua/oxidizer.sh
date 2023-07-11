@@ -252,12 +252,12 @@ Oxidizer 致力于为各个包管理器提供统一的接口，以减轻敲击�
 
 特别地，Oxidizer 提供两组后缀为`p`的实验性函数，用于并行安装和下载软件包
 
-- brew：`bisp`, `biscp`, `bupp`, `bupgp`
+- brew：`bisp`, `biscp`, `bupp`
 - scoop：`sisp`, `supp`
 
 例如，当需要安装 2 个及以上的包时，可以使用 `bisp [pkg1] [pkg1]` 代替 `bis [pkg1] [pkg1]`，进行并行下载安装。
 
-同理，`biscp`, `bupp`, `bupgp` 分别为 `bisc`, `bup`, `bupg` 的并行版本。
+同理，`biscp`, `bupp` 分别为 `bisc`, `bup` 的并行版本。
 
 使用并行功能前，需要启动 pueue 服务
 

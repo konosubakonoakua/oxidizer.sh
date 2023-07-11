@@ -269,12 +269,12 @@ Oxidizer aims to provide a unified interface for all package manager-related com
 
 Particularly, Oxidizer provides with two groups of experimental functions with suffix `p` for installing and downloading packages in parallel
 
-- brew: `bisp`, `biscp`, `bupp`, `bupgp`
+- brew: `bisp`, `biscp`, `bupp`
 - scoop: `sisp`, `supp`
 
 For example, when you have more than 1 packages to install, instead of using `bis [pkg1] [pkg2]` , you can use `bisp [pkg1] [pkg2]` then the packages will be downloaded and installed in parallel.
 
-Similarly, `biscp`, `bupp`, `bupgp` are the parallel version of `bisc`, `bup`, `bupg`, respectively.
+Similarly, `biscp`, `bupp`, are the parallel version of `bisc`, `bup`, respectively.
 
 Before using parallel functions, `pueue` service need to be enabled by
 
