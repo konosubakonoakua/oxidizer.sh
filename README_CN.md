@@ -111,27 +111,27 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 
 |                       插件                        | Linux | macOS | Windows | 自动加载？ |
 | :-----------------------------------------------: | :---: | :---: | :-----: | :--------: |
-|     [Brew](https://github.com/Homebrew/brew)      |   ✅   |   ✅   |    ❌    |     ✅      |
-| [Scoop](https://github.com/ScoopInstaller/Scoop)  |   ❌   |   ❌   |    ✅    |     ✅      |
-|     [Pueue](https://github.com/Nukesor/pueue)     |   ✅   |   ✅   |    ✅    |     ✅      |
-|                      System                       |  ✅¹   |   ✅   |    ✅    |     ✅      |
-|                      Utility                      |   ✅   |   ✅   |    ✅    |     ✅      |
-|            [Git](https://git-scm.com/)            |   ✅   |   ✅   |    ✅    |            |
-| [Bitwarden](https://github.com/bitwarden/clients) |   🕒   |   🕒   |    🕒    |            |
-|    [Conan](https://github.com/conan-io/conan)     |   ✅   |   ✅   |    ✅    |            |
-|      [Conda](https://github.com/conda/conda)      |   ✅   |   ✅   |    ✅    |            |
-|    [Julia](https://github.com/JuliaLang/julia)    |   ✅   |   ✅   |    🚧    |            |
-|   [Jupyter](https://github.com/jupyter/jupyter)   |   ✅   |   ✅   |    ✅    |            |
-|      [Node](https://github.com/nodejs/node)       |   ✅   |   ✅   |    ✅    |            |
-|     [Rust](https://github.com/rust-lang/rust)     |   ✅   |   ✅   |    ✅    |            |
-|   [Espanso](https://github.com/espanso/espanso)   |   ✅   |   ✅   |    ✅    |            |
-|        [TeXLive](https://tug.org/texlive/)        |   ✅   |   ✅   |    ✅    |            |
-|   [VSCode](https://github.com/microsoft/vscode)   |   ✅   |   ✅   |    ✅    |            |
-|                    Container²                     |   ✅   |   ✅   |    ✅    |            |
-|  [Helix](https://github.com/helix-editor/helix)   |   🕒   |   🕒   |    🕒    |            |
-|                      Formats                      |   🕒   |   🕒   |    🕒    |           |
-|                      Weather                      |   🕒   |   🕒   |    🕒    |           |
-|                       Notes                       |   🕒   |   🕒   |    🕒    |           |
+|     [Brew](https://github.com/Homebrew/brew)      |  ✅   |  ✅   |   ❌    |     ✅     |
+| [Scoop](https://github.com/ScoopInstaller/Scoop)  |  ❌   |  ❌   |   ✅    |     ✅     |
+|     [Pueue](https://github.com/Nukesor/pueue)     |  ✅   |  ✅   |   ✅    |     ✅     |
+|                      System                       |  ✅¹  |  ✅   |   ✅    |     ✅     |
+|                      Utility                      |  ✅   |  ✅   |   ✅    |     ✅     |
+|            [Git](https://git-scm.com/)            |  ✅   |  ✅   |   ✅    |            |
+| [Bitwarden](https://github.com/bitwarden/clients) |  🕒   |  🕒   |   🕒    |            |
+|    [Conan](https://github.com/conan-io/conan)     |  ✅   |  ✅   |   ✅    |            |
+|      [Conda](https://github.com/conda/conda)      |  ✅   |  ✅   |   ✅    |            |
+|    [Julia](https://github.com/JuliaLang/julia)    |  ✅   |  ✅   |   🚧    |            |
+|   [Jupyter](https://github.com/jupyter/jupyter)   |  ✅   |  ✅   |   ✅    |            |
+|      [Node](https://github.com/nodejs/node)       |  ✅   |  ✅   |   ✅    |            |
+|     [Rust](https://github.com/rust-lang/rust)     |  ✅   |  ✅   |   ✅    |            |
+|   [Espanso](https://github.com/espanso/espanso)   |  ✅   |  ✅   |   ✅    |            |
+|        [TeXLive](https://tug.org/texlive/)        |  ✅   |  ✅   |   ✅    |            |
+|   [VSCode](https://github.com/microsoft/vscode)   |  ✅   |  ✅   |   ✅    |            |
+|                    Container²                     |  ✅   |  ✅   |   ✅    |            |
+|  [Helix](https://github.com/helix-editor/helix)   |  🕒   |  🕒   |   🕒    |            |
+|                      Formats                      |  🕒   |  🕒   |   🕒    |            |
+|                      Weather                      |  🕒   |  🕒   |   🕒    |            |
+|                       Notes                       |  🕒   |  🕒   |   🕒    |            |
 
 ✅：完整功能
 🚧：部分功能
@@ -229,26 +229,26 @@ Oxidizer 致力于为各个包管理器提供统一的接口，以减轻敲击�
 
 |  后缀  |    操作     | brew `b` | scoop `s` | conda `c` | npm `n` | cargo `cg` | rustup `rs` | julia `jl` | conan `cn` | tlmgr `tl` |
 | :----: | :---------: | :------: | :-------: | :-------: | :-----: | :--------: | :---------: | :--------: | :--------: | :--------: |
-|  `*h`  |    help     |    ✅     |           |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |     ✅      |     ✅      |
-| `*cf`  |   config    |    ✅     |           |     ✅     |    ✅    |            |             |            |     ✅      |            |
-| `*is`  |   install   |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |     ✅      |     ✅      |
-| `*us`  |  uninstall  |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |     ✅      |     ✅      |
-| `*up`  |   update    |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |     ✅      |     ✅      |
-| `*ups` | update self |    ✅     |     ✅     |           |         |            |             |            |            |     ✅      |
-| `*ls`  |    list     |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |            |     ✅      |
-| `*lv`  |   leaves    |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |             |     ✅      |            |            |
-| `*sc`  |   search    |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |             |            |     ✅      |            |
-| `*cl`  |    clean    |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |             |     ✅      |            |            |
-| `*if`  |    info     |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |             |            |     ✅      |     ✅      |
-| `*st`  |   status    |    ✅     |     ✅     |           |    ✅    |            |             |     ✅      |            |            |
-| `*ck`  |    check    |    ✅     |     ✅     |           |    ✅    |     ✅      |      ✅      |            |            |     ✅      |
-| `*pn`  |     pin     |    ✅     |     ✅     |           |         |            |             |     ✅      |            |            |
-| `*upn` |    unpin    |    ✅     |     ✅     |           |         |            |             |     ✅      |            |            |
-| `*dp`  |   depends   |    ✅     |     ✅     |     ✅     |         |     ✅      |             |     ✅      |     ✅      |            |
-| `*rdp` |    needs    |          |           |     ✅     |         |            |             |     ✅      |            |            |
-| `*xa`  |  add repo   |    ✅     |     ✅     |     ✅     |         |            |             |            |     ✅      |            |
-| `*xrm` | remove repo |    ✅     |     ✅     |     ✅     |         |            |             |            |     ✅      |            |
-| `*xls` |  list repo  |          |           |     ✅     |         |            |             |            |     ✅      |            |
+|  `*h`  |    help     |    ✅    |           |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |     ✅     |     ✅     |
+| `*cf`  |   config    |    ✅    |           |    ✅     |   ✅    |            |             |            |     ✅     |            |
+| `*is`  |   install   |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |     ✅     |     ✅     |
+| `*us`  |  uninstall  |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |     ✅     |     ✅     |
+| `*up`  |   update    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |     ✅     |     ✅     |
+| `*ups` | update self |    ✅    |    ✅     |           |         |            |             |            |            |     ✅     |
+| `*ls`  |    list     |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |            |     ✅     |
+| `*lv`  |   leaves    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |     ✅     |            |            |
+| `*sc`  |   search    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |            |     ✅     |            |
+| `*cl`  |    clean    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |     ✅     |            |            |
+| `*if`  |    info     |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |            |     ✅     |     ✅     |
+| `*st`  |   status    |    ✅    |    ✅     |           |   ✅    |            |             |     ✅     |            |            |
+| `*ck`  |    check    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |            |            |     ✅     |
+| `*pn`  |     pin     |    ✅    |    ✅     |           |         |            |             |     ✅     |            |            |
+| `*upn` |    unpin    |    ✅    |    ✅     |           |         |            |             |     ✅     |            |            |
+| `*dp`  |   depends   |    ✅    |    ✅     |    ✅     |         |     ✅     |             |     ✅     |     ✅     |            |
+| `*rdp` |    needs    |          |           |    ✅     |         |            |             |     ✅     |            |            |
+| `*xa`  |  add repo   |    ✅    |    ✅     |    ✅     |         |            |             |            |     ✅     |            |
+| `*xrm` | remove repo |    ✅    |    ✅     |    ✅     |         |            |             |            |     ✅     |            |
+| `*xls` |  list repo  |          |           |    ✅     |         |            |             |            |     ✅     |            |
 
 特别地，Oxidizer 提供两组后缀为`p`的实验性函数，用于并行安装和下载软件包
 
@@ -272,16 +272,16 @@ bss pu
 
 | 后缀  |    操作     | brew `b` | scoop `s` | conda `c` | npm `n` | cargo `cg` | rustup `rs` | julia `jl` | conan `cn` |
 | :---: | :---------: | :------: | :-------: | :-------: | :-----: | :--------: | :---------: | :--------: | :--------: |
-| `*ii` | init/create |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |             |            |     ✅      |
-| `*b`  |    build    |          |           |           |         |     ✅      |             |     ✅      |     ✅      |
-| `*r`  |     run     |          |           |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |            |
-| `*ed` |    edit     |    ✅     |           |           |         |            |             |            |            |
-| `*ca` |     cat     |    ✅     |     ✅     |           |         |            |             |            |            |
-| `*ln` |    link     |    ✅     |           |           |         |            |             |            |            |
-| `*ts` |    test     |    ✅     |           |           |    ✅    |     ✅      |             |     ✅      |     ✅      |
-| `*au` |    audit    |    ✅     |           |           |    ✅    |            |             |            |            |
-| `*fx` |     fix     |    ✅     |           |           |    ✅    |     ✅      |             |            |            |
-| `*pb` |   publish   |          |           |           |    ✅    |     ✅      |             |            |            |
+| `*ii` | init/create |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |            |     ✅     |
+| `*b`  |    build    |          |           |           |         |     ✅     |             |     ✅     |     ✅     |
+| `*r`  |     run     |          |           |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |            |
+| `*ed` |    edit     |    ✅    |           |           |         |            |             |            |            |
+| `*ca` |     cat     |    ✅    |    ✅     |           |         |            |             |            |            |
+| `*ln` |    link     |    ✅    |           |           |         |            |             |            |            |
+| `*ts` |    test     |    ✅    |           |           |   ✅    |     ✅     |             |     ✅     |     ✅     |
+| `*au` |    audit    |    ✅    |           |           |   ✅    |            |             |            |            |
+| `*fx` |     fix     |    ✅    |           |           |   ✅    |     ✅     |             |            |            |
+| `*pb` |   publish   |          |           |           |   ✅    |     ✅     |             |            |            |
 
 部分快捷命令被包含在对应的系统扩展中
 
@@ -291,19 +291,19 @@ bss pu
 
 |  后缀  |  对应操作   | mas `m` | apt `a` | flatpak `f` | winget `w` | wsl `wl` |
 | :----: | :---------: | :-----: | :-----: | :---------: | :--------: | :------: |
-|  `*h`  |    help     |    ✅    |    ✅    |             |     ✅      |          |
-| `*is`  |   install   |    ✅    |    ✅    |      ✅      |     ✅      |    ✅     |
-| `*us`  |  uninstall  |    ✅    |    ✅    |      ✅      |     ✅      |          |
-| `*up`  |   update    |    ✅    |    ✅    |             |     ✅      |          |
-| `*ups` | update self |         |    ✅    |             |     ✅      |          |
-| `*ls`  |    list     |         |    ✅    |      ✅      |     ✅      |    ✅     |
+|  `*h`  |    help     |   ✅    |   ✅    |             |     ✅     |          |
+| `*is`  |   install   |   ✅    |   ✅    |     ✅      |     ✅     |    ✅    |
+| `*us`  |  uninstall  |   ✅    |   ✅    |     ✅      |     ✅     |          |
+| `*up`  |   update    |   ✅    |   ✅    |             |     ✅     |          |
+| `*ups` | update self |         |   ✅    |             |     ✅     |          |
+| `*ls`  |    list     |         |   ✅    |     ✅      |     ✅     |    ✅    |
 | `*lv`  |   leaves    |         |         |             |            |          |
-| `*sc`  |   search    |    ✅    |    ✅    |             |            |          |
-| `*cl`  |    clean    |         |    ✅    |             |            |          |
-| `*if`  |    info     |    ✅    |    ✅    |             |     ✅      |          |
-| `*st`  |   status    |    ✅    |         |             |            |          |
-| `*ck`  |    check    |         |    ✅    |             |            |          |
-| `*dp`  |   depends   |         |    ✅    |             |            |          |
+| `*sc`  |   search    |   ✅    |   ✅    |             |            |          |
+| `*cl`  |    clean    |         |   ✅    |             |            |          |
+| `*if`  |    info     |   ✅    |   ✅    |             |     ✅     |          |
+| `*st`  |   status    |   ✅    |         |             |            |          |
+| `*ck`  |    check    |         |   ✅    |             |            |          |
+| `*dp`  |   depends   |         |   ✅    |             |            |          |
 
 ### 5.1. Homebrew 管理
 
