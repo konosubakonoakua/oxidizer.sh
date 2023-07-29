@@ -22,16 +22,18 @@ colorMoved = default
 
 [alias]
 compress = repack -a -d --depth=250 --window=250
-clone-shallow = clone --depth 1
 count = rev-list --count HEAD
-remove-tag-local = tag --delete
-remove-tag-remote = push --delete origin
+clone-shallow = clone --depth 1
+tag-remove = tag --delete
+tag-remove-remote = push --delete origin
 origin-add = remote add origin
-origin-push = push --set-upstream origin
+origin-add-url = remote set-url
+origin-rename = remote rename origin
+publish = push --set-upstream origin
+filter = filter-repo
 filter-id = filter-repo --strip-blobs-with-ids
 filter-path = filter-repo --invert-paths --path-glob
 filter-size = filter-repo --strip-blobs-bigger-than
-summary = onefetch
 
 [http]
 version = HTTP/1.1
