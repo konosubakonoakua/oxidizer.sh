@@ -82,7 +82,6 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
   - [x] Use [fd](https://github.com/sharkdp/fd) instead of `find`
   - [x] Use [hyperfine](https://github.com/sharkdp/hyperfine) instead of `time`
   - [x] Use [ripgrep](https://github.com/BurntSushi/ripgrep) instead of `grep`
-  - [x] Use [sd](https://github.com/chmln/sd) instead of `sed`
   - [x] Use [tealdeer](https://github.com/dbrgn/tealdeer) instead of `tldr` or `man`
   - [x] Use [zoxide](https://github.com/ajeetdsouza/zoxide) instead of `cd` or `z`
   - [ ] Use [dust](https://github.com/bootandy/dust) instead of `du`

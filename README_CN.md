@@ -72,7 +72,6 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
   - [x] 使用 [fd](https://github.com/sharkdp/fd) 替换 `find`
   - [x] 使用 [hyperfine](https://github.com/sharkdp/hyperfine) 替换 `time`
   - [x] 使用 [ripgrep](https://github.com/BurntSushi/ripgrep) 替换 `grep`
-  - [x] 使用 [sd](https://github.com/chmln/sd) 替换 `sed`
   - [x] 使用 [tealdeer](https://github.com/dbrgn/tealdeer) 替换 `tldr` 和 `man`
   - [x] 使用 [zoxide](https://github.com/ajeetdsouza/zoxide) 替换 `cd` 和 `z`
   - [ ] 使用 [dust](https://github.com/bootandy/dust) 替换 `du`

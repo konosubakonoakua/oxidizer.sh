@@ -7,6 +7,5 @@ lsd
 ouch
 pueue
 ripgrep
-sd
 tealdeer
 zoxide
