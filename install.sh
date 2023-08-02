@@ -126,7 +126,8 @@ cp ${OXIDIZER}/defaults.sh ${OXIDIZER}/custom.sh
 # load zoxide
 sed -i.bak "s|.* OX_STARTUP=.*|export OX_STARTUP=1|" ${OXIDIZER}/custom.sh
 # set path of oxidizer
-echo "source OXIDIZER=${OXIDIZER}/oxidizer.sh" | xargs -I '{}' sed -i.bak '' 's|source OXIDIZER=.*|{}|' ${OX_SHELL}
+# echo "source OXIDIZER=${OXIDIZER}/oxidizer.sh" | xargs -I '{}' sed -i.bak '' 's|source OXIDIZER=.*|{}|' ${OX_SHELL}
+cat ${OX_SHELL} | rg -o 'source .+'
 
 ###################################################
 # Load Plugins
