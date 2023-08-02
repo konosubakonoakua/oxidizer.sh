@@ -93,7 +93,7 @@ cp -R -v "$env:OXIDIZER\defaults.ps1" "$env:OXIDIZER\custom.ps1"
 sed -i.bak "s|.* OX_STARTUP = .*|$Global:OX_STARTUP=1|" "$env:OXIDIZER\custom.ps1"
 # set path of oxidizer
 # sed -i.bak "s| = .*\oxidizer.ps1| = $env:OXIDIZER\oxidizer.ps1|" $PROFILE
-cat $PROFILE | rg -o 'source .+'
+echo $(cat $PROFILE | rg -o 'source .+')
 
 ###################################################
 # Load Plugins
@@ -110,4 +110,4 @@ if (Get-Command code -ErrorAction SilentlyContinue) {
 
 echo "Oxidizer installation complete!"
 echo "Don't forget to restart your terminal and hit 'edf ox' to tweak your preferences.\n"
-echo "Finally, run 'upox' function to activate the plugins. Enjoy\!"
+echo "Finally, run 'upox' function to activate the plugins. Enjoy!"

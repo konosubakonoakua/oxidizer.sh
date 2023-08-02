@@ -127,7 +127,7 @@ cp ${OXIDIZER}/defaults.sh ${OXIDIZER}/custom.sh
 sed -i.bak "s|.* OX_STARTUP=.*|export OX_STARTUP=1|" ${OXIDIZER}/custom.sh
 # set path of oxidizer
 # echo "source OXIDIZER=${OXIDIZER}/oxidizer.sh" | xargs -I '{}' sed -i.bak '' 's|source OXIDIZER=.*|{}|' ${OX_SHELL}
-cat ${OX_SHELL} | rg -o 'source .+'
+echo $(cat ${OX_SHELL} | rg -o 'source .+')
 
 ###################################################
 # Load Plugins
@@ -148,4 +148,4 @@ fi
 
 printf "🎉 Oxidizer installation complete!\n"
 printf "💡 Don't forget to restart your terminal and hit 'edf ox' to tweak your preferences.\n"
-printf "😀 Finally, run 'upox' function to activate the plugins. Enjoy\!\n"
+printf "😀 Finally, run 'upox' function to activate the plugins. Enjoy!\n"
