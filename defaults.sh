@@ -158,10 +158,10 @@ upp() {
 # OX_OXIDE[bkceb]=${OX_BACKUP}/conda/conda-base.txt
 
 ##########################################################
-# vscode settings
+# others settings
 ##########################################################
 
-# # OX_OXIDE[bkvs]=${OX_BACKUP}/vscode/settings.json
+# OX_OXIDE[bkesb]=${OX_BACKUP}/espanso/match/base.yml
 
 ##########################################################
 # common aliases

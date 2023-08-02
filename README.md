@@ -231,7 +231,7 @@ Oxidizer uses `ouch` to deal with compression and decompression, and provides wi
 
 ## 4. Software Information Management
 
-`back_*` and `up_*` work for `brew`, `scoop`, `conda`, `vscode`, `julia`, `texlive`, `node`. `clean_*` works for `brew` and `conda`.
+`back_*` and `up_*` work for `brew`, `scoop`, `conda`, `vscode` (only for windows), `julia`, `texlive`, `node`. `clean_*` works for `brew` and `conda`.
 
 - `back_*`
   - file: export package/extension info into `$OX_BACKUP` folder
