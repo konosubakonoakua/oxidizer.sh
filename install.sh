@@ -123,11 +123,17 @@ echo "${append_str}" >>"${OX_SHELL}"
 printf "⚙️ Adding Custom settings..."
 cp ${OXIDIZER}/defaults.sh ${OXIDIZER}/custom.sh
 
-# load zoxide
-sd ".* OX_STARTUP=.*" "export OX_STARTUP=1" ${OXIDIZER}/custom.sh
-
-# set path of oxidizer
-sd "source OXIDIZER=.*" "source OXIDIZER=${OXIDIZER}/oxidizer.sh" ${OX_SHELL}
+if [[ $(uname) = "Darwin" ]]; then
+    # load zoxide
+    sed -i.bak "s/.* OX_STARTUP=.*/export OX_STARTUP=1/g" ${OXIDIZER}/custom.sh
+    # set path of oxidizer
+    sed -i.bak "source OXIDIZER=.*" "source OXIDIZER=${OXIDIZER}/oxidizer.sh" ${OX_SHELL}
+else
+    # load zoxide
+    sed -i "s/.* OX_STARTUP=.*/export OX_STARTUP=1/g" ${OXIDIZER}/custom.sh
+    # set path of oxidizer
+    sed -i "source OXIDIZER=.*" "source OXIDIZER=${OXIDIZER}/oxidizer.sh" ${OX_SHELL}
+fi
 
 ###################################################
 # Load Plugins

@@ -9,7 +9,7 @@
 # basic settings
 ##########################################################
 
-# default editor, can be changed by function `che()`
+# default editor, can be changed by function `ched()`
 export EDITOR='code'
 # terminal editor
 export EDITOR_T='vi'
