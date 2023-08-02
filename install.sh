@@ -130,9 +130,9 @@ if [[ $(uname) = "Darwin" ]]; then
     sed -i.bak "source OXIDIZER=.*" "source OXIDIZER=${OXIDIZER}/oxidizer.sh" ${OX_SHELL}
 else
     # load zoxide
-    sed -i "s/.* OX_STARTUP=.*/export OX_STARTUP=1/g" ${OXIDIZER}/custom.sh
+    sed -i bak "s/.* OX_STARTUP=.*/export OX_STARTUP=1/g" ${OXIDIZER}/custom.sh
     # set path of oxidizer
-    sed -i "source OXIDIZER=.*" "source OXIDIZER=${OXIDIZER}/oxidizer.sh" ${OX_SHELL}
+    sed -i bak "s/source OXIDIZER=.*/source OXIDIZER=${OXIDIZER}/oxidizer.sh/g" ${OX_SHELL}
 fi
 
 ###################################################

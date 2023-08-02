@@ -9,7 +9,7 @@
 # basic settings
 ##########################################################
 
-# default editor, can be changed by function `che()`
+# default editor, can be changed by function `ched()`
 $env:EDITOR = 'code'
 # terminal editor
 $env:EDITOR_T = 'vi'

@@ -7,8 +7,9 @@ lsd
 ouch
 pueue
 ripgrep
-sd
+sed
 tealdeer
+uutils-coreutils
 zoxide
 winget
 sudo
