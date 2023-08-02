@@ -90,9 +90,9 @@ echo "Adding Custom settings..."
 cp -R -v "$env:OXIDIZER\defaults.ps1" "$env:OXIDIZER\custom.ps1"
 
 # load zoxide
-sed -i "s/.* OX_STARTUP = .*/$Global:OX_STARTUP=1/g" "$env:OXIDIZER\custom.ps1"
+sed -i.bak "s|.* OX_STARTUP = .*|$Global:OX_STARTUP=1|" "$env:OXIDIZER\custom.ps1"
 # set path of oxidizer
-sed -i "s/ = .*\\oxidizer.ps1/ = $env:OXIDIZER\\oxidizer.ps1/g" $PROFILE
+sed -i.bak "s| = .*\oxidizer.ps1| = $env:OXIDIZER\oxidizer.ps1|" $PROFILE
 
 ###################################################
 # Load Plugins
