@@ -162,6 +162,7 @@ upp() {
 ##########################################################
 
 # OX_OXIDE[bkesb]=${OX_BACKUP}/espanso/match/base.yml
+# OX_OXIDE[bkvs]=${OX_BACKUP}/vscode/settings.jsonc
 
 ##########################################################
 # common aliases
