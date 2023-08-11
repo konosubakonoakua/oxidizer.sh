@@ -45,7 +45,7 @@ brew tap "homebrew/bundle"
 
 printf "📦 Installing essential Oxidizer toolchains...\n"
 
-for pkg in $(cat ${OXIDIZER}/defaults/Brewfile.txt); do
+cat ${OXIDIZER}/defaults/Brewfile.txt | while read pkg; do
     case $pkg in
     ripgrep)
         cmd='rg'
