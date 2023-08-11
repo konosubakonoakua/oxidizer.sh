@@ -108,7 +108,7 @@ esac
 # Inject Oxidizer
 ###################################################
 
-printf '⚙️ Adding Oxidizer into %s...\n' ${OX_SHELL}
+printf '⚙️ Adding Oxidizer into %s...\n' "${OX_SHELL}"
 
 echo "# Oxidizer" >>${OX_SHELL}
 
