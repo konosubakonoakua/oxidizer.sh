@@ -1,3 +1,4 @@
+#!/bin/bash /bin/zsh
 export OXIDIZER=${OXIDIZER:-"${HOME}/oxidizer"}
 
 ##########################################################
@@ -53,27 +54,27 @@ declare -A OX_OXIDE
 # load system plugin
 case $(uname -a) in
 *Darwin*)
-    . ${OX_OXYGEN[oxpm]}
+    . "${OX_OXYGEN[oxpm]}"
     ;;
 *Ubuntu* | *Debian* | *WSL*)
-    . ${OX_OXYGEN[oxpd]}
+    . "${OX_OXYGEN[oxpd]}"
     ;;
 esac
 
 # load custom plugins
 declare -a OX_PLUGINS
 
-. ${OX_ELEMENT[ox]}
+. "${OX_ELEMENT[ox]}"
 
-for plugin in ${OX_PLUGINS[@]}; do
-    . ${OX_OXYGEN[$plugin]}
+for plugin in "${OX_PLUGINS[@]}"; do
+    . "${OX_OXYGEN[$plugin]}"
 done
 
 declare -a OX_CORE_PLUGINS
 OX_CORE_PLUGINS=(oxpb oxput oxppu)
 
 # load core plugins
-for core_plugin in ${OX_CORE_PLUGINS[@]}; do
+for core_plugin in "${OX_CORE_PLUGINS[@]}"; do
     . ${OX_OXYGEN[$core_plugin]}
 done
 
@@ -90,8 +91,8 @@ case ${SHELL} in
     OX_OXIDE[bkzs]=${OX_BACKUP}/shell/.zshrc
     ;;
 *bash)
-    [bs]=${HOME}/.bash_profile
-    [bshst]=${HOME}/.bash_history
+    OX_OXIDE[bs]=${HOME}/.bash_profile
+    OX_OXIDE[bshst]=${HOME}/.bash_history
     OX_OXIDE[bkbs]=${OX_BACKUP}/shell/.bash_profile
     ;;
 esac
@@ -104,34 +105,34 @@ OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
 
 # update all packages
 up_all() {
-    for obj in ${OX_UPDATE_PROG[@]}; do
-        eval up_$obj
+    for obj in "${OX_UPDATE_PROG[@]}"; do
+        eval "up_$obj"
     done
 }
 
 # backup package lists
 back_all() {
-    for obj in ${OX_BACKUP_PROG[@]}; do
-        eval back_$obj
+    for obj in "${OX_BACKUP_PROG[@]}"; do
+        eval "back_$obj"
     done
 }
 
 # export configurations
 epall() {
-    for obj in ${OX_EXPORT_FILE[@]}; do
-        epf $obj
+    for obj in "${OX_EXPORT_FILE[@]}"; do
+        epf "$obj"
     done
 }
 
 # import configurations
 ipall() {
-    for obj in ${OX_IMPORT_FILE[@]}; do
-        ipf $obj
+    for obj in "${OX_IMPORT_FILE[@]}"; do
+        ipf "$obj"
     done
 }
 
 iiox() {
-    echo "Installing Required packages...\n"
+    print "Installing Required packages...\n"
     for pkg in $(cat ${OXIDIZER}/defaults/Brewfile.txt); do
         case $pkg in
         ripgrep)
@@ -158,28 +159,28 @@ iiox() {
 
 # update Oxidizer
 upox() {
-    cd ${OXIDIZER}
-    echo "Updating Oxidizer...\n"
+    cd ${OXIDIZER} || exit
+    print "Updating Oxidizer...\n"
     git fetch origin master
     git reset --hard origin/master
 
     if [ ! -d ${OXIDIZER}/oxplugins-zsh ]; then
-        echo "\n\nCloning Oxidizer Plugins...\n"
+        print "\n\nCloning Oxidizer Plugins...\n"
         git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git
     else
-        echo "\n\nUpdating Oxidizer Plugins...\n"
-        cd ${OXIDIZER}/oxplugins-zsh
+        print "\n\nUpdating Oxidizer Plugins...\n"
+        cd ${OXIDIZER}/oxplugins-zsh || exit
         git fetch origin main
         git reset --hard origin/main
     fi
 
-    cd ${OXIDIZER}
-    local ox_change=$(git diff defaults.sh)
-    if [ -n $ox_change ]; then
-        echo "\n\nDefaults changed, don't forget to update your custom.sh accordingly...\n"
-        echo "Compare the difference using 'edf oxd'"
+    cd ${OXIDIZER} || exit
+    ox_change=$(git diff defaults.sh)
+    if [ -n "$ox_change" ]; then
+        print "\n\nDefaults changed, don't forget to update your custom.sh accordingly...\n"
+        print "Compare the difference using 'edf oxd'"
     fi
-    cd ${HOME}
+    cd ${HOME} || exit
 }
 
 ##########################################################

@@ -1,3 +1,4 @@
+#!/bin/bash /bin/zsh
 export OXIDIZER=${OXIDIZER:-"${HOME}/oxidizer"}
 printf "📦 Installing Oxidizer\n"
 
@@ -94,7 +95,7 @@ case ${SHELL} in
     export OX_SHELL=${HOME}/.zshrc
     ;;
 *bash)
-    if [[ $(bash --version | head -n1 | cut -d' ' -f4 | cut -d'.' -f1) < 5 ]]; then
+    if [[ $(bash --version | head -n1 | cut -d' ' -f4 | cut -d'.' -f1) -lt 5 ]]; then
         printf "📦 Installing latest Bash...\n"
         brew install bash bash-completion
     fi
@@ -107,21 +108,21 @@ esac
 # Inject Oxidizer
 ###################################################
 
-printf "⚙️ Adding Oxidizer into ${OX_SHELL}...\n"
+printf '⚙️ Adding Oxidizer into %s...\n' ${OX_SHELL}
 
 echo "# Oxidizer" >>${OX_SHELL}
 
 if [[ -z ${OXIDIZER} ]]; then
     OXIDIZER="${HOME}/oxidizer"
-    append_str='export OXIDIZER='"${OXIDIZER}"' && source '"${OXIDIZER}"'/oxidizer.sh'
+    append_str='export OXIDIZER='${OXIDIZER}' && source '${OXIDIZER}'/oxidizer.sh'
 else
-    append_str='source '"${OXIDIZER}"'/oxidizer.sh'
+    append_str='source '${OXIDIZER}'/oxidizer.sh'
 fi
 
-echo "${append_str}" >>"${OX_SHELL}"
+echo "${append_str}" >>${OX_SHELL}
 
 printf "⚙️ Adding Custom settings..."
-cp ${OXIDIZER}/defaults.sh ${OXIDIZER}/custom.sh
+cp ${OXIDIZER}/defaults.sh "${OXIDIZER}/"custom.sh
 
 # load zoxide
 sed -i.bak "s|.* OX_STARTUP=.*|export OX_STARTUP=1|" ${OXIDIZER}/custom.sh

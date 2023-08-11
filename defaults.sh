@@ -1,3 +1,5 @@
+#!/bin/bash /bin/zsh
+
 ##########################################################
 # conventions
 ##########################################################
@@ -94,11 +96,11 @@ OX_OXIDE[bkcv]="${OX_BACKUP}/app/verge.yaml"
 # vsk: vscode's keybindings.json
 # vss_: vscode's snippets folder
 declare -a OX_EXPORT_FILE
-OX_EXPORT_FILE=(ox)
+export OX_EXPORT_FILE=(ox)
 
 # files to be import from backup folder
 declare -a OX_IMPORT_FILE
-OX_IMPORT_FILE=(ox)
+export OX_IMPORT_FILE=(ox)
 
 ##########################################################
 # git settings
@@ -242,7 +244,7 @@ export OX_STARTUP=1
 
 startup() {
     # start directory
-    cd ${HOME}/Desktop
+    cd ${HOME}/Desktop || exit
 }
 
 ##########################################################
