@@ -132,8 +132,8 @@ ipall() {
 }
 
 iiox() {
-    printf "Installing Required packages...\n"
-    for pkg in $(cat ${OXIDIZER}/defaults/Brewfile.txt); do
+    printf "📦 Installing Required packages...\n"
+    cat ${OXIDIZER}/defaults/Brewfile.txt | while read -r pkg; do
         case $pkg in
         ripgrep)
             cmd='rg'
@@ -152,7 +152,7 @@ iiox() {
             ;;
         esac
         if test ! "$(command -v $cmd)"; then
-            brew install $pkg
+            brew install "$pkg"
         fi
     done
 }

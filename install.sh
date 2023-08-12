@@ -45,7 +45,7 @@ brew tap "homebrew/bundle"
 
 printf "📦 Installing essential Oxidizer toolchains...\n"
 
-cat ${OXIDIZER}/defaults/Brewfile.txt | while read pkg; do
+cat ${OXIDIZER}/defaults/Brewfile.txt | while read -r pkg; do
     case $pkg in
     ripgrep)
         cmd='rg'
@@ -64,7 +64,7 @@ cat ${OXIDIZER}/defaults/Brewfile.txt | while read pkg; do
         ;;
     esac
     if test ! "$(command -v $cmd)"; then
-        brew install $pkg
+        brew install "$pkg"
     fi
     brew install uutils-coreutils
 done
@@ -76,8 +76,6 @@ done
 if [[ $(uname -s) = "Linux" ]]; then
     printf "📦 Adding Tap linuxbrew/fonts...\n"
     brew tap "linuxbrew/fonts"
-    printf "📦 Installing Zap to Manage AppImage Packages...\n"
-    curl https://raw.githubusercontent.com/srevinsaju/zap/main/install.sh | bash -s
 else
     printf "📦 Adding Tap homebrew/cask-fonts...\n"
     brew tap "homebrew/cask-fonts"
@@ -91,7 +89,7 @@ printf "⚙️ Configuring Shell...\n"
 
 case ${SHELL} in
 *zsh)
-    brew install zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting
+    brew install zsh-completions zsh-autosuggestions zsh-syntax-highlighting
     export OX_SHELL=${HOME}/.zshrc
     ;;
 *bash)
@@ -128,7 +126,7 @@ cp ${OXIDIZER}/defaults.sh "${OXIDIZER}/"custom.sh
 sed -i.bak "s|.* OX_STARTUP=.*|export OX_STARTUP=1|" ${OXIDIZER}/custom.sh
 # set path of oxidizer
 # echo "source OXIDIZER=${OXIDIZER}/oxidizer.sh" | xargs -I '{}' sed -i.bak '' 's|source OXIDIZER=.*|{}|' ${OX_SHELL}
-echo $(cat ${OX_SHELL} | rg -o 'source .+')
+# echo $(cat ${OX_SHELL} | rg -o 'source .+')
 
 ###################################################
 # Load Plugins
