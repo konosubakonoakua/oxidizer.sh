@@ -53,7 +53,7 @@ ForEach ( $pkg in $pkgs ) {
         echo "Installing $pkg"
         scoop install $pkg
     }
-    scoop install uutils-coreutils scoop-completion posh-git psreadline dark innounp
+    scoop install uutils-coreutils scoop-completion posh-git psreadline dark
 }
 
 ###################################################
@@ -93,7 +93,7 @@ cp -R -v "$env:OXIDIZER\defaults.ps1" "$env:OXIDIZER\custom.ps1"
 sed -i.bak "s|.* OX_STARTUP = .*|$Global:OX_STARTUP=1|" "$env:OXIDIZER\custom.ps1"
 # set path of oxidizer
 # sed -i.bak "s| = .*\oxidizer.ps1| = $env:OXIDIZER\oxidizer.ps1|" $PROFILE
-echo $(cat $PROFILE | rg -o 'source .+')
+# echo $(cat $PROFILE | rg -o 'source .+')
 
 ###################################################
 # Load Plugins
