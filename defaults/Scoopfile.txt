@@ -7,9 +7,9 @@ lsd
 ouch
 pueue
 ripgrep
-sed
 tealdeer
-uutils-coreutils
 zoxide
-winget
+uutils-coreutils
+sed
 sudo
+winget

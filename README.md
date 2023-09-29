@@ -96,7 +96,8 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
 
 - [x] Use [bottom](https://github.com/ClementTsang/bottom) instead of `top` or `htop`
 - [x] Use [gitui](https://github.com/extrawurst/gitui) instead of `lazygit`
-- [ ] Use [helix](https://github.com/helix-editor/helix) instead of `neovim`
+- [ ] Use [helix](https://github.com/helix-editor/helix) instead of `vim`
+- [ ] Use [yazi](https://github.com/sxyazi/yazi) instead of `range`
 - [ ] Use [zellij](https://github.com/zellij-org/zellij) instead of `tmux` (Not support Windows yet)
 
 ### 2.3. GUI Tools Replacement

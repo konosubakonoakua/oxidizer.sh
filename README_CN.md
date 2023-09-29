@@ -86,7 +86,8 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 
 - [x] 使用 [bottom](https://github.com/ClementTsang/bottom) 替换 `top` 和 `htop`
 - [x] 使用 [gitui](https://github.com/extrawurst/gitui) 替换 `lazygit`
-- [ ] 使用 [helix](https://github.com/helix-editor/helix) 替换 `neovim`
+- [ ] 使用 [helix](https://github.com/helix-editor/helix) 替换 `vim`
+- [ ] 使用 [yazi](https://github.com/sxyazi/yazi) 替换 `range`
 - [ ] 使用 [zellij](https://github.com/zellij-org/zellij) 替换 `tmux`（目前不支持 Windows）
 
 ### 2.3. GUI 工具替换
