@@ -25,6 +25,7 @@ declare -A OX_OXYGEN=(
     [oxpnj]=${OXIDIZER}/oxplugins-zsh/ox-node.sh
     [oxppd]=${OXIDIZER}/oxplugins-zsh/ox-podman.sh
     [oxppu]=${OXIDIZER}/oxplugins-zsh/ox-pueue.sh
+    [oxprb]=${OXIDIZER}/oxplugins-zsh/ox-ruby.sh
     [oxprs]=${OXIDIZER}/oxplugins-zsh/ox-rust.sh
     [oxptl]=${OXIDIZER}/oxplugins-zsh/ox-texlive.sh
     [oxput]=${OXIDIZER}/oxplugins-zsh/ox-utils.sh

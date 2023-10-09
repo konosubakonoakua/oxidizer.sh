@@ -25,6 +25,7 @@ export EDITOR_T='vi'
 # oxphx: ox-helix
 # oxpjl: ox-julia
 # oxpnj: ox-nodejs
+# oxprb: ox-ruby
 # oxprs: ox-rust
 # oxpzj: ox-zellij
 # oxpbw: ox-bitwarden
