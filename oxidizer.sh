@@ -134,7 +134,7 @@ ipall() {
 
 iiox() {
     printf "📦 Installing Required packages...\n"
-    cat ${OXIDIZER}/defaults/Brewfile.txt | while read -r pkg; do
+    while read -r pkg <"${OXIDIZER}"/defaults/Brewfile.txt; do
         case $pkg in
         ripgrep)
             cmd='rg'
@@ -152,7 +152,7 @@ iiox() {
             cmd=$pkg
             ;;
         esac
-        if test ! "$(command -v $cmd)"; then
+        if test ! "$(command -v "$cmd")"; then
             brew install "$pkg"
         fi
     done
@@ -160,28 +160,28 @@ iiox() {
 
 # update Oxidizer
 upox() {
-    cd ${OXIDIZER} || exit
+    cd "${OXIDIZER}" || exit
     printf "Updating Oxidizer...\n"
     git fetch origin master
     git reset --hard origin/master
 
-    if [ ! -d ${OXIDIZER}/oxplugins-zsh ]; then
+    if [ ! -d "${OXIDIZER}"/oxplugins-zsh ]; then
         printf "\n\nCloning Oxidizer Plugins...\n"
         git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git
     else
         printf "\n\nUpdating Oxidizer Plugins...\n"
-        cd ${OXIDIZER}/oxplugins-zsh || exit
+        cd "${OXIDIZER}"/oxplugins-zsh || exit
         git fetch origin main
         git reset --hard origin/main
     fi
 
-    cd ${OXIDIZER} || exit
+    cd "${OXIDIZER}" || exit
     ox_change=$(git diff defaults.sh)
     if [ -n "$ox_change" ]; then
         printf "\n\nDefaults changed, don't forget to update your custom.sh accordingly...\n"
         printf "Compare the difference using 'edf oxd'"
     fi
-    cd ${HOME} || exit
+    cd "${HOME}" || exit
 }
 
 ##########################################################
