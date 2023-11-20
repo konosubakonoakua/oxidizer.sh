@@ -20,7 +20,7 @@ if test ! "$(command -v brew)"; then
 fi
 
 printf "⚙️ Adding Custom settings...\n"
-cp -i -v ${OXIDIZER}/defaults.sh ${OXIDIZER}/custom.sh
+cp -i -v "${OXIDIZER}"/defaults.sh "${OXIDIZER}"/custom.sh
 
 if [[ $(uname -s) = "Darwin" ]]; then
     printf "📦 Activating Homebrew on MacOS...\n"
@@ -45,22 +45,10 @@ brew tap "homebrew/bundle"
 
 printf "📦 Installing essential Oxidizer toolchains...\n"
 
-cat ${OXIDIZER}/defaults/Brewfile.txt | while read -r pkg; do
-    case $pkg in
-    tealdear)
-        cmd='tldr'
-        ;;
-    zoxide)
-        cmd='z'
-        ;;
-    *)
-        cmd=$pkg
-        ;;
-    esac
-    if test ! "$(command -v $cmd)"; then
+while read -r pkg <"${OXIDIZER}"/defaults/Brewfile.txt; do
+    if test ! "$(command -v "$pkg")"; then
         brew install "$pkg"
     fi
-    brew install uutils-coreutils
 done
 
 ###################################################
@@ -92,7 +80,7 @@ case ${SHELL} in
         brew install bash bash-completion
     fi
     export OX_SHELL=${HOME}/.profile
-    echo 'export BASH_SILENCE_DEPRECATION_WARNING=1' >>${OX_SHELL}
+    echo 'export BASH_SILENCE_DEPRECATION_WARNING=1' >>"${OX_SHELL}"
     ;;
 esac
 
@@ -102,7 +90,7 @@ esac
 
 printf '⚙️ Adding Oxidizer into %s...\n' "${OX_SHELL}"
 
-echo "# Oxidizer" >>${OX_SHELL}
+echo "# Oxidizer" >>"${OX_SHELL}"
 
 if [[ -z ${OXIDIZER} ]]; then
     OXIDIZER="${HOME}/oxidizer"
@@ -111,13 +99,13 @@ else
     append_str='source '${OXIDIZER}'/oxidizer.sh'
 fi
 
-echo "${append_str}" >>${OX_SHELL}
+echo "${append_str}" >>"${OX_SHELL}"
 
 printf "⚙️ Adding Custom settings..."
-cp ${OXIDIZER}/defaults.sh "${OXIDIZER}/"custom.sh
+cp "${OXIDIZER}"/defaults.sh "${OXIDIZER}/"custom.sh
 
 # load zoxide
-sed -i.bak "s|.* OX_STARTUP=.*|export OX_STARTUP=1|" ${OXIDIZER}/custom.sh
+sed -i.bak "s|.* OX_STARTUP=.*|export OX_STARTUP=1|" "${OXIDIZER}"/custom.sh
 # set path of oxidizer
 # echo "source OXIDIZER=${OXIDIZER}/oxidizer.sh" | xargs -I '{}' sed -i.bak '' 's|source OXIDIZER=.*|{}|' ${OX_SHELL}
 # echo $(cat ${OX_SHELL} | grep -o -E 'source .+')
@@ -126,7 +114,7 @@ sed -i.bak "s|.* OX_STARTUP=.*|export OX_STARTUP=1|" ${OXIDIZER}/custom.sh
 # Load Plugins
 ###################################################
 
-git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git ${OXIDIZER}/oxplugins-zsh
+git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git "${OXIDIZER}"/oxplugins-zsh
 
 ###################################################
 # Editor

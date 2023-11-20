@@ -135,15 +135,7 @@ ipall() {
 iiox() {
     printf "📦 Installing Required packages...\n"
     while read -r pkg <"${OXIDIZER}"/defaults/Brewfile.txt; do
-        case $pkg in
-        zoxide)
-            cmd='z'
-            ;;
-        *)
-            cmd=$pkg
-            ;;
-        esac
-        if test ! "$(command -v "$cmd")"; then
+        if test ! "$(command -v "$pkg")"; then
             brew install "$pkg"
         fi
     done

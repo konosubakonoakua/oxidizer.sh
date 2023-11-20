@@ -181,14 +181,10 @@ alias e="echo"
 alias rr="rm -rf"
 alias c="clear"
 alias own="sudo chown -R $(whoami)"
-alias shname="echo ${SHELL}"
-alias shls="cat ${SHELLS}"
-alias quit="killall -9"
 
 # tools
-# alias man="tldr"
-# alias hf="hyperfine"
-# alias zz="z -"
+alias man="tldr"
+alias hf="hyperfine"
 
 ##########################################################
 # shell
@@ -198,10 +194,10 @@ alias quit="killall -9"
 ccc() {
     case ${SHELL} in
     *zsh)
-        local HISTSIZE=0 && history -p && reset && echo >${OX_ELEMENT[zshst]}
+        local HISTSIZE=0 && history -p && reset && echo >"${OX_ELEMENT[zshst]}"
         ;;
     *bash)
-        local HISTSIZE=0 && history -c && reset && echo >${OX_ELEMENT[bshst]}
+        local HISTSIZE=0 && history -c && reset && echo >"${OX_ELEMENT[bshst]}"
         ;;
     esac
 }
@@ -216,24 +212,24 @@ case ${SHELL} in
     ;;
 *bash)
     # turn case sensitivity off
-    if [ ! -e ${HOME}/.inputrc ]; then
-        echo '$include /etc/inputrc' >${HOME}/.inputrc
+    if [ ! -e "${HOME}"/.inputrc ]; then
+        echo '$include /etc/inputrc' >"${HOME}"/.inputrc
     fi
-    echo 'set completion-ignore-case On' >>${HOME}/.inputrc
+    echo 'set completion-ignore-case On' >>"${HOME}"/.inputrc
     ;;
 esac
 
 # test profile loading time
-# tt() {
-#     case ${SHELL} in
-#     *zsh)
-#         hyperfine --warmup 3 --shell zsh "source ${OX_ELEMENT[zs]}"
-#         ;;
-#     *bash)
-#         hyperfine --warmup 3 --shell bash "source ${OX_ELEMENT[bs]}"
-#         ;;
-#     esac
-# }
+tt() {
+    case ${SHELL} in
+    *zsh)
+        hyperfine --warmup 3 --shell zsh "source ${OX_ELEMENT[zs]}"
+        ;;
+    *bash)
+        hyperfine --warmup 3 --shell bash "source ${OX_ELEMENT[bs]}"
+        ;;
+    esac
+}
 
 ##########################################################
 # startup commands
@@ -246,7 +242,7 @@ export OX_STARTUP=1
 
 startup() {
     # start directory
-    cd ${HOME}/Desktop || exit
+    cd "${HOME}"/Desktop || exit
 }
 
 ##########################################################

@@ -148,14 +148,14 @@ function rr { rm -rf $args }
 function c { clear }
 
 # tools
-# function man { tldr $args }
-# function hf { hyperfine $args }
+function man { tldr $args }
+function hf { hyperfine $args }
 
 ##########################################################
 # powershell
 ##########################################################
 
-# function tt { hyperfine --warmup 3 --shell powershell '. $PROFILE' }
+function tt { hyperfine --warmup 3 --shell powershell '. $PROFILE' }
 
 ##########################################################
 # startup & daily commands

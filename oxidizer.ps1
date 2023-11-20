@@ -113,18 +113,14 @@ function iiox {
     echo "Installing Required packages...`n"
     $pkgs = cat "$env:OXIDIZER\defaults\Scoopfile.txt"
     ForEach ( $pkg in $pkgs ) {
-        Switch ( $pkg ) {
-            ripgrep { $cmd = 'rg' }
-            zoxide { $cmd = 'z' }
-            Default { $cmd = $pkg }
-        }
-        if (Get-Command $cmd -ErrorAction SilentlyContinue) {
+        if (Get-Command $pkg -ErrorAction SilentlyContinue) {
             echo "$pkg Already Installed"
         }
         else {
             echo "Installing $pkg"
             scoop install $pkg
         }
+        scoop install ripgrep
     }
 }
 

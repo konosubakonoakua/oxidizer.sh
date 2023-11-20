@@ -39,19 +39,14 @@ ForEach ( $bucket in $scoopBuckets ) {
 $pkgs = cat "$env:OXIDIZER\defaults\Scoopfile.txt"
 
 ForEach ( $pkg in $pkgs ) {
-    Switch ( $pkg ) {
-        ripgrep { $cmd = 'rg' }
-        zoxide { $cmd = 'z' }
-        Default { $cmd = $pkg }
-    }
-    if (Get-Command $cmd -ErrorAction SilentlyContinue) {
+    if (Get-Command $pkg -ErrorAction SilentlyContinue) {
         echo "$pkg Already Installed"
     }
     else {
         echo "Installing $pkg"
         scoop install $pkg
     }
-    scoop install uutils-coreutils scoop-completion posh-git psreadline dark
+    scoop install ripgrep uutils-coreutils scoop-completion posh-git psreadline dark
 }
 
 ###################################################
