@@ -186,25 +186,13 @@ alias shls="cat ${SHELLS}"
 alias quit="killall -9"
 
 # tools
-alias man="tldr"
-alias hf="hyperfine"
-alias zz="z -"
+# alias man="tldr"
+# alias hf="hyperfine"
+# alias zz="z -"
 
 ##########################################################
 # shell
 ##########################################################
-
-# test profile loading time
-tt() {
-    case ${SHELL} in
-    *zsh)
-        hyperfine --warmup 3 --shell zsh "source ${OX_ELEMENT[zs]}"
-        ;;
-    *bash)
-        hyperfine --warmup 3 --shell bash "source ${OX_ELEMENT[bs]}"
-        ;;
-    esac
-}
 
 # clean history
 ccc() {
@@ -234,6 +222,18 @@ case ${SHELL} in
     echo 'set completion-ignore-case On' >>${HOME}/.inputrc
     ;;
 esac
+
+# test profile loading time
+# tt() {
+#     case ${SHELL} in
+#     *zsh)
+#         hyperfine --warmup 3 --shell zsh "source ${OX_ELEMENT[zs]}"
+#         ;;
+#     *bash)
+#         hyperfine --warmup 3 --shell bash "source ${OX_ELEMENT[bs]}"
+#         ;;
+#     esac
+# }
 
 ##########################################################
 # startup commands

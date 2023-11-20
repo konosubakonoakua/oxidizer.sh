@@ -1,7 +1,6 @@
 bat
 fd
 gitui
-hyperfine
 lsd
 ouch
 tealdeer

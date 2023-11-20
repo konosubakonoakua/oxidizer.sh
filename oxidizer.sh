@@ -136,9 +136,6 @@ iiox() {
     printf "📦 Installing Required packages...\n"
     while read -r pkg <"${OXIDIZER}"/defaults/Brewfile.txt; do
         case $pkg in
-        tealdear)
-            cmd='tldr'
-            ;;
         zoxide)
             cmd='z'
             ;;

@@ -114,9 +114,7 @@ function iiox {
     $pkgs = cat "$env:OXIDIZER\defaults\Scoopfile.txt"
     ForEach ( $pkg in $pkgs ) {
         Switch ( $pkg ) {
-            bottom { $cmd = 'btm' }
             ripgrep { $cmd = 'rg' }
-            tealdeer { $cmd = 'tldr' }
             zoxide { $cmd = 'z' }
             Default { $cmd = $pkg }
         }
