@@ -3,5 +3,4 @@ fd
 gitui
 lsd
 ouch
-tealdeer
 zoxide

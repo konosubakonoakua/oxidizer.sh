@@ -80,13 +80,13 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
   - [x] Use [lsd](https://github.com/Peltoche/lsd) instead of `ls`
 - non-coreutils
   - [x] Use [fd](https://github.com/sharkdp/fd) instead of `find`
-  - [x] Use [ripgrep](https://github.com/BurntSushi/ripgrep) instead of `grep` (only required on Windows)
-  - [x] Use [tealdeer](https://github.com/dbrgn/tealdeer) instead of `tldr` or `man`
   - [x] Use [zoxide](https://github.com/ajeetdsouza/zoxide) instead of `cd` or `z`
+  - [x] Use [ripgrep](https://github.com/BurntSushi/ripgrep) instead of `grep` (only required on Windows)
   - [ ] Use [dust](https://github.com/bootandy/dust) instead of `du`
   - [ ] Use [hyperfine](https://github.com/sharkdp/hyperfine) instead of `time`
   - [ ] Use [procs](https://github.com/dalance/procs) instead of `ps`
   - [ ] Use [starship](https://github.com/starship/starship) instead of `powerline10k` or `ohmyposh`
+  - [ ] Use [tealdeer](https://github.com/dbrgn/tealdeer) instead of `tldr` or `man`
   - [ ] Use [tokei](https://github.com/XAMPPRocky/tokei) instead of `cloc`
   - [ ] Use [tre](https://github.com/dduan/tre) instead of `tree`
 

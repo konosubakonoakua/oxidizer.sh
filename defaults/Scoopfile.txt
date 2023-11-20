@@ -3,7 +3,6 @@ fd
 gitui
 lsd
 ouch
-tealdeer
 zoxide
 ripgrep
 uutils-coreutils

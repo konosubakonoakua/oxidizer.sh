@@ -70,13 +70,13 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
   - [x] 使用 [lsd](https://github.com/Peltoche/lsd) 替换 `ls`
 - non-coreutils
   - [x] 使用 [fd](https://github.com/sharkdp/fd) 替换 `find`
-  - [x] 使用 [ripgrep](https://github.com/BurntSushi/ripgrep) 替换 `grep`（仅 Windows）
-  - [x] 使用 [tealdeer](https://github.com/dbrgn/tealdeer) 替换 `tldr` 和 `man`
   - [x] 使用 [zoxide](https://github.com/ajeetdsouza/zoxide) 替换 `cd` 和 `z`
+  - [x] 使用 [ripgrep](https://github.com/BurntSushi/ripgrep) 替换 `grep`（仅 Windows）
   - [ ] 使用 [dust](https://github.com/bootandy/dust) 替换 `du`
   - [ ] 使用 [hyperfine](https://github.com/sharkdp/hyperfine) 替换 `time`
   - [ ] 使用 [procs](https://github.com/dalance/procs) 替换 `ps`
   - [ ] 使用 [starship](https://github.com/starship/starship) 替换 `powerline10k` 和 `ohmyposh`
+  - [ ] 使用 [tealdeer](https://github.com/dbrgn/tealdeer) 替换 `tldr` 和 `man`
   - [ ] 使用 [tokei](https://github.com/XAMPPRocky/tokei) 替换 `cloc`
   - [ ] 使用 [tre](https://github.com/dduan/tre) 替换 `tree`
 
