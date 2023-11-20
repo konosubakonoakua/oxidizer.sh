@@ -75,30 +75,30 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
 > ☑️ means required in the installation.
 
 - coreutils
-  - [x] Use [uutils-coreutils](https://github.com/uutils/coreutils) instead of `coreutils`
+  - [x] Use [uutils-coreutils](https://github.com/uutils/coreutils) instead of `coreutils` (only required on Windows)
   - [x] Use [bat](https://github.com/sharkdp/bat) instead of `cat`
   - [x] Use [lsd](https://github.com/Peltoche/lsd) instead of `ls`
 - non-coreutils
   - [x] Use [fd](https://github.com/sharkdp/fd) instead of `find`
   - [x] Use [hyperfine](https://github.com/sharkdp/hyperfine) instead of `time`
-  - [x] Use [ripgrep](https://github.com/BurntSushi/ripgrep) instead of `grep`
+  - [x] Use [ripgrep](https://github.com/BurntSushi/ripgrep) instead of `grep` (only required on Windows)
   - [x] Use [tealdeer](https://github.com/dbrgn/tealdeer) instead of `tldr` or `man`
   - [x] Use [zoxide](https://github.com/ajeetdsouza/zoxide) instead of `cd` or `z`
   - [ ] Use [dust](https://github.com/bootandy/dust) instead of `du`
   - [ ] Use [procs](https://github.com/dalance/procs) instead of `ps`
+  - [ ] Use [starship](https://github.com/starship/starship) instead of `powerline10k` or `ohmyposh`
   - [ ] Use [tokei](https://github.com/XAMPPRocky/tokei) instead of `cloc`
   - [ ] Use [tre](https://github.com/dduan/tre) instead of `tree`
-  - [ ] Use [starship](https://github.com/starship/starship) instead of `powerline10k` or `ohmyposh`
 
 > `Nushell` is a cross-platform written in Rust, but it doesn't support dynamical path for the moment.
 
 ### 2.2. TUI Tools Replacement
 
-- [x] Use [bottom](https://github.com/ClementTsang/bottom) instead of `top` or `htop`
 - [x] Use [gitui](https://github.com/extrawurst/gitui) instead of `lazygit`
-- [ ] Use [helix](https://github.com/helix-editor/helix) instead of `vim`
+- [ ] Use [bottom](https://github.com/ClementTsang/bottom) instead of `top` or `htop`
 - [ ] Use [yazi](https://github.com/sxyazi/yazi) instead of `range`
-- [ ] Use [zellij](https://github.com/zellij-org/zellij) instead of `tmux` (Not support Windows yet)
+- [ ] Use [helix](https://github.com/helix-editor/helix) instead of `vim` (Not drop-in)
+- [ ] Use [zellij](https://github.com/zellij-org/zellij) instead of `tmux` (Not supported on Windows)
 
 ### 2.3. GUI Tools Replacement
 
@@ -109,7 +109,7 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
 ### 2.4. Other Useful Rust Tools
 
 - [x] [ouch](https://github.com/ouch-org/ouch): Painless compression and decompression tool
-- [x] [pueue](https://github.com/Nukesor/pueue): Command-line task management tool for sequential and parallel execution of long-running tasks.
+- [ ] [pueue](https://github.com/Nukesor/pueue): Command-line task management tool for sequential and parallel execution of long-running tasks
 - [ ] [espanso](https://github.com/espanso/espanso): Text Expander written in Rust (try it for fun!)
 - [ ] [kondo](https://github.com/tbillington/kondo): A tool to clean dependencies and build artefacts from your projects.
 - [ ] [navi](https://github.com/denisidoro/navi): An interactive cheatsheet tool for the command-line

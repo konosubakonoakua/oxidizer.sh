@@ -47,12 +47,6 @@ printf "📦 Installing essential Oxidizer toolchains...\n"
 
 cat ${OXIDIZER}/defaults/Brewfile.txt | while read -r pkg; do
     case $pkg in
-    ripgrep)
-        cmd='rg'
-        ;;
-    bottom)
-        cmd='btm'
-        ;;
     tealdear)
         cmd='tldr'
         ;;
@@ -126,7 +120,7 @@ cp ${OXIDIZER}/defaults.sh "${OXIDIZER}/"custom.sh
 sed -i.bak "s|.* OX_STARTUP=.*|export OX_STARTUP=1|" ${OXIDIZER}/custom.sh
 # set path of oxidizer
 # echo "source OXIDIZER=${OXIDIZER}/oxidizer.sh" | xargs -I '{}' sed -i.bak '' 's|source OXIDIZER=.*|{}|' ${OX_SHELL}
-# echo $(cat ${OX_SHELL} | rg -o 'source .+')
+# echo $(cat ${OX_SHELL} | grep -o -E 'source .+')
 
 ###################################################
 # Load Plugins

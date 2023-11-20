@@ -65,29 +65,29 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 ☑️ 表示默认安装
 
 - coreutils
-  - [x] 使用 [uutils-coreutils](https://github.com/uutils/coreutils) 替换 `coreutils`
+  - [x] 使用 [uutils-coreutils](https://github.com/uutils/coreutils) 替换 `coreutils`（仅 Windows）
   - [x] 使用 [bat](https://github.com/sharkdp/bat) 替换 `cat`
   - [x] 使用 [lsd](https://github.com/Peltoche/lsd) 替换 `ls`
 - non-coreutils
   - [x] 使用 [fd](https://github.com/sharkdp/fd) 替换 `find`
   - [x] 使用 [hyperfine](https://github.com/sharkdp/hyperfine) 替换 `time`
-  - [x] 使用 [ripgrep](https://github.com/BurntSushi/ripgrep) 替换 `grep`
+  - [x] 使用 [ripgrep](https://github.com/BurntSushi/ripgrep) 替换 `grep`（仅 Windows）
   - [x] 使用 [tealdeer](https://github.com/dbrgn/tealdeer) 替换 `tldr` 和 `man`
   - [x] 使用 [zoxide](https://github.com/ajeetdsouza/zoxide) 替换 `cd` 和 `z`
   - [ ] 使用 [dust](https://github.com/bootandy/dust) 替换 `du`
   - [ ] 使用 [procs](https://github.com/dalance/procs) 替换 `ps`
+  - [ ] 使用 [starship](https://github.com/starship/starship) 替换 `powerline10k` 和 `ohmyposh`
   - [ ] 使用 [tokei](https://github.com/XAMPPRocky/tokei) 替换 `cloc`
   - [ ] 使用 [tre](https://github.com/dduan/tre) 替换 `tree`
-  - [ ] 使用 [starship](https://github.com/starship/starship) 替换 `powerline10k` 和 `ohmyposh`
 
 > `Nushell` 是一个 Rust 编写的全平台 Shell，但其目前不支持动态地址，而且其插件只支持 Rust 和 Python，而不是其内置的 Nu 语言。
 
 ### 2.2. TUI 工具替换
 
-- [x] 使用 [bottom](https://github.com/ClementTsang/bottom) 替换 `top` 和 `htop`
 - [x] 使用 [gitui](https://github.com/extrawurst/gitui) 替换 `lazygit`
-- [ ] 使用 [helix](https://github.com/helix-editor/helix) 替换 `vim`
+- [ ] 使用 [bottom](https://github.com/ClementTsang/bottom) 替换 `top` 和 `htop`
 - [ ] 使用 [yazi](https://github.com/sxyazi/yazi) 替换 `range`
+- [ ] 使用 [helix](https://github.com/helix-editor/helix) 替换 `vim` （非平替）
 - [ ] 使用 [zellij](https://github.com/zellij-org/zellij) 替换 `tmux`（目前不支持 Windows）
 
 ### 2.3. GUI 工具替换
@@ -99,7 +99,7 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 ### 2.4. 其他实用的 Rust 工具
 
 - [x] [ouch](https://github.com/ouch-org/ouch)：终端无痛压缩 & 解压工具
-- [x] [pueue](https://github.com/Nukesor/pueue)：命令行并行任务管理器
+- [ ] [pueue](https://github.com/Nukesor/pueue)：命令行并行任务管理器
 - [ ] [espanso](https://github.com/espanso/espanso)：输入法扩展器（推荐尝试）
 - [ ] [kondo](https://github.com/tbillington/kondo)：项目依赖清理命令行工具
 - [ ] [navi](https://github.com/denisidoro/navi)：交互式 cheatsheet 命令行
