@@ -134,7 +134,7 @@ ipall() {
 
 iiox() {
     printf "📦 Installing Required packages...\n"
-    while read -r pkg <"${OXIDIZER}"/defaults/Brewfile.txt; do
+    cat "${OXIDIZER}"/defaults/Brewfile.txt | while read -r pkg; do
         if test ! "$(command -v "$pkg")"; then
             brew install "$pkg"
         fi
