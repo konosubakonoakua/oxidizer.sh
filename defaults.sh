@@ -73,9 +73,10 @@ OX_OXIDE[bkwz]=${OX_BACKUP}/terminal/wezterm.lua
 # register proxy ports
 ##########################################################
 
-# c: clash, v: v2ray
+# c: clash, v: v2ray, r: clash-meta
 declare -A OX_PROXY=(
     [c]=7890
+    [m]=7898
     [v]=1080
 )
 

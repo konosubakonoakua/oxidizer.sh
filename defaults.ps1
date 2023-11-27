@@ -70,6 +70,7 @@ $Global:OX_OXIDE.bkwz = "$env:OX_BACKUP\terminal\wezterm.lua"
 # c: clash, v: v2ray
 $Global:OX_PROXY = @{
     'c' = '7890'
+    'm' = '7898'
     'v' = '1080'
 }
 
