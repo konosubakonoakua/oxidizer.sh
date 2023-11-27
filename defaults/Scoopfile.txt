@@ -3,8 +3,8 @@ fd
 gitui
 lsd
 ouch
-zoxide
 ripgrep
+zoxide
 uutils-coreutils
 sed
 sudo
