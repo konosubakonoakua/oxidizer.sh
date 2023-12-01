@@ -394,7 +394,15 @@ cls h
   - `s`: for `linux-s390x`
 - `ceep`: export environment
 
-## 6. Further Reading
+## 6. Project Management
+
+### 6.1. Git
+
+- [x] `gclhs --his`: delete history
+
+for aliases, check `.gitconfig` in `defaults` folder by `edf oxg`
+
+## 7. Further Reading
 
 - [Service Management](https://github.com/ivaquero/oxidizer/blob/master/docs/services.md)
 - [Project Management](https://github.com/ivaquero/oxidizer/blob/master/docs/projects.md)
@@ -402,11 +410,11 @@ cls h
 - [System Management](https://github.com/ivaquero/oxidizer/blob/master/docs/systems.md)
 - [Writing A Plugin](https://github.com/ivaquero/oxidizer/blob/master/docs/plugins.md)
 
-## 7. Credits
+## 8. Credits
 
 - [Mario Catuogno's Clean-macOS](https://github.com/MarioCatuogno/Clean-macOS)
 - [Mike McQuaid's dotfiles](https://github.com/MikeMcQuaid/dotfiles)
 
-## 8. License
+## 9. License
 
 This work is released under the GPL-v3 license.

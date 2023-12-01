@@ -1,27 +1,5 @@
 # 更多用法
 
-## 项目管理
-
-| 后缀  |  操作  | git `g` |
-| :---: | :----: | :-----: |
-| `*h`  |  help  |   ✅    |
-| `*ii` |  init  |   ✅    |
-| `*df` |  diff  |   ✅    |
-| `*cl` | clean  |   ✅    |
-| `*ls` |  list  |         |
-| `*st` | status |   ✅    |
-| `*a`  |  add   |   ✅    |
-| `*rm` | remove |   ✅    |
-| `*pl` |  pull  |   ✅    |
-| `*ps` |  push  |   ✅    |
-| `*cf` | config |   ✅    |
-
-### Git
-
-- [x] `gcl --ig`：根据 `.gitignore` 删除忽略文件
-- [x] `gcl --his`：删除 history
-- [x] `gjk`：查找大 blob 文件
-
 ## 服务管理
 
 |  后缀  |     操作     | brew<br>services `bs` | pueue `pu` | espanso `es` | bitwarden `bw` |

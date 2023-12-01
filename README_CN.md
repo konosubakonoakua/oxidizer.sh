@@ -346,15 +346,21 @@ conda install -c conda-forge mamba conda-tree
   - `s`: for `linux-s390x`
 - `ceep`: export environment
 
-## 6. 更多阅读
+## 6. 项目管理
+
+### 6.1. Git
+
+- [x] `gclhs`：删除 history
+
+## 7. 更多阅读
 
 - [更多用法](https://github.com/ivaquero/oxidizer/blob/master/docs/advanced_cn.md)
 
-## 7. 致谢
+## 8. 致谢
 
 - [Mario Catuogno's Clean-macOS](https://github.com/MarioCatuogno/Clean-macOS)
 - [Mike McQuaid's dotfiles](https://github.com/MikeMcQuaid/dotfiles)
 
-## 8. 许可
+## 9. 许可
 
 这个项目在 GPL-v3 许可下发布
