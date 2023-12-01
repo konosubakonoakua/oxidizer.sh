@@ -32,21 +32,22 @@ sum = !onefetch
 # helper
 cmpr = repack -a -d -f --depth=300 --window=300 --window-memory=1g
 # clone
-cln-clean = clone --depth 1 --no-checkout
+cln = clone
+cln-clean = cln --depth 1 --no-checkout
 # add
 a = add
-aa = add --all
+aa = a --all
 # branch
 br = branch
-br-ls = branch --all
-br-rm = branch --delete
-br-rm-remote = branch --delete --remotes
+br-ls = br --all
+br-rm = br --delete
+br-rm-remote = br --delete --remotes
 # commit
 c = commit
-ci = commit --interactive
+ci = c --interactive
 # checkout
 co = checkout
-cob = checkout -b
+cob = co -b
 # clean
 cl = clean
 cl-ign = !git rm -rf --cached . && git add .
@@ -58,16 +59,16 @@ df = diff
 f = fetch
 # grep
 gr = grep
-grn = grep --line-number
+grn = gr --line-number
 # log
 lg = log
-lgg = log --graph
-lgo = log --oneline
-lgor = log --oneline --reverse
+lgg = lg --graph
+lgo = lg --oneline
+lgor = lgo --oneline --reverse
 # ls-files
 ls = ls-files
-lsd = ls-files --debug
-lsfn = ls-files --full-name
+lsd = ls --debug
+lsfn = ls --full-name
 # merge
 m = merge
 # pull
@@ -86,20 +87,22 @@ rv = revert
 # status
 st = status
 # tag
-tag-rm = tag --delete
-tag-rm-remote = push origin --delete
-tag-ls = tag --list
-tag-cl = tag --cleanup
-tag-edit = tag --edit
-tag-annot = tag --annotate
+tg = tag
+tg-rm = tg --delete
+tg-rm-remote = push origin --delete
+tg-ls = tg --list
+tg-cl = tg --cleanup
+tg-edit = tg --edit
+tg-annot = tg --annotate
 # origin
 org-add = remote add origin
 org-add-url = remote set-url
 org-rename = remote rename origin
 # filter-repo
-flt-id = filter-repo --strip-blobs-with-ids
-flt-path = filter-repo --invert-paths --path-glob
-flt-size = filter-repo --strip-blobs-bigger-than
+flt = filter-repo
+flt-id = flt --strip-blobs-with-ids
+flt-path = flt --invert-paths --path-glob
+flt-size = flt --strip-blobs-bigger-than
 
 # [http]
 # version = HTTP/1.1
