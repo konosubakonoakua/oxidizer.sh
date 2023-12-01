@@ -21,32 +21,83 @@ conflictstyle = diff3
 colorMoved = default
 
 [alias]
-a = add
+# basics
 cf = config
-ck = checkout
-df = diff
-ft = fetch
 h = help
 ii = init
-st = status
-cln-shallow = clone --depth 1
-cmpr = repack -a -d --depth=250 --window=250
+ui = !gitui
+# summary
 cnt = rev-list --count HEAD
+sum = !onefetch
+# helper
+cmpr = repack -a -d -f --depth=300 --window=300 --window-memory=1g
+# clone
+cln-clean = clone --depth 1 --filter=combine:blob:none+tree:0 --no-checkout
+# add
+a = add
+aa = add --all
+# branch
+br = branch
+br-ls = branch --all
+br-rm = branch --delete
+br-rm-remote = branch --delete --remotes
+
+# commit
+c = commit
+ci = commit --interactive
+# checkout
+co = checkout
+cob = checkout -b
+# clean
+cl = clean
+cl-ign = !git rm -rf --cached . && git add .
+ls-blob = !"git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | grep 'blob' | sort -k 2 -n"
+ls-blob-10 = !"git ls-blob | tail -n 10"
+# diff
+df = diff
+# fetch
+f = fetch
+# grep
+gr = grep
+grn = grep --line-number
+# log
+lg = log
+lgg = log --graph
+lgo = log --oneline
+lgor = log --oneline --reverse
+# ls-files
+ls = ls-files
+lsd = ls-files --debug
+lsfn = ls-files --full-name
+# merge
+m = merge
+# pull
+p = pull
+# push
+ps = push
+pbl = push --set-upstream origin
+# rebase
+rb = rebase
+rbi = rebase --interactive
+# reset
 undo = reset --soft HEAD^
 unstage = reset HEAD --
-brch-ls = branch --all
-brch-rm = branch --delete
-brch-rm-remote = branch --delete --remotes
+# revert
+rv = revert
+# status
+st = status
+# tag
 tag-rm = tag --delete
 tag-rm-remote = push origin --delete
 tag-ls = tag --list
 tag-cl = tag --cleanup
 tag-edit = tag --edit
 tag-annot = tag --annotate
+# origin
 org-add = remote add origin
 org-add-url = remote set-url
 org-rename = remote rename origin
-pbl = push --set-upstream origin
+# filter-repo
 flt-id = filter-repo --strip-blobs-with-ids
 flt-path = filter-repo --invert-paths --path-glob
 flt-size = filter-repo --strip-blobs-bigger-than
