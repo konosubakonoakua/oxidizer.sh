@@ -21,25 +21,39 @@ conflictstyle = diff3
 colorMoved = default
 
 [alias]
-compress = repack -a -d --depth=250 --window=250
-count = rev-list --count HEAD
+a = add
+cf = config
+ck = checkout
+df = diff
+ft = fetch
+h = help
+ii = init
+st = status
+cln-shallow = clone --depth 1
+cmpr = repack -a -d --depth=250 --window=250
+cnt = rev-list --count HEAD
 undo = reset --soft HEAD^
-clone-shallow = clone --depth 1
-origin-add = remote add origin
-origin-add-url = remote set-url
-origin-rename = remote rename origin
-branch-remove = branch --delete
-branch-remove-remote = branch --delete --remotes
-tag-remove = tag --delete
-tag-remove-remote = push origin --delete
-publish = push --set-upstream origin
-filter-id = filter-repo --strip-blobs-with-ids
-filter-path = filter-repo --invert-paths --path-glob
-filter-size = filter-repo --strip-blobs-bigger-than
+unstage = reset HEAD --
+brch-ls = branch --all
+brch-rm = branch --delete
+brch-rm-remote = branch --delete --remotes
+tag-rm = tag --delete
+tag-rm-remote = push origin --delete
+tag-ls = tag --list
+tag-cl = tag --cleanup
+tag-edit = tag --edit
+tag-annot = tag --annotate
+org-add = remote add origin
+org-add-url = remote set-url
+org-rename = remote rename origin
+pbl = push --set-upstream origin
+flt-id = filter-repo --strip-blobs-with-ids
+flt-path = filter-repo --invert-paths --path-glob
+flt-size = filter-repo --strip-blobs-bigger-than
 
 # [http]
 # version = HTTP/1.1
-# proxy = http://127.0.0.1:7890
+# proxy = http://127.0.0.1:7898
 
 # [https]
-# proxy = https://127.0.0.1:7890
+# proxy = https://127.0.0.1:7898

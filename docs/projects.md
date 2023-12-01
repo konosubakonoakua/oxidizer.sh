@@ -1,25 +1,24 @@
 ## Project Management
 
-| Suffix | Action | git `g` | git tag `gt` | cmake `cm` |
-| :----: | :----: | :-----: | :----------: | :--------: |
-|  `*h`  |  help  |    ✅    |      ✅       |     ✅      |
-| `*ii`  |  init  |    ✅    |              |            |
-| `*df`  |  diff  |    ✅    |              |            |
-| `*cl`  | clean  |    ✅    |      ✅       |            |
-| `*ls`  |  list  |         |      ✅       |            |
-| `*st`  | status |    ✅    |              |            |
-|  `*a`  |  add   |    ✅    |      ✅       |            |
-| `*rm`  | remove |         |      ✅       |            |
-| `*pl`  |  pull  |    ✅    |              |            |
-| `*ps`  |  push  |    ✅    |              |            |
-| `*cf`  | config |    ✅    |              |            |
-| `*if`  |  info  |    ✅    |              |            |
+| Suffix | Action | git `g` |
+| :----: | :----: | :-----: |
+|  `*h`  |  help  |   ✅    |
+| `*ii`  |  init  |   ✅    |
+| `*df`  |  diff  |   ✅    |
+| `*cl`  | clean  |   ✅    |
+| `*ls`  |  list  |         |
+| `*st`  | status |   ✅    |
+|  `*a`  |  add   |   ✅    |
+| `*rm`  | remove |         |
+| `*pl`  |  pull  |   ✅    |
+| `*ps`  |  push  |   ✅    |
+| `*cf`  | config |   ✅    |
+| `*if`  |  info  |   ✅    |
 
 ### Git
 
-- [x] delete ignored files in `.gitignore`: `gcl --ig`
-- [x] find fat blob files: `gjk`
-- [x] integration of `git filter-repo` command
-  - [x] clean files by size bigger than `git filter-size`
-  - [x] clean files by id `git filter-id`
-  - [x] clean files by path `git filter-path`
+- [x] `gcl --ig`: delete ignored files according to `.gitignore`
+- [x] `gcl --his`: delete history
+- [x] `gjk`: find fat blob files
+
+for aliases, check `.gitconfig` in `defaults` folder by `edf oxg`
