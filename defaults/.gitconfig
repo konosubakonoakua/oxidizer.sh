@@ -32,7 +32,7 @@ sum = !onefetch
 # helper
 cmpr = repack -a -d -f --depth=300 --window=300 --window-memory=1g
 # clone
-cln-clean = clone --depth 1 --filter=combine:blob:none+tree:0 --no-checkout
+cln-clean = clone --depth 1 --no-checkout
 # add
 a = add
 aa = add --all
@@ -41,7 +41,6 @@ br = branch
 br-ls = branch --all
 br-rm = branch --delete
 br-rm-remote = branch --delete --remotes
-
 # commit
 c = commit
 ci = commit --interactive
