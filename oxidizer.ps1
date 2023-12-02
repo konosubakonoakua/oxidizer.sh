@@ -95,16 +95,16 @@ function back_all {
 }
 
 # export configurations
-function epall {
-    ForEach ($obj in $Global:OX_EXPORT_FILE) {
-        epf $obj
+function oxall {
+    ForEach ($obj in $Global:OX_OXIDIZE_FILE) {
+        oxf $obj
     }
 }
 
 # export configurations
-function ipall {
-    ForEach ($obj in $Global:OX_IMPORT_FILE) {
-        ipf $obj
+function rdall {
+    ForEach ($obj in $Global:OX_REDUCE_FILE) {
+        rdf $obj
     }
 }
 

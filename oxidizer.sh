@@ -118,17 +118,17 @@ back_all() {
     done
 }
 
-# export configurations
-epall() {
-    for obj in "${OX_EXPORT_FILE[@]}"; do
-        epf "$obj"
+# oxidize configurations
+oxall() {
+    for obj in "${OX_OXIDIZE_FILE[@]}"; do
+        oxf "$obj"
     done
 }
 
-# import configurations
-ipall() {
-    for obj in "${OX_IMPORT_FILE[@]}"; do
-        ipf "$obj"
+# reduce configurations
+rdall() {
+    for obj in "${OX_REDUCE_FILE[@]}"; do
+        rdf "$obj"
     done
 }
 

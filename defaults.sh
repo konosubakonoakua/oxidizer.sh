@@ -81,10 +81,10 @@ declare -A OX_PROXY=(
 )
 
 OX_ELEMENT[cv]="${HOME}/.config/clash-verge/verge.yaml"
-OX_OXIDE[bkcv]="${OX_BACKUP}/app/verge.yaml"
+OX_OXIDE[bkcv]="${OX_BACKUP}/apps/verge.yaml"
 
 ##########################################################
-# select export and import settings
+# select oxidize and reduce settings
 ##########################################################
 
 # files to be exported to backup folder
@@ -96,12 +96,12 @@ OX_OXIDE[bkcv]="${OX_BACKUP}/app/verge.yaml"
 # vs: vscode's settings.json
 # vsk: vscode's keybindings.json
 # vss_: vscode's snippets folder
-declare -a OX_EXPORT_FILE
-export OX_EXPORT_FILE=(ox)
+declare -a OX_OXIDIZE_FILE
+export OX_OXIDIZE_FILE=(ox)
 
 # files to be import from backup folder
-declare -a OX_IMPORT_FILE
-export OX_IMPORT_FILE=(ox)
+declare -a OX_REDUCE_FILE
+export OX_REDUCE_FILE=(ox)
 
 ##########################################################
 # git settings
