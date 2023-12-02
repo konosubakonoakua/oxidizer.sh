@@ -110,7 +110,6 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
 
 - [x] [ouch](https://github.com/ouch-org/ouch): Painless compression and decompression tool
 - [ ] [pueue](https://github.com/Nukesor/pueue): Command-line task management tool for sequential and parallel execution of long-running tasks
-- [ ] [espanso](https://github.com/espanso/espanso): Text Expander written in Rust (try it for fun!)
 - [ ] [kondo](https://github.com/tbillington/kondo): A tool to clean dependencies and build artefacts from your projects.
 - [ ] [navi](https://github.com/denisidoro/navi): An interactive cheatsheet tool for the command-line
 - [ ] [onefetch](https://github.com/o2sh/onefetch): Command-line Git information tool
@@ -169,16 +168,18 @@ Oxidizer uses Homebrew or Scoop to manage packages and software programs to bypa
 - `brf`
   - file: browse by `bat` / `cat`
   - folder: browse by `lsd` / `ls`
-- `ipf`
-  - overwrite system configurations by customized (backup) files
-- `epf`
-  - export system configurations to back up folder
-- `iif`
-  - overwrite system configurations in by Oxidizer defaults.
+- `oxf`
+  - oxidize file: backup configuration file to backup folder
+- `rdf`
+  - reduce file: owerwrite configuation file by backup (customized) file
+- `clyf`
+  - catalyze file: owerwrite configuartion file by Oxidizer defaults
+- `ppgf`
+  - propagate file: backup Oxidizer defaults to backup folder
 
 For example, if you want to edit `~/.zshrc`, you can type `edf zs`.
 
-When you use `epf zs`, `~/.zshrc` will be copied and save in `$OX_BACKUP/shell` folder, where `$OX_BACKUP` is the backup path that can be personalized in `$OXIDIZER/custom.sh`. As mentioned in **Get Started**, you can open `custom.sh` simply by `edf ox`.
+When you use `oxf zs`, `~/.zshrc` will be copied and save in `$OX_BACKUP/shell` folder, where `$OX_BACKUP` is the backup path that can be personalized in `$OXIDIZER/custom.sh`. As mentioned in **Get Started**, you can open `custom.sh` simply by `edf ox`.
 
 The table below lists the information of specific configuration files:
 
@@ -223,7 +224,7 @@ The table below lists the information of specific configuration files:
 
 > `_` denotes a folder
 
-Oxidizer uses `ouch` to deal with compression and decompression, and provides with 3 shortcuts
+Oxidizer uses [ouch](https://github.com/ouch-org/ouch) to deal with compression and decompression, and provides with 3 shortcuts
 
 - `zpf`: compress file
 - `uzpf`: decompress file
@@ -398,7 +399,7 @@ cls h
 
 ### 6.1. Git
 
-- [x] `gclhs --his`: delete history
+- [x] `gclhs`: delete commit history
 
 for aliases, check `.gitconfig` in `defaults` folder by `edf oxg`
 

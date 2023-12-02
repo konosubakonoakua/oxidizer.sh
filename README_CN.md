@@ -100,7 +100,6 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 
 - [x] [ouch](https://github.com/ouch-org/ouch)：终端无痛压缩 & 解压工具
 - [ ] [pueue](https://github.com/Nukesor/pueue)：命令行并行任务管理器
-- [ ] [espanso](https://github.com/espanso/espanso)：输入法扩展器（推荐尝试）
 - [ ] [kondo](https://github.com/tbillington/kondo)：项目依赖清理命令行工具
 - [ ] [navi](https://github.com/denisidoro/navi)：交互式 cheatsheet 命令行
 - [ ] [onefetch](https://github.com/o2sh/onefetch)：命令行 Git 信息工具
@@ -155,14 +154,18 @@ Oxidizer 通过 Homebrew 或 Scoop 管理包和软件，以绕过管理员权限
 - `brf`
   - 通过 `bat`/`cat` 浏览文件
   - 文件夹：通过 `lsd`/`ls` 浏览
-- `ipf`
-  - 文件：在 `$OX_OXYGEN` 中覆盖对应的 `$OX_ELEMENT` 文件配置
-- `epf`
-  - 文件：在 `$OX_ELEMENT` 中覆盖对应的 `$OX_OXYGEN` 文件配置
+- `oxf` (oxidize file)
+  - 氧化文件：在 `$OX_ELEMENT` 中覆盖对应的 `$OX_OXIDE` 文件配置
+- `rdf` (reduce file)
+  - 还原文件：在 `$OX_OXIDE` 中覆盖对应的 `$OX_ELEMENT` 文件配置
+- `clyf` (catalyze file)
+  - 催化文件：在 `$OX_OXYGEN` 中覆盖对应的 `$OX_ELEMENT` 文件配置
+- `ppgf` (propagate file)
+  - 传播文件：在 `$OX_OXYGEN` 中覆盖对应的 `$OX_OXIDE` 文件配置
 
 例如，当你想编辑 `~/.zshrc`，键入 `edf zs`。
 
-当你使用 `epf zs`，`~/.zshrc` 会被复制并保存到 `$OX_BACKUP/shell` 文件夹。其中，`$OX_BACKUP` 是可以在 `$OXIDIZER/custom.sh` 中自定义的备份路径。通过 `edf ox` 即可轻松打开 `custom.sh` 文件。
+当你使用 `oxf zs`，`~/.zshrc` 会被复制并保存到 `$OX_BACKUP/shell` 文件夹。其中，`$OX_BACKUP` 是可以在 `$OXIDIZER/custom.sh` 中自定义的备份路径。通过 `edf ox` 即可轻松打开 `custom.sh` 文件。
 
 下表罗列了每个配置文件的缩写：
 
@@ -206,7 +209,7 @@ Oxidizer 通过 Homebrew 或 Scoop 管理包和软件，以绕过管理员权限
 
 > `_` 表示文件夹
 
-Oxidizer 使用 `ouch` 压缩或解压缩文件，提供 3 个快捷命令
+Oxidizer 使用 [ouch](https://github.com/ouch-org/ouch) 压缩或解压缩文件，提供 3 个快捷命令
 
 - `zpf`：压缩
 - `uzpf`：解压缩
@@ -350,7 +353,7 @@ conda install -c conda-forge mamba conda-tree
 
 ### 6.1. Git
 
-- [x] `gclhs`：删除 history
+- [x] `gclhs`：删除提交历史
 
 ## 7. 更多阅读
 
