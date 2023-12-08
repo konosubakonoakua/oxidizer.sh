@@ -138,8 +138,8 @@ function upox {
     else {
         cd "$env:OXIDIZER\oxplugins-pwsh"
         echo "`n`nUpdating Oxidizer Plugins...`n"
-        git fetch origin main
-        git reset --hard origin/main
+        git fetch origin master
+        git reset --hard origin/master
     }
 
     cd $env:OXIDIZER
