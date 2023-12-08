@@ -41,7 +41,7 @@ aa = a --all
 br = branch
 br-ls = br --all
 br-rm = br --delete
-br-rm-remote = br --delete --remotes
+br-rm-rmt = br --delete --remotes
 # commit
 c = commit
 ci = c --interactive
@@ -89,7 +89,7 @@ st = status
 # tag
 tg = tag
 tg-rm = tg --delete
-tg-rm-remote = push origin --delete
+tg-rm-rmt = push origin --delete
 tg-ls = tg --list
 tg-cl = tg --cleanup
 tg-edit = tg --edit
@@ -97,7 +97,7 @@ tg-annot = tg --annotate
 # origin
 org-add = remote add origin
 org-add-url = remote set-url
-org-rename = remote rename origin
+org-rnm = remote rename origin
 # filter-repo
 flt = filter-repo
 flt-id = flt --strip-blobs-with-ids
@@ -106,7 +106,7 @@ flt-size = flt --strip-blobs-bigger-than
 
 # [http]
 # version = HTTP/1.1
-# proxy = http://127.0.0.1:7898
+# proxy = http://127.0.0.1:7890
 
 # [https]
-# proxy = https://127.0.0.1:7898
+# proxy = https://127.0.0.1:7890
