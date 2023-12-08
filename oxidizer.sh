@@ -154,8 +154,8 @@ upox() {
     else
         printf "\n\nUpdating Oxidizer Plugins...\n"
         cd "${OXIDIZER}"/oxplugins-zsh || exit
-        git fetch origin master
-        git reset --hard origin/master
+        git fetch origin main
+        git reset --hard origin/main
     fi
 
     cd "${OXIDIZER}" || exit
