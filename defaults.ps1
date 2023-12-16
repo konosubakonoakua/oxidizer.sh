@@ -54,7 +54,6 @@ $env:OX_BACKUP = "$HOME\Documents\backup"
 
 # shell
 $Global:OX_OXIDE.bkox = "$env:OX_BACKUP\shell\custom.ps1"
-# $Global:OX_OXIDE.bkpx = "$env:OX_BACKUP\verge.yaml"
 
 # terminal
 $Global:OX_ELEMENT.wz = "$HOME\.wezterm.lua"
@@ -70,12 +69,9 @@ $Global:OX_OXIDE.bkwz = "$env:OX_BACKUP\terminal\wezterm.lua"
 # c: clash, v: v2ray
 $Global:OX_PROXY = @{
     'c' = '7890'
-    'm' = '7898'
+    'm' = '7897'
     'v' = '1080'
 }
-
-$Global:OX_ELEMENT.cv = "$HOME/.config/clash-verge/verge.yaml"
-$Global:OX_OXIDE.bkcv = "$env:OX_BACKUP/apps/verge.yaml"
 
 ##########################################################
 # select oxidize and reduce configurations

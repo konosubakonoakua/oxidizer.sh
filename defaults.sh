@@ -59,7 +59,6 @@ export OX_BACKUP=${HOME}/Documents/backup
 # shell backups
 OX_OXIDE[bkox]=${OX_BACKUP}/shell/custom.sh
 # OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
-# OX_OXIDE[bkpx]=${OX_BACKUP}/verge.yaml
 
 # system file
 OX_ELEMENT[wz]=${HOME}/.config/wezterm/wezterm.lua
@@ -76,12 +75,9 @@ OX_OXIDE[bkwz]=${OX_BACKUP}/terminal/wezterm.lua
 # c: clash, v: v2ray, r: clash-meta
 declare -A OX_PROXY=(
     [c]=7890
-    [m]=7898
+    [m]=7897
     [v]=1080
 )
-
-OX_ELEMENT[cv]="${HOME}/.config/clash-verge/verge.yaml"
-OX_OXIDE[bkcv]="${OX_BACKUP}/apps/verge.yaml"
 
 ##########################################################
 # select oxidize and reduce settings
