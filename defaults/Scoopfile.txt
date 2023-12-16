@@ -6,6 +6,7 @@ ouch
 ripgrep
 zoxide
 uutils-coreutils
+innounp
 sed
 sudo
 winget

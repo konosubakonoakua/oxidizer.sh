@@ -57,7 +57,10 @@ $env:OX_BACKUP = "$HOME\Documents\backup"
 $Global:OX_OXIDE.bkox = "$env:OX_BACKUP\shell\custom.ps1"
 
 # terminal
-$Global:OX_ELEMENT.wz = "$HOME\.wezterm.lua"
+if ( Test-Path "$HOME\.wezterm.lua" ) {
+    $Global:OX_ELEMENT.wz = "$HOME\.wezterm.lua"
+    NewNew-Item -Path $Global:OX_ELEMENT.wz -ItemType File
+}
 # $Global:OX_ELEMENT.al = "$env:APPDATA\alacritty\alacritty.yml"
 
 $Global:OX_OXIDE.bkwz = "$env:OX_BACKUP\terminal\wezterm.lua"

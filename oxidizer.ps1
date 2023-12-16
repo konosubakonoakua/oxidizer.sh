@@ -57,7 +57,12 @@ $Global:OX_APPHOME = @{}
 . $Global:OX_ELEMENT.ox
 
 ForEach ($plugin in $Global:OX_PLUGINS) {
-    . $Global:OX_OXYGEN.$($plugin)
+    if (Test-Path $Global:OX_OXYGEN.$($plugin)) {
+        . $Global:OX_OXYGEN.$($plugin)
+    }
+    else {
+        echo "Plugin not found: $plugin"
+    }
 }
 
 # load core plugins
@@ -66,7 +71,6 @@ $Global:OX_CORE_PLUGINS = @('oxps', 'oxput', 'oxpnw')
 ForEach ($core_plugin in $Global:OX_CORE_PLUGINS) {
     . $Global:OX_OXYGEN.$($core_plugin)
 }
-
 
 ##########################################################
 # PowerShell Settings

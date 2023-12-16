@@ -67,7 +67,7 @@ declare -a OX_PLUGINS
 . "${OX_ELEMENT[ox]}"
 
 for plugin in "${OX_PLUGINS[@]}"; do
-    if [ -f "${OX_OXYGEN[$plugin]}" ]; then
+    if [[ -f "${OX_OXYGEN[$plugin]}" ]]; then
         . "${OX_OXYGEN[$plugin]}"
     else
         echo "Plugin not found: ${plugin}"
