@@ -21,22 +21,23 @@ export EDITOR_T='vi'
 
 # oxpg: ox-git
 # oxpc: ox-conda
-# oxpcn: ox-conan
-# oxphx: ox-helix
-# oxpjl: ox-julia
-# oxpnj: ox-nodejs
-# oxprb: ox-ruby
-# oxprs: ox-rust
-# oxpzj: ox-zellij
 # oxpbw: ox-bitwarden
+# oxpcn: ox-conan
 # oxpct: ox-container
 # oxpes: ox-espanso
+# oxpfm: ox-format
+# oxphx: ox-helix
+# oxpjl: ox-julia
 # oxpjn: ox-jupyter
+# oxpnj: ox-nodejs
+# oxpnt: ox-notes
+# oxppu: ox-pueue
+# oxprb: ox-ruby
+# oxprs: ox-rust
 # oxptl: ox-texlive
 # oxpvs: ox-vscode
-# oxpfm: ox-format
 # oxpwr: ox-weather
-# oxpwr: ox-notes
+# oxpzj: ox-zellij
 
 OX_PLUGINS=(
     oxpwr
@@ -72,7 +73,7 @@ OX_OXIDE[bkwz]=${OX_BACKUP}/terminal/wezterm.lua
 # register proxy ports
 ##########################################################
 
-# c: clash, v: v2ray, r: clash-meta
+# c: clash, m: clash-meta, v: v2ray
 declare -A OX_PROXY=(
     [c]=7890
     [m]=7897
@@ -98,14 +99,6 @@ export OX_OXIDIZE_FILE=(ox)
 # files to be import from backup folder
 declare -a OX_REDUCE_FILE
 export OX_REDUCE_FILE=(ox)
-
-##########################################################
-# git settings
-##########################################################
-
-# backup files
-OX_OXIDE[bkg]=${OX_BACKUP}/.gitconfig
-OX_OXIDE[bkgi]=${OX_BACKUP}/git/.gitignore
 
 ##########################################################
 # brew settings
@@ -160,7 +153,11 @@ upp() {
 # others settings
 ##########################################################
 
+# git
+OX_OXIDE[bkg]=${OX_BACKUP}/.gitconfig
+OX_OXIDE[bkgi]=${OX_BACKUP}/git/.gitignore
 # OX_OXIDE[bkesb]=${OX_BACKUP}/espanso/match/base.yml
+# vscode
 # OX_OXIDE[bkvs]=${OX_BACKUP}/vscode/settings.jsonc
 
 ##########################################################

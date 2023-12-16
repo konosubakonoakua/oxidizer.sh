@@ -20,21 +20,22 @@ $env:EDITOR_T = 'vi'
 
 # oxpg: ox-git
 # oxpc: ox-conda
-# oxpcn: ox-conan
-# oxphx: ox-helix
-# oxpjl: ox-julia
-# oxpnj: ox-nodejs
-# oxprb: ox-ruby
-# oxprs: ox-rust
 # oxpbw: ox-bitwarden
+# oxpcn: ox-conan
 # oxpct: ox-container
 # oxpes: ox-espanso
+# oxpfm: ox-format
+# oxphx: ox-helix
+# oxpjl: ox-julia
 # oxpjn: ox-jupyter
+# oxpnj: ox-nodejs
+# oxpnt: ox-notes
+# oxppu: ox-pueue
+# oxprb: ox-ruby
+# oxprs: ox-rust
 # oxptl: ox-texlive
 # oxpvs: ox-vscode
-# oxpfm: ox-formats
 # oxpwr: ox-weather
-# oxpwr: ox-notes
 
 $Global:OX_PLUGINS = @(
     'oxpwr',
@@ -66,7 +67,7 @@ $Global:OX_OXIDE.bkwz = "$env:OX_BACKUP\terminal\wezterm.lua"
 # register proxy ports
 ##########################################################
 
-# c: clash, v: v2ray
+# c: clash, m: clash-meta, v: v2ray
 $Global:OX_PROXY = @{
     'c' = '7890'
     'm' = '7897'
@@ -90,14 +91,6 @@ $Global:OX_OXIDIZE_FILE = @('ox')
 
 # files to be import from backup folder
 $Global:OX_REDUCE_FILE = @("ox")
-
-##########################################################
-# git settings
-##########################################################
-
-# backup files
-$Global:OX_OXIDE.bkg = "$env:OX_BACKUP\.gitconfig"
-$Global:OX_OXIDE.bkgi = "$env:OX_BACKUP\git\.gitignore"
 
 ##########################################################
 # pueue settings
@@ -128,9 +121,13 @@ $Global:OX_OXIDE.bkgi = "$env:OX_BACKUP\git\.gitignore"
 # # $Global:OX_OXIDE.bkceb = "$env:OX_BACKUP\conda\conda-base.txt"
 
 ##########################################################
-# vscode settings
+# other settings
 ##########################################################
 
+# git
+$Global:OX_OXIDE.bkg = "$env:OX_BACKUP\.gitconfig"
+$Global:OX_OXIDE.bkgi = "$env:OX_BACKUP\git\.gitignore"
+# vscode
 $Global:OX_OXIDE.bkvs = "$env:OX_BACKUP\vscode\settings.json"
 
 ##########################################################

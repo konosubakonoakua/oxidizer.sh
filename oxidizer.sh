@@ -18,10 +18,13 @@ declare -A OX_OXYGEN=(
     [oxpcn]=${OXIDIZER}/oxplugins-zsh/ox-conan.sh
     [oxpct]=${OXIDIZER}/oxplugins-zsh/ox-container.sh
     [oxpes]=${OXIDIZER}/oxplugins-zsh/ox-espanso.sh
+    [oxpfm]=${OXIDIZER}/oxplugins-zsh/ox-formats.sh
     [oxphx]=${OXIDIZER}/oxplugins-zsh/ox-helix.sh
     [oxpjl]=${OXIDIZER}/oxplugins-zsh/ox-julia.sh
     [oxpjn]=${OXIDIZER}/oxplugins-zsh/ox-jupyter.sh
     [oxpnj]=${OXIDIZER}/oxplugins-zsh/ox-node.sh
+    [oxpnt]=${OXIDIZER}/oxplugins-zsh/ox-notes.sh
+    [oxpnw]=${OXIDIZER}/oxplugins-zsh/ox-network.sh
     [oxppd]=${OXIDIZER}/oxplugins-zsh/ox-podman.sh
     [oxppu]=${OXIDIZER}/oxplugins-zsh/ox-pueue.sh
     [oxprb]=${OXIDIZER}/oxplugins-zsh/ox-ruby.sh
@@ -29,10 +32,8 @@ declare -A OX_OXYGEN=(
     [oxptl]=${OXIDIZER}/oxplugins-zsh/ox-texlive.sh
     [oxput]=${OXIDIZER}/oxplugins-zsh/ox-utils.sh
     [oxpvs]=${OXIDIZER}/oxplugins-zsh/ox-vscode.sh
-    [oxpzj]=${OXIDIZER}/oxplugins-zsh/ox-zellij.sh
-    [oxpfm]=${OXIDIZER}/oxplugins-zsh/ox-formats.sh
     [oxpwr]=${OXIDIZER}/oxplugins-zsh/ox-weather.sh
-    [oxpns]=${OXIDIZER}/oxplugins-zsh/ox-notes.sh
+    [oxpzj]=${OXIDIZER}/oxplugins-zsh/ox-zellij.sh
 )
 
 ##########################################################
@@ -70,7 +71,7 @@ for plugin in "${OX_PLUGINS[@]}"; do
 done
 
 declare -a OX_CORE_PLUGINS
-OX_CORE_PLUGINS=(oxpb oxput oxppu)
+OX_CORE_PLUGINS=(oxpb oxput oxpnw)
 
 # load core plugins
 for core_plugin in "${OX_CORE_PLUGINS[@]}"; do

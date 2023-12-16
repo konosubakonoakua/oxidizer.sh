@@ -18,19 +18,20 @@ $Global:OX_OXYGEN = @{
     'oxpcn' = "$env:OXIDIZER\oxplugins-pwsh\ox-conan.ps1"
     'oxpdk' = "$env:OXIDIZER\oxplugins-pwsh\ox-docker.ps1"
     'oxpes' = "$env:OXIDIZER\oxplugins-pwsh\ox-espanso.ps1"
+    'oxpfm' = "$env:OXIDIZER\oxplugins-pwsh\ox-formats.ps1"
     'oxphx' = "$env:OXIDIZER\oxplugins-pwsh\ox-helix.ps1"
     'oxpjl' = "$env:OXIDIZER\oxplugins-pwsh\ox-julia.ps1"
     'oxpjn' = "$env:OXIDIZER\oxplugins-pwsh\ox-jupyter.ps1"
     'oxpnj' = "$env:OXIDIZER\oxplugins-pwsh\ox-node.ps1"
+    'oxpnt' = "$env:OXIDIZER\oxplugins-pwsh\ox-notes.ps1"
+    'oxpnw' = "$env:OXIDIZER\oxplugins-pwsh\ox-network.ps1"
     'oxppu' = "$env:OXIDIZER\oxplugins-pwsh\ox-pueue.ps1"
     'oxprb' = "$env:OXIDIZER\oxplugins-pwsh\ox-ruby.ps1"
     'oxprs' = "$env:OXIDIZER\oxplugins-pwsh\ox-rust.ps1"
     'oxptl' = "$env:OXIDIZER\oxplugins-pwsh\ox-texlive.ps1"
     'oxput' = "$env:OXIDIZER\oxplugins-pwsh\ox-utils.ps1"
     'oxpvs' = "$env:OXIDIZER\oxplugins-pwsh\ox-vscode.ps1"
-    'oxpfm' = "$env:OXIDIZER\oxplugins-pwsh\ox-formats.ps1"
     'oxpwr' = "$env:OXIDIZER\oxplugins-pwsh\ox-weather.ps1"
-    'oxpns' = "$env:OXIDIZER\oxplugins-pwsh\ox-notes.ps1"
 }
 
 ##########################################################
@@ -60,7 +61,7 @@ ForEach ($plugin in $Global:OX_PLUGINS) {
 }
 
 # load core plugins
-$Global:OX_CORE_PLUGINS = @('oxps', 'oxput', 'oxppu')
+$Global:OX_CORE_PLUGINS = @('oxps', 'oxput', 'oxpnw')
 
 ForEach ($core_plugin in $Global:OX_CORE_PLUGINS) {
     . $Global:OX_OXYGEN.$($core_plugin)
