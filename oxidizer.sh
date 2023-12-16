@@ -107,43 +107,6 @@ OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
 # Oxidizer Management
 ##########################################################
 
-# update all packages
-up_all() {
-    for obj in "${OX_UPDATE_PROG[@]}"; do
-        eval "up_$obj"
-    done
-}
-
-# backup package lists
-back_all() {
-    for obj in "${OX_BACKUP_PROG[@]}"; do
-        eval "back_$obj"
-    done
-}
-
-# oxidize configurations
-oxall() {
-    for obj in "${OX_OXIDIZE_FILE[@]}"; do
-        oxf "$obj"
-    done
-}
-
-# reduce configurations
-rdall() {
-    for obj in "${OX_REDUCE_FILE[@]}"; do
-        rdf "$obj"
-    done
-}
-
-iiox() {
-    printf "📦 Installing Required packages...\n"
-    cat "${OXIDIZER}"/defaults/Brewfile.txt | while read -r pkg; do
-        if test ! "$(command -v "$pkg")"; then
-            brew install "$pkg"
-        fi
-    done
-}
-
 # update Oxidizer
 upox() {
     cd "${OXIDIZER}" || exit

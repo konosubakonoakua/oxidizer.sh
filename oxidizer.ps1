@@ -83,34 +83,6 @@ $Global:OX_OXIDE.bkps = "$env:OX_BACKUP\shell\Profile.ps1"
 # Oxidizer Management
 ##########################################################
 
-# update packages
-function up_all {
-    ForEach ($obj in $Global:OX_UPDATE_PROG) {
-        Invoke-Expression up_$obj
-    }
-}
-
-# backup packages lists
-function back_all {
-    ForEach ($obj in $Global:OX_BACKUP_PROG) {
-        Invoke-Expression back_$obj
-    }
-}
-
-# export configurations
-function oxall {
-    ForEach ($obj in $Global:OX_OXIDIZE_FILE) {
-        oxf $obj
-    }
-}
-
-# export configurations
-function rdall {
-    ForEach ($obj in $Global:OX_REDUCE_FILE) {
-        rdf $obj
-    }
-}
-
 # initialize Oxidizer
 function iiox {
     echo "Installing Required packages...`n"

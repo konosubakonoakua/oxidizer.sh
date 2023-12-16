@@ -46,10 +46,6 @@ $Global:OX_PLUGINS = @(
 # select initial and backup configurations
 ##########################################################
 
-# options: scoop, conda, vscode, julia, texlive, node
-$Global:OX_UPDATE_PROG = @('scoop')
-$Global:OX_BACKUP_PROG = @('scoop')
-
 # backup file path
 $env:OX_BACKUP = "$HOME\Documents\backup"
 
@@ -76,24 +72,6 @@ $Global:OX_PROXY = @{
     'm' = '7897'
     'v' = '1080'
 }
-
-##########################################################
-# select oxidize and reduce configurations
-##########################################################
-
-# files to be exported to backup folder
-# ox: custom.sh of Oxidizer
-# rs: cargo's env
-# pu: pueue's config.yml
-# pua: pueue's aliases.yml
-# jl: julia's startup.jl
-# vs: vscode's settings.json
-# vsk: vscode's keybindings.json
-# vss_: vscode's snippets folder
-$Global:OX_OXIDIZE_FILE = @('ox')
-
-# files to be import from backup folder
-$Global:OX_REDUCE_FILE = @("ox")
 
 ##########################################################
 # pueue settings

@@ -47,13 +47,6 @@ OX_PLUGINS=(
 # select software configuration objects
 ##########################################################
 
-# options: brew, conda, vscode, julia, texlive, node
-declare -a OX_UPDATE_PROG
-export OX_UPDATE_PROG=(brew)
-
-declare -a OX_BACKUP_PROG
-export OX_BACKUP_PROG=(brew)
-
 # backup file path
 export OX_BACKUP=${HOME}/Documents/backup
 
@@ -79,26 +72,6 @@ declare -A OX_PROXY=(
     [m]=7897
     [v]=1080
 )
-
-##########################################################
-# select oxidize and reduce settings
-##########################################################
-
-# files to be exported to backup folder
-# ox: custom.sh of Oxidizer
-# rs: cargo's env
-# pu: pueue's config.yml
-# pua: pueue's aliases.yml
-# jl: julia's startup.jl
-# vs: vscode's settings.json
-# vsk: vscode's keybindings.json
-# vss_: vscode's snippets folder
-declare -a OX_OXIDIZE_FILE
-export OX_OXIDIZE_FILE=(ox)
-
-# files to be import from backup folder
-declare -a OX_REDUCE_FILE
-export OX_REDUCE_FILE=(ox)
 
 ##########################################################
 # brew settings
