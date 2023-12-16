@@ -23,7 +23,7 @@ declare -A OX_OXYGEN=(
     [oxpjl]=${OXIDIZER}/oxplugins-zsh/ox-julia.sh
     [oxpjn]=${OXIDIZER}/oxplugins-zsh/ox-jupyter.sh
     [oxpnj]=${OXIDIZER}/oxplugins-zsh/ox-node.sh
-    [oxpnt]=${OXIDIZER}/oxplugins-zsh/ox-notes.sh
+    [oxpns]=${OXIDIZER}/oxplugins-zsh/ox-notes.sh
     [oxpnw]=${OXIDIZER}/oxplugins-zsh/ox-network.sh
     [oxppd]=${OXIDIZER}/oxplugins-zsh/ox-podman.sh
     [oxppu]=${OXIDIZER}/oxplugins-zsh/ox-pueue.sh
@@ -67,7 +67,11 @@ declare -a OX_PLUGINS
 . "${OX_ELEMENT[ox]}"
 
 for plugin in "${OX_PLUGINS[@]}"; do
-    . "${OX_OXYGEN[$plugin]}"
+    if [ -f "${OX_OXYGEN[$plugin]}" ]; then
+        . "${OX_OXYGEN[$plugin]}"
+    else
+        echo "Plugin not found: ${plugin}"
+    fi
 done
 
 declare -a OX_CORE_PLUGINS

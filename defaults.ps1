@@ -29,7 +29,7 @@ $env:EDITOR_T = 'vi'
 # oxpjl: ox-julia
 # oxpjn: ox-jupyter
 # oxpnj: ox-nodejs
-# oxpnt: ox-notes
+# oxpns: ox-notes
 # oxppu: ox-pueue
 # oxprb: ox-ruby
 # oxprs: ox-rust
