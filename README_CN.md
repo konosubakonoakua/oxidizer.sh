@@ -158,7 +158,7 @@ Oxidizer 通过 Homebrew 或 Scoop 管理包和软件，以绕过管理员权限
   - 氧化文件：在 `$OX_ELEMENT` 中覆盖对应的 `$OX_OXIDE` 文件配置
 - `rdf` (reduce file)
   - 还原文件：在 `$OX_OXIDE` 中覆盖对应的 `$OX_ELEMENT` 文件配置
-- `clyf` (catalyze file)
+- `clzf` (catalyze file)
   - 催化文件：在 `$OX_OXYGEN` 中覆盖对应的 `$OX_ELEMENT` 文件配置
 - `ppgf` (propagate file)
   - 传播文件：在 `$OX_OXYGEN` 中覆盖对应的 `$OX_OXIDE` 文件配置
