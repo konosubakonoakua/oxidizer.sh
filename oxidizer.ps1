@@ -19,7 +19,6 @@ $Global:OX_OXYGEN = @{
     'oxpdk' = "$env:OXIDIZER\oxplugins-pwsh\ox-docker.ps1"
     'oxpes' = "$env:OXIDIZER\oxplugins-pwsh\ox-espanso.ps1"
     'oxpfm' = "$env:OXIDIZER\oxplugins-pwsh\ox-formats.ps1"
-    'oxphx' = "$env:OXIDIZER\oxplugins-pwsh\ox-helix.ps1"
     'oxpjl' = "$env:OXIDIZER\oxplugins-pwsh\ox-julia.ps1"
     'oxpjn' = "$env:OXIDIZER\oxplugins-pwsh\ox-jupyter.ps1"
     'oxpnj' = "$env:OXIDIZER\oxplugins-pwsh\ox-node.ps1"

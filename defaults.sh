@@ -26,7 +26,6 @@ export EDITOR_T='vi'
 # oxpct: ox-container
 # oxpes: ox-espanso
 # oxpfm: ox-format
-# oxphx: ox-helix
 # oxpjl: ox-julia
 # oxpjn: ox-jupyter
 # oxpnj: ox-nodejs
@@ -40,6 +39,7 @@ export EDITOR_T='vi'
 # oxpzj: ox-zellij
 
 OX_PLUGINS=(
+    oxpg
     oxpwr
 )
 
@@ -63,8 +63,10 @@ OX_OXIDE[bkwz]=${OX_BACKUP}/terminal/wezterm.lua
 # OX_OXIDE[bkal]=${OX_BACKUP}/terminal/alacritty.yml
 
 ##########################################################
-# register proxy ports
+# proxy and mirror settings
 ##########################################################
+
+# to use proxy and mirrors for faster download, don't forget to add `oxpnw` in `OX_PLUGINS`
 
 # c: clash, m: clash-meta, v: v2ray
 declare -A OX_PROXY=(
@@ -73,18 +75,19 @@ declare -A OX_PROXY=(
     [v]=1080
 )
 
+# use `mrb [key]` for brew mirror, use `mrbq` for quit brew mirror
+# declare -A MIRRORS=(
+#     [bts]="mirrors.tuna.tsinghua.edu.cn/git/homebrew"
+#     [bzk]="mirrors.ustc.edu.cn/git/homebrew"
+# )
+
 ##########################################################
 # brew settings
 ##########################################################
 
+export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ENV_HINTS=1
-export HOMEBREW_CLEANUP_MAX_AGE_DAYS="7"
-
-# brew mirrors for faster download, use `bmr` to use
-# declare -A HOMEBREW_MIRROR=(
-#     [ts]="mirrors.tuna.tsinghua.edu.cn/git/homebrew"
-#     [zk]="mirrors.ustc.edu.cn/git/homebrew"
-# )
+export HOMEBREW_CLEANUP_MAX_AGE_DAYS="3"
 
 # predefined brew services
 # set the length of key <= 3

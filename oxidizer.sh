@@ -19,7 +19,6 @@ declare -A OX_OXYGEN=(
     [oxpct]=${OXIDIZER}/oxplugins-zsh/ox-container.sh
     [oxpes]=${OXIDIZER}/oxplugins-zsh/ox-espanso.sh
     [oxpfm]=${OXIDIZER}/oxplugins-zsh/ox-formats.sh
-    [oxphx]=${OXIDIZER}/oxplugins-zsh/ox-helix.sh
     [oxpjl]=${OXIDIZER}/oxplugins-zsh/ox-julia.sh
     [oxpjn]=${OXIDIZER}/oxplugins-zsh/ox-jupyter.sh
     [oxpnj]=${OXIDIZER}/oxplugins-zsh/ox-node.sh

@@ -114,7 +114,7 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 | [Scoop](https://github.com/ScoopInstaller/Scoop)  |  ❌   |  ❌   |   ✅    |     ✅     |
 |     [Pueue](https://github.com/Nukesor/pueue)     |  ✅   |  ✅   |   ✅    |     ✅     |
 |                      System                       |  ✅¹  |  ✅   |   ✅    |     ✅     |
-|                      Utility                      |  ✅   |  ✅   |   ✅    |     ✅     |
+|                   File Utility                    |  ✅   |  ✅   |   ✅    |     ✅     |
 |            [Git](https://git-scm.com/)            |  ✅   |  ✅   |   ✅    |            |
 | [Bitwarden](https://github.com/bitwarden/clients) |  🕒   |  🕒   |   🕒    |            |
 |    [Conan](https://github.com/conan-io/conan)     |  ✅   |  ✅   |   ✅    |            |
@@ -127,10 +127,10 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 |        [TeXLive](https://tug.org/texlive/)        |  ✅   |  ✅   |   ✅    |            |
 |   [VSCode](https://github.com/microsoft/vscode)   |  ✅   |  ✅   |   ✅    |            |
 |                    Container²                     |  ✅   |  ✅   |   ✅    |            |
-|  [Helix](https://github.com/helix-editor/helix)   |  🕒   |  🕒   |   🕒    |            |
-|                      Formats                      |  🕒   |  🕒   |   🕒    |            |
+|                Formats（格式转换）                |  🕒   |  🕒   |   🕒    |            |
+|               Network（代理与镜像）               |  🕒   |  🕒   |   🕒    |            |
 |                      Weather                      |  🕒   |  🕒   |   🕒    |            |
-|                       Notes                       |  🕒   |  🕒   |   🕒    |            |
+|                Notes （Obsidian）                 |  🕒   |  🕒   |   🕒    |            |
 
 ✅：完整功能
 🚧：部分功能
@@ -185,8 +185,6 @@ Oxidizer 通过 Homebrew 或 Scoop 管理包和软件，以绕过管理员权限
 |    espanso     |  `es`  |        `default.yml`         |
 |    espanso     | `esb`  |       `match/base.yml`       |
 |    espanso     | `esx_` |       `match/packages`       |
-|     helix      |  `hx`  |        `config.toml`         |
-|     helix      | `hxl`  |       `languages.toml`       |
 |     julia      |  `jl`  |         `startup.jl`         |
 |     julia      | `jlx`  |       `julia-pkgs.txt`       |
 |     julia      | `jlp`  |        `Project.toml`        |

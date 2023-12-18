@@ -38,6 +38,7 @@ $env:EDITOR_T = 'vi'
 # oxpwr: ox-weather
 
 $Global:OX_PLUGINS = @(
+    'oxpg',
     'oxpwr',
     'oxpvs'
 )

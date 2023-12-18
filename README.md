@@ -128,7 +128,7 @@ The plugins are hosted in [OxPlugins-Zsh](https://github.com/ivaquero/oxplugins-
 | [Scoop](https://github.com/ScoopInstaller/Scoop)  |  ❌   |  ❌   |   ✅    |    ✅     |
 |     [Pueue](https://github.com/Nukesor/pueue)     |  ✅   |  ✅   |   ✅    |    ✅     |
 |                      System                       |  ✅¹  |  ✅   |   ✅    |    ✅     |
-|                      Utility                      |  ✅   |  ✅   |   ✅    |    ✅     |
+|     File Utility (backup/import config, etc.)     |  ✅   |  ✅   |   ✅    |    ✅     |
 |            [Git](https://git-scm.com/)            |  ✅   |  ✅   |   ✅    |           |
 | [Bitwarden](https://github.com/bitwarden/clients) |  🕒   |  🕒   |   🕒    |           |
 |    [Conan](https://github.com/conan-io/conan)     |  ✅   |  ✅   |   ✅    |           |
@@ -141,10 +141,10 @@ The plugins are hosted in [OxPlugins-Zsh](https://github.com/ivaquero/oxplugins-
 |        [TeXLive](https://tug.org/texlive/)        |  ✅   |  ✅   |   ✅    |           |
 |   [VSCode](https://github.com/microsoft/vscode)   |  ✅   |  ✅   |   ✅    |           |
 |                    Container²                     |  ✅   |  ✅   |   ✅    |           |
-|  [Helix](https://github.com/helix-editor/helix)   |  🕒   |  🕒   |   🕒    |           |
-|                      Formats                      |  🕒   |  🕒   |   🕒    |           |
+|               Formats (conversion)                |  🕒   |  🕒   |   🕒    |           |
+|            Network (proxy and mirror)             |  🕒   |  🕒   |   🕒    |           |
 |                      Weather                      |  🕒   |  🕒   |   🕒    |           |
-|                       Notes                       |  🕒   |  🕒   |   🕒    |           |
+|                 Notes (obsidian)                  |  🕒   |  🕒   |   🕒    |           |
 
 ✅: complete functionality
 🚧: partial functionality
@@ -199,8 +199,6 @@ The table below lists the information of specific configuration files:
 |    espanso     |     `es`     |        `default.yml`         |
 |    espanso     |    `esb`     |       `match/base.yml`       |
 |    espanso     |    `esx_`    |       `match/packages`       |
-|     helix      |     `hx`     |        `config.toml`         |
-|     helix      |    `hxl`     |       `languages.toml`       |
 |     julia      |     `jl`     |         `startup.jl`         |
 |     julia      |    `jlx`     |       `julia-pkgs.txt`       |
 |     julia      |    `jlp`     |        `Project.toml`        |
