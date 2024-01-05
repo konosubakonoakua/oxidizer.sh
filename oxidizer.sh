@@ -74,7 +74,9 @@ for plugin in "${OX_PLUGINS[@]}"; do
 done
 
 declare -a OX_CORE_PLUGINS
-OX_CORE_PLUGINS=(oxpb oxput oxpnw)
+if [[ $(uname) = "Darwin" || $(uname) = "Linux" ]]; then
+    OX_CORE_PLUGINS=(oxpb oxput oxpnw)
+fi
 
 # load core plugins
 for core_plugin in "${OX_CORE_PLUGINS[@]}"; do
