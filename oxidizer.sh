@@ -60,6 +60,9 @@ case $(uname -a) in
 *Ubuntu* | *Debian* | *WSL*)
     . "${OX_OXYGEN[oxpd]}"
     ;;
+*MINGW*)
+    . "${OX_OXYGEN[oxpw]}"
+    ;;
 esac
 
 # load custom plugins
