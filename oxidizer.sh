@@ -76,6 +76,8 @@ done
 declare -a OX_CORE_PLUGINS
 if [[ $(uname) = "Darwin" || $(uname) = "Linux" ]]; then
     OX_CORE_PLUGINS=(oxpb oxput oxpnw)
+else
+    OX_CORE_PLUGINS=(oxput oxpnw)
 fi
 
 # load core plugins
