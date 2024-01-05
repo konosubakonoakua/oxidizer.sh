@@ -12,6 +12,7 @@ declare -A OX_OXYGEN=(
     [oxpm]=${OXIDIZER}/oxplugins-zsh/ox-macos.sh
     [oxpd]=${OXIDIZER}/oxplugins-zsh/ox-debians.sh
     [oxpb]=${OXIDIZER}/oxplugins-zsh/ox-brew.sh
+    [oxps]=${OXIDIZER}/oxplugins-zsh/ox-scoop.sh
     [oxpg]=${OXIDIZER}/oxplugins-zsh/ox-git.sh
     [oxpc]=${OXIDIZER}/oxplugins-zsh/ox-conda.sh
     [oxpbw]=${OXIDIZER}/oxplugins-zsh/ox-bitwarden.sh
