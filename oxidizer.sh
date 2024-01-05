@@ -11,6 +11,7 @@ declare -A OX_OXYGEN=(
     [oxwz]=${OXIDIZER}/defaults/wezterm.lua
     [oxpm]=${OXIDIZER}/oxplugins-zsh/ox-macos.sh
     [oxpd]=${OXIDIZER}/oxplugins-zsh/ox-debians.sh
+    [oxpw]=${OXIDIZER}/oxplugins-zsh/ox-windows.sh
     [oxpb]=${OXIDIZER}/oxplugins-zsh/ox-brew.sh
     [oxps]=${OXIDIZER}/oxplugins-zsh/ox-scoop.sh
     [oxpg]=${OXIDIZER}/oxplugins-zsh/ox-git.sh
@@ -99,8 +100,8 @@ case ${SHELL} in
     OX_OXIDE[bkzs]=${OX_BACKUP}/shell/.zshrc
     ;;
 *bash)
-    OX_OXIDE[bs]=${HOME}/.bash_profile
-    OX_OXIDE[bshst]=${HOME}/.bash_history
+    OX_ELEMENT[bs]=${HOME}/.bash_profile
+    OX_ELEMENT[bshst]=${HOME}/.bash_history
     OX_OXIDE[bkbs]=${OX_BACKUP}/shell/.bash_profile
     ;;
 esac
