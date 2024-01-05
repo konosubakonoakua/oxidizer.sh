@@ -54,13 +54,19 @@ export OX_BACKUP=${HOME}/Documents/backup
 OX_OXIDE[bkox]=${OX_BACKUP}/shell/custom.sh
 # OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
 
-# system file
-OX_ELEMENT[wz]=${HOME}/.config/wezterm/wezterm.lua
-# OX_ELEMENT[al]=${HOME}/.config/alacritty/alacritty.yml
-
 # terminal
+case $(uname) in
+*Darwin* | *Ubuntu* | *Debian* | *WSL*)
+    OX_ELEMENT[wz]=${HOME}/.config/wezterm/wezterm.lua
+    ;;
+*MINGW*)
+    OX_ELEMENT[wz]=${HOME}/.wezterm.lua
+    if [[ -z "${OX_ELEMENT[wz]}" ]]; then
+        touch "${OX_ELEMENT[wz]}"
+    fi
+    ;;
+esac
 OX_OXIDE[bkwz]=${OX_BACKUP}/terminal/wezterm.lua
-# OX_OXIDE[bkal]=${OX_BACKUP}/terminal/alacritty.yml
 
 ##########################################################
 # proxy and mirror settings

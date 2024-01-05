@@ -58,10 +58,7 @@ if ( Test-Path "$HOME\.wezterm.lua" ) {
     $Global:OX_ELEMENT.wz = "$HOME\.wezterm.lua"
     NewNew-Item -Path $Global:OX_ELEMENT.wz -ItemType File
 }
-# $Global:OX_ELEMENT.al = "$env:APPDATA\alacritty\alacritty.yml"
-
 $Global:OX_OXIDE.bkwz = "$env:OX_BACKUP\terminal\wezterm.lua"
-# $Global:OX_OXIDE.bkal = "$env:OX_BACKUP\terminal\alacritty.yml"
 
 ##########################################################
 # register proxy ports

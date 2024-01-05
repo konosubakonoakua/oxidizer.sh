@@ -93,6 +93,7 @@ sed -i.bak "s|.* OX_STARTUP = .*|$Global:OX_STARTUP=1|" "$env:OXIDIZER\custom.ps
 ###################################################
 
 git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git $env:OXIDIZER\oxplugins-pwsh
+git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git $env:OXIDIZER\oxplugins-zsh
 
 . $PROFILE
 
