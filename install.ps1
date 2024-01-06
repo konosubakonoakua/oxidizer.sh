@@ -58,23 +58,22 @@ ForEach ( $pkg in $pkgs ) {
 # Update PowerShell Settings
 ###################################################
 
-$OX_SHELL = "$HOME/.bash_profile"
+$env:OX_SHELL = "$HOME/.bash_profile"
 
-Write-Output "Adding Oxidizer into $OX_SHELL..."
+Write-Output "Adding Oxidizer into $env:OX_SHELL..."
 
 if (!(Test-Path -Path $OX_SHELL)) {
-    New-Item -ItemType File -Force -Path $OX_SHELL
+    New-Item -ItemType File -Force -Path $env:OX_SHELL
 }
 
-Write-Output '# Oxidizer' >> $OX_SHELL
+Write-Output '# Oxidizer' >> $env:OX_SHELL
 
 if ([string]::IsNullOrEmpty($env:OXIDIZER)) {
-    Write-Output '
-        export OXIDIZER=${HOME}/oxidizer' >> $OX_SHELL
-    Write-Output 'source ${OXIDIZER}/oxidizer.sh' >> $OX_SHELL
+    Write-Output 'export OXIDIZER=${HOME}/oxidizer' >> $env:OX_SHELL
+    Write-Output 'source ${OXIDIZER}/oxidizer.sh' >> $env:OX_SHELL
 }
 else {
-    Write-Output "source '${OXIDIZER}'/oxidizer.sh" >> $OX_SHELL
+    Write-Output 'source ${OXIDIZER}/oxidizer.sh' >> $env:OX_SHELL
 }
 
 Write-Output "Adding Custom settings..."
