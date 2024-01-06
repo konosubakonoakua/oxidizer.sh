@@ -118,7 +118,7 @@ upox() {
 
     if [ ! -d "${OXIDIZER}"/plugins ]; then
         printf "\n\nCloning Oxidizer Plugins...\n"
-        git clone --depth=1 https://github.com/ivaquero/plugins.git
+        git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git "${OXIDIZER}"/plugins
     else
         printf "\n\nUpdating Oxidizer Plugins...\n"
         cd "${OXIDIZER}"/plugins || exit
