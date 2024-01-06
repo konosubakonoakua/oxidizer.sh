@@ -5,7 +5,7 @@
 ![code size](https://img.shields.io/github/languages/code-size/ivaquero/oxidizer.svg)
 ![repo size](https://img.shields.io/github/repo-size/ivaquero/oxidizer.svg)
 
-Simple & Extensible Dotfile Manager using Rust Toolchains (PRs and Forks are welcome !)
+Simple & Extensible Dotfile Manager Unifying Your Terminal Operations (PRs and Forks are welcome !)
 
 <p align="left">
 <a href="README.md">English</a> |
@@ -14,7 +14,7 @@ Simple & Extensible Dotfile Manager using Rust Toolchains (PRs and Forks are wel
 
 Let's Oxidize Development Environments
 
-![oxidizer](https://raw.githubusercontent.com/ivaquero/blog-bio/master/tutorials/images/cmd/oxidizer.png)
+![oxidizer](https://raw.githubusercontent.com/ivaquero/backup/main/docs/oxidizer.png)
 
 ## 1. Get Started
 
@@ -52,7 +52,7 @@ $env:scoop_mirror = 1
 
 > For Cmder users, you need to remove the `-Options ReadOnly` from `Set-Item -Path function:\prompt -Value $Prompt -Options ReadOnly` in the last line of `%CMDER_ROOT%\vendor\profile.ps1`.
 
-After installation, you might personalize your preference in `custom.sh` or `custom.ps1`, check [defaults.sh](https://github.com/ivaquero/oxidizer/blob/master/defaults.sh) or [defaults.ps1](https://github.com/ivaquero/oxidizer/blob/master/defaults.ps1). Open `custom.sh` or `custom.ps1` by following command
+After installation, you might personalize your preference in `custom.sh`, check [defaults.sh](https://github.com/ivaquero/oxidizer/blob/master/defaults.sh). Open `custom.sh` or `custom.ps1` by following command
 
 ```bash
 edf ox
@@ -75,29 +75,30 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
 > ☑️ means required in the installation.
 
 - coreutils
-  - [x] Use [uutils-coreutils](https://github.com/uutils/coreutils) instead of `coreutils`
+  - [x] Use [uutils-coreutils](https://github.com/uutils/coreutils) instead of `coreutils` (only required on Windows)
   - [x] Use [bat](https://github.com/sharkdp/bat) instead of `cat`
   - [x] Use [lsd](https://github.com/Peltoche/lsd) instead of `ls`
 - non-coreutils
   - [x] Use [fd](https://github.com/sharkdp/fd) instead of `find`
-  - [x] Use [hyperfine](https://github.com/sharkdp/hyperfine) instead of `time`
-  - [x] Use [ripgrep](https://github.com/BurntSushi/ripgrep) instead of `grep`
-  - [x] Use [sd](https://github.com/chmln/sd) instead of `sed`
-  - [x] Use [tealdeer](https://github.com/dbrgn/tealdeer) instead of `tldr` or `man`
   - [x] Use [zoxide](https://github.com/ajeetdsouza/zoxide) instead of `cd` or `z`
+  - [x] Use [ripgrep](https://github.com/BurntSushi/ripgrep) instead of `grep`
   - [ ] Use [dust](https://github.com/bootandy/dust) instead of `du`
+  - [ ] Use [hyperfine](https://github.com/sharkdp/hyperfine) instead of `time`
+  - [ ] Use [procs](https://github.com/dalance/procs) instead of `ps`
+  - [ ] Use [starship](https://github.com/starship/starship) instead of `powerline10k` or `ohmyposh`
+  - [ ] Use [tealdeer](https://github.com/dbrgn/tealdeer) instead of `tldr` or `man`
   - [ ] Use [tokei](https://github.com/XAMPPRocky/tokei) instead of `cloc`
   - [ ] Use [tre](https://github.com/dduan/tre) instead of `tree`
-  - [ ] Use [starship](https://github.com/starship/starship) instead of `powerline10k` or `ohmyposh`
 
 > `Nushell` is a cross-platform written in Rust, but it doesn't support dynamical path for the moment.
 
 ### 2.2. TUI Tools Replacement
 
-- [x] Use [bottom](https://github.com/ClementTsang/bottom) instead of `top` or `htop`
 - [x] Use [gitui](https://github.com/extrawurst/gitui) instead of `lazygit`
-- [ ] Use [helix](https://github.com/helix-editor/helix) instead of `neovim`
-- [ ] Use [zellij](https://github.com/zellij-org/zellij) instead of `tmux` (Not support Windows yet)
+- [ ] Use [bottom](https://github.com/ClementTsang/bottom) instead of `top` or `htop`
+- [ ] Use [yazi](https://github.com/sxyazi/yazi) instead of `range`
+- [ ] Use [helix](https://github.com/helix-editor/helix) instead of `vim` (Not drop-in)
+- [ ] Use [zellij](https://github.com/zellij-org/zellij) instead of `tmux` (Not supported on Windows)
 
 ### 2.3. GUI Tools Replacement
 
@@ -108,8 +109,7 @@ Oxidizer is originally designed for **non-administrator** users. It saves your t
 ### 2.4. Other Useful Rust Tools
 
 - [x] [ouch](https://github.com/ouch-org/ouch): Painless compression and decompression tool
-- [x] [pueue](https://github.com/Nukesor/pueue): Command-line task management tool for sequential and parallel execution of long-running tasks.
-- [ ] [espanso](https://github.com/espanso/espanso): Text Expander written in Rust (try it for fun!)
+- [ ] [pueue](https://github.com/Nukesor/pueue): Command-line task management tool for sequential and parallel execution of long-running tasks
 - [ ] [kondo](https://github.com/tbillington/kondo): A tool to clean dependencies and build artefacts from your projects.
 - [ ] [navi](https://github.com/denisidoro/navi): An interactive cheatsheet tool for the command-line
 - [ ] [onefetch](https://github.com/o2sh/onefetch): Command-line Git information tool
@@ -120,29 +120,33 @@ Oxidizer is designed to be extensible, you can personalize `OX_PLUGINS` in `cust
 
 Of course, you are allowed to write your own plugins, see [Writing A Plugin](https://github.com/ivaquero/oxidizer/blob/master/docs/plugins.md) for details.
 
-The plugins are hosted in [OxPlugins-Zsh](https://github.com/ivaquero/oxplugins-zsh) and [OxPlugins-PowerShell](https://github.com/ivaquero/oxplugins-pwsh)
+The plugins are hosted in [OxPlugins](https://github.com/ivaquero/oxplugins-zsh)
+
+> [OxPlugins-PowerShell](https://github.com/ivaquero/oxplugins-pwsh) has stopped maintenance.
 
 |                      Plugin                       | Linux | macOS | Windows | Autoload? |
 | :-----------------------------------------------: | :---: | :---: | :-----: | :-------: |
-|     [Brew](https://github.com/Homebrew/brew)      |   ✅   |   ✅   |    ❌    |     ✅     |
-| [Scoop](https://github.com/ScoopInstaller/Scoop)  |   ❌   |   ❌   |    ✅    |     ✅     |
-|     [Pueue](https://github.com/Nukesor/pueue)     |   ✅   |   ✅   |    ✅    |     ✅     |
-|                      System                       |  ✅¹   |   ✅   |    ✅    |     ✅     |
-|                      Utility                      |   ✅   |   ✅   |    ✅    |     ✅     |
-|            [Git](https://git-scm.com/)            |   ✅   |   ✅   |    ✅    |           |
-| [Bitwarden](https://github.com/bitwarden/clients) |   🕒   |   🕒   |    🕒    |           |
-|    [Conan](https://github.com/conan-io/conan)     |   ✅   |   ✅   |    ✅    |           |
-|      [Conda](https://github.com/conda/conda)      |   ✅   |   ✅   |    ✅    |           |
-|    [Julia](https://github.com/JuliaLang/julia)    |   ✅   |   ✅   |    🚧    |           |
-|   [Jupyter](https://github.com/jupyter/jupyter)   |   ✅   |   ✅   |    ✅    |           |
-|      [Node](https://github.com/nodejs/node)       |   ✅   |   ✅   |    🚧    |           |
-|     [Rust](https://github.com/rust-lang/rust)     |   ✅   |   ✅   |    ✅    |           |
-|   [Espanso](https://github.com/espanso/espanso)   |   ✅   |   ✅   |    ✅    |           |
-|        [TeXLive](https://tug.org/texlive/)        |   ✅   |   ✅   |    ✅    |           |
-|   [VSCode](https://github.com/microsoft/vscode)   |   ✅   |   ✅   |    ✅    |           |
-|                    Container²                     |   ✅   |   ✅   |    ✅    |           |
-|                      Formats                      |   🕒   |   🕒   |    🕒    |           |
-|  [Helix](https://github.com/helix-editor/helix)   |   🕒   |   🕒   |    🕒    |           |
+|     [Brew](https://github.com/Homebrew/brew)      |  ✅   |  ✅   |   ❌    |    ✅     |
+| [Scoop](https://github.com/ScoopInstaller/Scoop)  |  ❌   |  ❌   |   ✅    |    ✅     |
+|     [Pueue](https://github.com/Nukesor/pueue)     |  ✅   |  ✅   |   ✅    |    ✅     |
+|                      System                       |  ✅¹  |  ✅   |   ✅    |    ✅     |
+|     File Utility (backup/import config, etc.)     |  ✅   |  ✅   |   ✅    |    ✅     |
+|            [Git](https://git-scm.com/)            |  ✅   |  ✅   |   ✅    |           |
+| [Bitwarden](https://github.com/bitwarden/clients) |  🕒   |  🕒   |   🕒    |           |
+|    [Conan](https://github.com/conan-io/conan)     |  ✅   |  ✅   |   ✅    |           |
+|      [Conda](https://github.com/conda/conda)      |  ✅   |  ✅   |   ✅    |           |
+|    [Julia](https://github.com/JuliaLang/julia)    |  ✅   |  ✅   |   🚧    |           |
+|   [Jupyter](https://github.com/jupyter/jupyter)   |  ✅   |  ✅   |   ✅    |           |
+|      [Node](https://github.com/nodejs/node)       |  ✅   |  ✅   |   ✅    |           |
+|     [Rust](https://github.com/rust-lang/rust)     |  ✅   |  ✅   |   ✅    |           |
+|   [Espanso](https://github.com/espanso/espanso)   |  ✅   |  ✅   |   ✅    |           |
+|        [TeXLive](https://tug.org/texlive/)        |  ✅   |  ✅   |   ✅    |           |
+|   [VSCode](https://github.com/microsoft/vscode)   |  ✅   |  ✅   |   ✅    |           |
+|                    Container²                     |  ✅   |  ✅   |   ✅    |           |
+|               Formats (conversion)                |  🕒   |  🕒   |   🕒    |           |
+|            Network (proxy and mirror)             |  🕒   |  🕒   |   🕒    |           |
+|                      Weather                      |  🕒   |  🕒   |   🕒    |           |
+|                 Notes (obsidian)                  |  🕒   |  🕒   |   🕒    |           |
 
 ✅: complete functionality
 🚧: partial functionality
@@ -157,7 +161,7 @@ Oxidizer uses Homebrew or Scoop to manage packages and software programs to bypa
 
 ## 3. File Management
 
-![design](https://raw.githubusercontent.com/ivaquero/backup/master/design.png)
+![design](https://raw.githubusercontent.com/ivaquero/backup/master/docs/design.drawio.png)
 
 - `frf`
   - refresh file by `source`
@@ -166,16 +170,18 @@ Oxidizer uses Homebrew or Scoop to manage packages and software programs to bypa
 - `brf`
   - file: browse by `bat` / `cat`
   - folder: browse by `lsd` / `ls`
-- `ipf`
-  - overwrite system configurations by customized (backup) files
-- `epf`
-  - export system configurations to back up folder
-- `iif`
-  - overwrite system configurations in by Oxidizer defaults.
+- `oxf`
+  - oxidize file: backup configuration file to backup folder
+- `rdf`
+  - reduce file: owerwrite configuation file by backup (customized) file
+- `clzf`
+  - catalyze file: owerwrite configuartion file by Oxidizer defaults
+- `ppgf`
+  - propagate file: backup Oxidizer defaults to backup folder
 
 For example, if you want to edit `~/.zshrc`, you can type `edf zs`.
 
-When you use `epf zs`, `~/.zshrc` will be copied and save in `$OX_BACKUP/shell` folder, where `$OX_BACKUP` is the backup path that can be personalized in `$OXIDIZER/custom.sh`. As mentioned in **Get Started**, you can open `custom.sh` simply by `edf ox`.
+When you use `oxf zs`, `~/.zshrc` will be copied and save in `$OX_BACKUP/shell` folder, where `$OX_BACKUP` is the backup path that can be personalized in `$OXIDIZER/custom.sh`. As mentioned in **Get Started**, you can open `custom.sh` simply by `edf ox`.
 
 The table below lists the information of specific configuration files:
 
@@ -193,10 +199,8 @@ The table below lists the information of specific configuration files:
 |     conan      |    `cnr`     |        `remotes.json`        |
 |     conan      |    `cnd`     |      `profiles/default`      |
 |    espanso     |     `es`     |        `default.yml`         |
-|    espanso     |    `esx`     |       `match/base.yml`       |
+|    espanso     |    `esb`     |       `match/base.yml`       |
 |    espanso     |    `esx_`    |       `match/packages`       |
-|     helix      |     `hx`     |        `config.toml`         |
-|     helix      |    `hxl`     |       `languages.toml`       |
 |     julia      |     `jl`     |         `startup.jl`         |
 |     julia      |    `jlx`     |       `julia-pkgs.txt`       |
 |     julia      |    `jlp`     |        `Project.toml`        |
@@ -220,7 +224,7 @@ The table below lists the information of specific configuration files:
 
 > `_` denotes a folder
 
-Oxidizer uses `ouch` to deal with compression and decompression, and provides with 3 shortcuts
+Oxidizer uses [ouch](https://github.com/ouch-org/ouch) to deal with compression and decompression, and provides with 3 shortcuts
 
 - `zpf`: compress file
 - `uzpf`: decompress file
@@ -228,7 +232,7 @@ Oxidizer uses `ouch` to deal with compression and decompression, and provides wi
 
 ## 4. Software Information Management
 
-`back_*` and `up_*` work for `brew`, `scoop`, `conda`, `vscode`, `julia`, `texlive`, `node`. `clean_*` works for `brew` and `conda`.
+`back_*` and `up_*` work for `brew`, `scoop`, `conda`, `vscode` (only for windows), `julia`, `texlive`, `node`. `clean_*` works for `brew` and `conda`.
 
 - `back_*`
   - file: export package/extension info into `$OX_BACKUP` folder
@@ -241,37 +245,37 @@ Oxidizer uses `ouch` to deal with compression and decompression, and provides wi
 
 Oxidizer aims to provide a unified interface for all package manager-related commands to reduce typing and memory burden of command-line users.
 
-| Suffix |   Action    | brew `b` | scoop `s` | conda `c` | npm `n` | cargo `cg` | rustup `rs` | julia `jl` | conan `cn` | tlmgr `tl` |
-| :----: | :---------: | :------: | :-------: | :-------: | :-----: | :--------: | :---------: | :--------: | :--------: | :--------: |
-|  `*h`  |    help     |    ✅     |           |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |     ✅      |     ✅      |
-| `*cf`  |   config    |    ✅     |           |     ✅     |    ✅    |            |             |            |     ✅      |            |
-| `*is`  |   install   |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |     ✅      |     ✅      |
-| `*us`  |  uninstall  |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |     ✅      |     ✅      |
-| `*up`  |   update    |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |     ✅      |     ✅      |
-| `*ups` | update self |    ✅     |     ✅     |           |         |            |             |            |            |     ✅      |
-| `*ls`  |    list     |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |            |     ✅      |
-| `*lv`  |   leaves    |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |             |     ✅      |            |            |
-| `*sc`  |   search    |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |             |            |     ✅      |            |
-| `*cl`  |    clean    |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |             |     ✅      |            |            |
-| `*if`  |    info     |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |             |            |     ✅      |     ✅      |
-| `*st`  |   status    |    ✅     |     ✅     |           |    ✅    |            |             |     ✅      |            |            |
-| `*ck`  |    check    |    ✅     |     ✅     |           |    ✅    |     ✅      |      ✅      |            |            |     ✅      |
-| `*pn`  |     pin     |    ✅     |     ✅     |           |         |            |             |     ✅      |            |            |
-| `*upn` |    unpin    |    ✅     |     ✅     |           |         |            |             |     ✅      |            |            |
-| `*dp`  |   depends   |    ✅     |     ✅     |     ✅     |         |     ✅      |             |     ✅      |     ✅      |            |
-| `*rdp` |    needs    |          |           |     ✅     |         |            |             |     ✅      |            |            |
-| `*xa`  |  add repo   |    ✅     |     ✅     |     ✅     |         |            |             |            |     ✅      |            |
-| `*xrm` | remove repo |    ✅     |     ✅     |     ✅     |         |            |             |            |     ✅      |            |
-| `*xls` |  list repo  |          |           |     ✅     |         |            |             |            |     ✅      |            |
+| Suffix |   Action    | brew `b` | scoop `s` | conda `c` | npm `n` | cargo `cg` | rustup `rs` | julia `jl` | gem `rb` | conan `cn` | tlmgr `tl` |
+| :----: | :---------: | :------: | :-------: | :-------: | :-----: | :--------: | :---------: | :--------: | :------: | :--------: | :--------: |
+|  `*h`  |    help     |    ✅    |           |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |    ✅    |     ✅     |     ✅     |
+| `*cf`  |   config    |    ✅    |           |    ✅     |   ✅    |            |             |            |          |     ✅     |            |
+| `*is`  |   install   |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |    ✅    |     ✅     |     ✅     |
+| `*us`  |  uninstall  |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |    ✅    |     ✅     |     ✅     |
+| `*up`  |   update    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |    ✅    |     ✅     |     ✅     |
+| `*ups` | update self |    ✅    |    ✅     |           |         |            |             |            |          |            |     ✅     |
+| `*ls`  |    list     |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |    ✅    |            |     ✅     |
+| `*lv`  |   leaves    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |     ✅     |          |            |            |
+| `*sc`  |   search    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |            |    ✅    |     ✅     |            |
+| `*cl`  |    clean    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |     ✅     |    ✅    |            |            |
+| `*if`  |    info     |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |            |          |     ✅     |     ✅     |
+| `*st`  |   status    |    ✅    |    ✅     |           |   ✅    |            |             |     ✅     |          |            |            |
+| `*ck`  |    check    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |            |    ✅    |            |     ✅     |
+| `*pn`  |     pin     |    ✅    |    ✅     |           |         |            |             |     ✅     |          |            |            |
+| `*upn` |    unpin    |    ✅    |    ✅     |           |         |            |             |     ✅     |          |            |            |
+| `*dp`  |   depends   |    ✅    |    ✅     |    ✅     |         |     ✅     |             |     ✅     |    ✅    |     ✅     |            |
+| `*rdp` |    needs    |          |           |    ✅     |         |            |             |     ✅     |          |            |            |
+| `*xa`  |  add repo   |    ✅    |    ✅     |    ✅     |         |            |             |            |          |     ✅     |            |
+| `*xrm` | remove repo |    ✅    |    ✅     |    ✅     |         |            |             |            |          |     ✅     |            |
+| `*xls` |  list repo  |          |           |    ✅     |         |            |             |            |          |     ✅     |            |
 
 Particularly, Oxidizer provides with two groups of experimental functions with suffix `p` for installing and downloading packages in parallel
 
-- brew: `bisp`, `biscp`, `bupp`, `bupgp`
+- brew: `bisp`, `biscp`, `bupp`
 - scoop: `sisp`, `supp`
 
 For example, when you have more than 1 packages to install, instead of using `bis [pkg1] [pkg2]` , you can use `bisp [pkg1] [pkg2]` then the packages will be downloaded and installed in parallel.
 
-Similarly, `biscp`, `bupp`, `bupgp` are the parallel version of `bisc`, `bup`, `bupg`, respectively.
+Similarly, `biscp`, `bupp`, are the parallel version of `bisc`, `bup`, respectively.
 
 Before using parallel functions, `pueue` service need to be enabled by
 
@@ -284,18 +288,18 @@ bss pu
 
 Some package managers also have functionality of project management
 
-| Suffix |   Action    | brew `b` | scoop `s` | conda `c` | npm `n` | cargo `cg` | rustup `rs` | julia `jl` | conan `cn` |
-| :----: | :---------: | :------: | :-------: | :-------: | :-----: | :--------: | :---------: | :--------: | :--------: |
-| `*ii`  | init/create |    ✅     |     ✅     |     ✅     |    ✅    |     ✅      |             |            |     ✅      |
-|  `*b`  |    build    |          |           |           |         |     ✅      |             |     ✅      |     ✅      |
-|  `*r`  |     run     |          |           |     ✅     |    ✅    |     ✅      |      ✅      |     ✅      |            |
-| `*ed`  |    edit     |    ✅     |           |           |         |            |             |            |            |
-| `*ca`  |     cat     |    ✅     |     ✅     |           |         |            |             |            |            |
-| `*ln`  |    link     |    ✅     |           |           |         |            |             |            |            |
-| `*ts`  |    test     |    ✅     |           |           |    ✅    |     ✅      |             |     ✅      |     ✅      |
-| `*au`  |    audit    |    ✅     |           |           |    ✅    |            |             |            |            |
-| `*fx`  |     fix     |    ✅     |           |           |    ✅    |     ✅      |             |            |            |
-| `*pb`  |   publish   |          |           |           |    ✅    |     ✅      |             |            |            |
+| Suffix |   Action    | brew `b` | scoop `s` | conda `c` | npm `n` | cargo `cg` | rustup `rs` | julia `jl` | gem `rb` | conan `cn` |
+| :----: | :---------: | :------: | :-------: | :-------: | :-----: | :--------: | :---------: | :--------: | :------: | :--------: |
+| `*ii`  | init/create |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |            |          |     ✅     |
+|  `*b`  |    build    |          |           |           |         |     ✅     |             |     ✅     |    ✅    |     ✅     |
+|  `*r`  |     run     |          |           |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |          |            |
+| `*ed`  |    edit     |    ✅    |           |           |         |            |             |            |          |            |
+| `*ct`  |     cat     |    ✅    |    ✅     |           |         |            |             |            |    ✅    |            |
+| `*ln`  |    link     |    ✅    |           |           |         |            |             |            |          |            |
+| `*ts`  |    test     |    ✅    |           |           |   ✅    |     ✅     |             |     ✅     |          |     ✅     |
+| `*au`  |    audit    |    ✅    |           |           |   ✅    |            |             |            |          |            |
+| `*fx`  |     fix     |    ✅    |           |           |   ✅    |     ✅     |             |            |          |            |
+| `*pb`  |   publish   |          |           |           |   ✅    |     ✅     |             |            |          |            |
 
 Some of the package managers shortcuts are included in corresponding system plugins.
 
@@ -305,22 +309,22 @@ Some of the package managers shortcuts are included in corresponding system plug
 
 | Suffix |   Action    | mas `m` | apt `a` | winget `w` | wsl `wl` |
 | :----: | :---------: | :-----: | :-----: | :--------: | :------: |
-|  `*h`  |    help     |    ✅    |    ✅    |     ✅      |    ✅     |
-| `*is`  |   install   |    ✅    |    ✅    |     ✅      |    ✅     |
-| `*us`  |  uninstall  |    ✅    |    ✅    |     ✅      |    ✅     |
-| `*up`  |   update    |    ✅    |    ✅    |     ✅      |    ✅     |
-| `*ups` | update self |         |    ✅    |     ✅      |    ✅     |
-| `*ls`  |    list     |         |    ✅    |     ✅      |    ✅     |
+|  `*h`  |    help     |   ✅    |   ✅    |     ✅     |    ✅    |
+| `*is`  |   install   |   ✅    |   ✅    |     ✅     |    ✅    |
+| `*us`  |  uninstall  |   ✅    |   ✅    |     ✅     |    ✅    |
+| `*up`  |   update    |   ✅    |   ✅    |     ✅     |    ✅    |
+| `*ups` | update self |         |   ✅    |     ✅     |    ✅    |
+| `*ls`  |    list     |         |   ✅    |     ✅     |    ✅    |
 | `*lv`  |   leaves    |         |         |            |          |
-| `*sc`  |   search    |    ✅    |    ✅    |            |          |
-| `*cl`  |    clean    |         |    ✅    |            |    ✅     |
-| `*if`  |    info     |    ✅    |    ✅    |     ✅      |          |
-| `*st`  |   status    |    ✅    |         |            |          |
-| `*ck`  |    check    |         |    ✅    |            |          |
-| `*dp`  |   depends   |         |    ✅    |            |          |
-| `*xa`  |  add repo   |         |    ✅    |     ✅      |          |
-| `*xrm` | remove repo |         |    ✅    |     ✅      |          |
-| `*xls` |  list repo  |         |    ✅    |     ✅      |          |
+| `*sc`  |   search    |   ✅    |   ✅    |            |          |
+| `*cl`  |    clean    |         |   ✅    |            |    ✅    |
+| `*if`  |    info     |   ✅    |   ✅    |     ✅     |          |
+| `*st`  |   status    |   ✅    |         |            |          |
+| `*ck`  |    check    |         |   ✅    |            |          |
+| `*dp`  |   depends   |         |   ✅    |            |          |
+| `*xa`  |  add repo   |         |   ✅    |     ✅     |          |
+| `*xrm` | remove repo |         |   ✅    |     ✅     |          |
+| `*xls` |  list repo  |         |   ✅    |     ✅     |          |
 
 ### 5.1. Homebrew
 
@@ -391,7 +395,15 @@ cls h
   - `s`: for `linux-s390x`
 - `ceep`: export environment
 
-## 6. Further Reading
+## 6. Project Management
+
+### 6.1. Git
+
+- [x] `gclhs`: delete commit history
+
+for aliases, check `.gitconfig` in `defaults` folder by `edf oxg`
+
+## 7. Further Reading
 
 - [Service Management](https://github.com/ivaquero/oxidizer/blob/master/docs/services.md)
 - [Project Management](https://github.com/ivaquero/oxidizer/blob/master/docs/projects.md)
@@ -399,11 +411,11 @@ cls h
 - [System Management](https://github.com/ivaquero/oxidizer/blob/master/docs/systems.md)
 - [Writing A Plugin](https://github.com/ivaquero/oxidizer/blob/master/docs/plugins.md)
 
-## 7. Credits
+## 8. Credits
 
 - [Mario Catuogno's Clean-macOS](https://github.com/MarioCatuogno/Clean-macOS)
 - [Mike McQuaid's dotfiles](https://github.com/MikeMcQuaid/dotfiles)
 
-## 8. License
+## 9. License
 
 This work is released under the GPL-v3 license.

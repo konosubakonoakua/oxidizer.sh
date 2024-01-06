@@ -6,34 +6,41 @@ local set_environment_variables = {}
 
 -- Shell
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    term = ''
     table.insert( launch_menu, {
         label = 'PowerShell',
-        args = { 'pwsh.exe', '-NoLogo' }
+        args = { 'powershell.exe', '-NoLogo' }
      } )
-    default_prog = { 'pwsh.exe', '-NoLogo' }
+    table.insert( launch_menu, {
+        label = "WSL",
+        args = { "wsl.exe", "--cd", "/home/" }
+     } )
+    default_prog = { 'powershell.exe', '-NoLogo' }
 elseif wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
     table.insert( launch_menu, {
-        label = 'bash',
+        label = 'Bash',
         args = { 'bash', '-l' }
      } )
     default_prog = { 'bash', '-l' }
 else
     table.insert( launch_menu, {
-        label = 'zsh',
+        label = 'Zsh',
         args = { 'zsh', '-l' }
      } )
     default_prog = { 'zsh', '-l' }
 end
 
 -- Title
-function basename( s ) return string.gsub( s, '(.*[/\\])(.*)', '%2' ) end
+function basename( s )
+    return string.gsub( s, '(.*[/\\])(.*)', '%2' )
+end
 
 wezterm.on( 'format-tab-title', function( tab, tabs, panes, config, hover, max_width )
     local pane = tab.active_pane
 
     local index = ""
-    if #tabs > 1 then index = string.format( "%d: ", tab.tab_index + 1 ) end
+    if #tabs > 1 then
+        index = string.format( "%d: ", tab.tab_index + 1 )
+    end
 
     local process = basename( pane.foreground_process_name )
 
@@ -71,11 +78,9 @@ local config = {
      },
 
     -- Font
-    font = wezterm.font_with_fallback { {
-        family = 'FiraCode Nerd Font'
-     }, 'FiraCode NF' },
+    font = wezterm.font_with_fallback { 'JetBrains Mono' },
     font_size = 16,
-    normalize_to_nfc = false,
+    freetype_load_target = "Mono",
 
     -- Tab bar
     enable_tab_bar = true,
@@ -202,22 +207,30 @@ local config = {
             ActivateTab = 8
          }
      }, {
-        key = 'n',
-        mods = 'CMD',
-        action = 'ShowTabNavigator'
+        key = 't',
+        mods = 'CTRL',
+        action = wezterm.action.SpawnTab 'CurrentPaneDomain'
      }, {
-        key = 'b',
-        mods = 'CMD',
-        action = 'ActivateLastTab'
+        key = 'w',
+        mods = 'CTRL',
+        action = wezterm.action.CloseCurrentTab {
+            confirm = true
+         }
+     }, {
+        key = 'd',
+        mods = 'CTRL',
+        action = wezterm.action.CloseCurrentPane {
+            confirm = true
+         }
      }, {
         key = 'LeftArrow',
-        mods = 'CMD',
+        mods = 'ALT|CMD',
         action = wezterm.action {
             ActivateTabRelative = -1
          }
      }, {
         key = 'RightArrow',
-        mods = 'CMD',
+        mods = 'ALT|CMD',
         action = wezterm.action {
             ActivateTabRelative = 1
          }

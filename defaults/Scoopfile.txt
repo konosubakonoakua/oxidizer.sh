@@ -1,14 +1,9 @@
 bat
-bottom
 fd
 gitui
-hyperfine
 lsd
 ouch
-pueue
 ripgrep
-sd
-tealdeer
 zoxide
-winget
+sed
 sudo

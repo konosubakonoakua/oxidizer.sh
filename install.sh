@@ -1,3 +1,4 @@
+#!/bin/bash /bin/zsh
 export OXIDIZER=${OXIDIZER:-"${HOME}/oxidizer"}
 printf "📦 Installing Oxidizer\n"
 
@@ -8,7 +9,7 @@ printf "📦 Installing Oxidizer\n"
 if test ! "$(command -v brew)"; then
     printf "📦 Homebrew not installed. Installing.\n"
     if [[ $(uname -s) = "Linux" ]] && [[ $(uname -m) = "aarch64" ]]; then
-        echo "⚠️ Oxidizer doesn't support limited Linux-son-ARM yet."
+        printf "⚠️ Oxidizer doesn't support limited Linux-son-ARM yet."
         sleep 5
         exit
     elif [[ ${BREW_CN} ]]; then
@@ -19,7 +20,7 @@ if test ! "$(command -v brew)"; then
 fi
 
 printf "⚙️ Adding Custom settings...\n"
-cp -i -v ${OXIDIZER}/defaults.sh ${OXIDIZER}/custom.sh
+cp -i -v "${OXIDIZER}"/defaults.sh "${OXIDIZER}"/custom.sh
 
 if [[ $(uname -s) = "Darwin" ]]; then
     printf "📦 Activating Homebrew on MacOS...\n"
@@ -44,16 +45,10 @@ brew tap "homebrew/bundle"
 
 printf "📦 Installing essential Oxidizer toolchains...\n"
 
-for pkg in $(cat ${OXIDIZER}/defaults/Brewfile.txt); do
+cat ${OXIDIZER}/defaults/Brewfile.txt | while read -r pkg; do
     case $pkg in
     ripgrep)
         cmd='rg'
-        ;;
-    bottom)
-        cmd='btm'
-        ;;
-    tealdear)
-        cmd='tldr'
         ;;
     zoxide)
         cmd='z'
@@ -63,9 +58,8 @@ for pkg in $(cat ${OXIDIZER}/defaults/Brewfile.txt); do
         ;;
     esac
     if test ! "$(command -v $cmd)"; then
-        brew install $pkg
+        brew install "$pkg"
     fi
-    brew install uutils-coreutils
 done
 
 ###################################################
@@ -75,8 +69,6 @@ done
 if [[ $(uname -s) = "Linux" ]]; then
     printf "📦 Adding Tap linuxbrew/fonts...\n"
     brew tap "linuxbrew/fonts"
-    printf "📦 Installing Zap to Manage AppImage Packages...\n"
-    curl https://raw.githubusercontent.com/srevinsaju/zap/main/install.sh | bash -s
 else
     printf "📦 Adding Tap homebrew/cask-fonts...\n"
     brew tap "homebrew/cask-fonts"
@@ -90,16 +82,16 @@ printf "⚙️ Configuring Shell...\n"
 
 case ${SHELL} in
 *zsh)
-    brew install zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting
+    brew install zsh-completions zsh-autosuggestions zsh-syntax-highlighting
     export OX_SHELL=${HOME}/.zshrc
     ;;
 *bash)
-    if [[ $(bash --version | head -n1 | cut -d' ' -f4 | cut -d'.' -f1) < 5 ]]; then
+    if [[ $(bash --version | head -n1 | cut -d' ' -f4 | cut -d'.' -f1) -lt 5 ]]; then
         printf "📦 Installing latest Bash...\n"
         brew install bash bash-completion
     fi
     export OX_SHELL=${HOME}/.profile
-    echo 'export BASH_SILENCE_DEPRECATION_WARNING=1' >>${OX_SHELL}
+    echo 'export BASH_SILENCE_DEPRECATION_WARNING=1' >>"${OX_SHELL}"
     ;;
 esac
 
@@ -107,44 +99,40 @@ esac
 # Inject Oxidizer
 ###################################################
 
-printf "⚙️ Adding Oxidizer into ${OX_SHELL}...\n"
+printf '⚙️ Adding Oxidizer into %s...\n' "${OX_SHELL}"
 
-echo "# Oxidizer" >>${OX_SHELL}
+echo "# Oxidizer" >>"${OX_SHELL}"
 
 if [[ -z ${OXIDIZER} ]]; then
     OXIDIZER="${HOME}/oxidizer"
-    append_str='export OXIDIZER='"${OXIDIZER}"' && source '"${OXIDIZER}"'/oxidizer.sh'
+    append_str='export OXIDIZER='${OXIDIZER}' && source '${OXIDIZER}'/oxidizer.sh'
 else
-    append_str='source '"${OXIDIZER}"'/oxidizer.sh'
+    append_str='source '${OXIDIZER}'/oxidizer.sh'
 fi
 
 echo "${append_str}" >>"${OX_SHELL}"
 
-echo "⚙️ Adding Custom settings..."
-cp ${OXIDIZER}/defaults.sh ${OXIDIZER}/custom.sh
+printf "⚙️ Adding Custom settings..."
+if [[ ! -f "${OXIDIZER}/"custom.sh ]]; then
+    cp "${OXIDIZER}"/defaults.sh "${OXIDIZER}/"custom.sh
+fi
 
 # load zoxide
-sd ".* OX_STARTUP=.*" "export OX_STARTUP=1" ${OXIDIZER}/custom.sh
-
+sed -i.bak "s|.* OX_STARTUP=.*|export OX_STARTUP=1|" "${OXIDIZER}"/custom.sh
 # set path of oxidizer
-sd "source OXIDIZER=.*" "source OXIDIZER=${OXIDIZER}/oxidizer.sh" ${OX_SHELL}
+# echo "source OXIDIZER=${OXIDIZER}/oxidizer.sh" | xargs -I '{}' sed -i.bak '' 's|source OXIDIZER=.*|{}|' ${OX_SHELL}
+# echo $(cat ${OX_SHELL} | rg -o 'source .+')
 
 ###################################################
 # Load Plugins
 ###################################################
 
-git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git
+git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git "${OXIDIZER}"/plugins
 
 ###################################################
 # Editor
 ###################################################
 
-if test ! "$(command -v nvim)"; then
-    echo "⚙️ Using Vim as Default Terminal Editor"
-    export EDITOR="vi"
-else
-    export EDITOR="nvim"
-fi
-
 printf "🎉 Oxidizer installation complete!\n"
-echo "Don't forget to restart your terminal and run \'upox\' function"
+printf "💡 Don't forget to restart your terminal and hit 'edf ox' to tweak your preferences.\n"
+printf "😀 Finally, run 'upox' function to activate the plugins. Enjoy!\n"

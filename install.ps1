@@ -3,10 +3,10 @@ if ([string]::IsNullOrEmpty($env:OXIDIZER)) {
 }
 
 if (Get-Command scoop -ErrorAction SilentlyContinue) {
-    echo "Scoop Already Installed"
+    Write-Output "Scoop Already Installed"
 }
 else {
-    echo "Scoop Not Found. Installing..."
+    Write-Output "Scoop Not Found. Installing..."
 
     $f_scoop = Join-Path $HOME "install.ps1"
 
@@ -39,74 +39,61 @@ ForEach ( $bucket in $scoopBuckets ) {
 $pkgs = cat "$env:OXIDIZER\defaults\Scoopfile.txt"
 
 ForEach ( $pkg in $pkgs ) {
-    Switch ( $pkg ) {
-        bottom { $cmd = 'btm' }
-        ripgrep { $cmd = 'rg' }
-        tealdeer { $cmd = 'tldr' }
-        zoxide { $cmd = 'z' }
+    Switch ($pkg) {
+        ripgrep { $cmd = "rg" }
+        zoxide { $cmd = "z" }
         Default { $cmd = $pkg }
     }
     if (Get-Command $cmd -ErrorAction SilentlyContinue) {
-        echo "$pkg Already Installed"
+        Write-Output "$pkg Already Installed"
     }
     else {
-        echo "Installing $pkg"
+        Write-Output "Installing $pkg"
         scoop install $pkg
     }
-    scoop install uutils-coreutils scoop-completion posh-git psreadline dark innounp
+    scoop install dark innounp
 }
 
 ###################################################
 # Update PowerShell Settings
 ###################################################
 
-Remove-Item alias:cp -Force -ErrorAction SilentlyContinue
+$env:OX_SHELL = "$HOME/.bash_profile"
 
-echo "Adding Oxidizer into $PROFILE..."
+Write-Output "Adding Oxidizer into $env:OX_SHELL..."
 
-if (!(Test-Path -Path $PROFILE)) {
-    New-Item -ItemType File -Force -Path $PROFILE
+if (!(Test-Path -Path $OX_SHELL)) {
+    New-Item -ItemType File -Force -Path $env:OX_SHELL
 }
 
-echo '# Oxidizer' >> $PROFILE
+Write-Output '# Oxidizer' >> $env:OX_SHELL
 
 if ([string]::IsNullOrEmpty($env:OXIDIZER)) {
-    if ($(uname).Contains("Windows")) {
-        echo '
-        $env:OXIDIZER = "$HOME\oxidizer"' >> $PROFILE
-    }
-    else {
-        echo '
-        $env:OXIDIZER = "$env:HOME\oxidizer"' >> $PROFILE
-    }
-    echo '. $env:OXIDIZER\oxidizer.ps1' >> $PROFILE
+    Write-Output 'export OXIDIZER=${HOME}/oxidizer' >> $env:OX_SHELL
+    Write-Output 'source ${OXIDIZER}/oxidizer.sh' >> $env:OX_SHELL
 }
 else {
-    echo ". $env:OXIDIZER\oxidizer.ps1" >> $PROFILE
+    Write-Output 'source ${OXIDIZER}/oxidizer.sh' >> $env:OX_SHELL
 }
 
-echo "Adding Custom settings..."
+Write-Output "Adding Custom settings..."
 
-cp -R -v "$env:OXIDIZER\defaults.ps1" "$env:OXIDIZER\custom.ps1"
+if (!(Test-Path -Path "$env:OXIDIZER\custom.sh")) {
+    Copy-Item -R -v "$env:OXIDIZER\defaults.sh" "$env:OXIDIZER\custom.sh"
+}
 
 # load zoxide
-sd '.* OX_STARTUP=.*' '$Global:OX_STARTUP=1' "$env:OXIDIZER\custom.ps1"
-
+sed -i.bak "s|.* OX_STARTUP = .*|$Global:OX_STARTUP=1|" "$env:OXIDIZER\custom.ps1"
 # set path of oxidizer
-sd '= .*\\oxidizer.ps1' "= $env:OXIDIZER\oxidizer.ps1" $PROFILE
+# sed -i.bak "s| = .*\oxidizer.ps1| = $env:OXIDIZER\oxidizer.ps1|" $OX_SHELL
+# Write-Output $(cat $OX_SHELL | rg -o 'source .+')
 
 ###################################################
 # Load Plugins
 ###################################################
 
-git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git
+git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git $env:OXIDIZER\plugins
 
-. $PROFILE
-
-if (Get-Command code -ErrorAction SilentlyContinue) {
-    scoop install vscode
-    reg import "C:\Scoop\apps\vscode\current\install-associations.reg"
-}
-
-echo "Oxidizer installation complete!"
-echo "Don't forget to restart your terminal and run \'upox\' function"
+Write-Output "Oxidizer installation complete!"
+Write-Output "Please use it in Git Bash and hit 'edf ox' to tweak your preferences.\n"
+Write-Output "Finally, run 'upox' function to activate the plugins. Enjoy!"

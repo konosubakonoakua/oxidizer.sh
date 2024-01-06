@@ -1,3 +1,4 @@
+#!/bin/bash /bin/zsh
 ##########################################################
 # conventions
 ##########################################################
@@ -9,7 +10,7 @@
 # basic settings
 ##########################################################
 
-# default editor, can be changed by function `che()`
+# default editor, can be changed by function `ched()`
 export EDITOR='code'
 # terminal editor
 export EDITOR_T='vi'
@@ -20,34 +21,31 @@ export EDITOR_T='vi'
 
 # oxpg: ox-git
 # oxpc: ox-conda
-# oxpcn: ox-conan
-# oxpfm: ox-format
-# oxphx: ox-helix
-# oxpjl: ox-julia
-# oxpnj: ox-nodejs
-# oxprs: ox-rust
-# oxpzj: ox-zellij
 # oxpbw: ox-bitwarden
+# oxpcn: ox-conan
 # oxpct: ox-container
 # oxpes: ox-espanso
+# oxpfm: ox-format
+# oxpjl: ox-julia
 # oxpjn: ox-jupyter
+# oxpnj: ox-nodejs
+# oxpns: ox-notes
+# oxppu: ox-pueue
+# oxprb: ox-ruby
+# oxprs: ox-rust
 # oxptl: ox-texlive
 # oxpvs: ox-vscode
+# oxpwr: ox-weather
+# oxpzj: ox-zellij
 
 OX_PLUGINS=(
-    oxpfm
+    oxpg
+    oxpwr
 )
 
 ##########################################################
 # select software configuration objects
 ##########################################################
-
-# options: brew, conda, vscode, julia, texlive, node
-declare -a OX_UPDATE_PROG
-export OX_UPDATE_PROG=(brew)
-
-declare -a OX_BACKUP_PROG
-export OX_BACKUP_PROG=(brew)
 
 # backup file path
 export OX_BACKUP=${HOME}/Documents/backup
@@ -57,74 +55,57 @@ OX_OXIDE[bkox]=${OX_BACKUP}/shell/custom.sh
 # OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
 
 # terminal
-# OX_OXIDE[bkwz]=${OX_BACKUP}/terminal/wezterm.lua
-# OX_OXIDE[bkal]=${OX_BACKUP}/terminal/alacritty.yml
-
-# system file
-OX_ELEMENT[wz]=${HOME}/.config/wezterm/wezterm.lua
-# OX_ELEMENT[al]=${HOME}/.config/alacritty/alacritty.yml
+case $(uname -a) in
+*Darwin* | *Ubuntu* | *Debian*)
+    OX_ELEMENT[wz]=${HOME}/.config/wezterm/wezterm.lua
+    ;;
+*MINGW*)
+    OX_ELEMENT[wz]=${HOME}/.wezterm.lua
+    if [[ -z "${OX_ELEMENT[wz]}" ]]; then
+        touch "${OX_ELEMENT[wz]}"
+    fi
+    ;;
+esac
+OX_OXIDE[bkwz]=${OX_BACKUP}/terminal/wezterm.lua
 
 ##########################################################
-# register proxy ports
+# proxy and mirror settings
 ##########################################################
 
-# c: clash, v: v2ray
+# to use proxy and mirrors for faster download, don't forget to add `oxpnw` in `OX_PLUGINS`
+
+# c: clash, m: clash-meta, v: v2ray
 declare -A OX_PROXY=(
     [c]=7890
+    [m]=7897
     [v]=1080
 )
 
-OX_ELEMENT[cv]="${HOME}/.config/clash-verge/verge.yaml"
-OX_OXIDE[bkcv]="${OX_BACKUP}/app/verge.yaml"
-
-##########################################################
-# select export and import settings
-##########################################################
-
-# files to be exported to backup folder
-# ox: custom.sh of Oxidizer
-# rs: cargo's env
-# pu: pueue's config.yml
-# pua: pueue's aliases.yml
-# jl: julia's startup.jl
-# vs: vscode's settings.json
-# vsk: vscode's keybindings.json
-# vss_: vscode's snippets folder
-declare -a OX_EXPORT_FILE
-OX_EXPORT_FILE=(ox)
-
-# files to be import from backup folder
-declare -a OX_IMPORT_FILE
-OX_IMPORT_FILE=(ox)
-
-##########################################################
-# git settings
-##########################################################
-
-# backup files
-OX_OXIDE[bkg]=${OX_BACKUP}/.gitconfig
-OX_OXIDE[bkgi]=${OX_BACKUP}/git/.gitignore
+# use `mrb [key]` for brew mirror, use `mrbq` for quit brew mirror
+# declare -A MIRRORS=(
+#     [bts]="mirrors.tuna.tsinghua.edu.cn/git/homebrew"
+#     [bzk]="mirrors.ustc.edu.cn/git/homebrew"
+# )
 
 ##########################################################
 # brew settings
 ##########################################################
 
-export HOMEBREW_NO_ENV_HINTS=1
-export HOMEBREW_CLEANUP_MAX_AGE_DAYS="7"
+case $(uname -a) in
+*Darwin* | *Ubuntu* | *Debian*)
+    export HOMEBREW_NO_AUTO_UPDATE=1
+    export HOMEBREW_NO_ENV_HINTS=1
+    export HOMEBREW_CLEANUP_MAX_AGE_DAYS="3"
 
-# brew mirrors for faster download, use `bmr` to use
-# declare -A HOMEBREW_MIRROR=(
-#     [ts]="mirrors.tuna.tsinghua.edu.cn/git/homebrew"
-#     [zk]="mirrors.ustc.edu.cn/git/homebrew"
-# )
-
-# predefined brew services
-# set the length of key <= 3
-declare -A HOMEBREW_SERVICE=(
-    [pu]="pueue"
-    [pg]="postgresql@15"
-    [pd]="podman"
-)
+    # predefined brew services
+    # set the length of key <= 3
+    declare -A HOMEBREW_SERVICE=(
+        [pu]="pueue"
+        [pg]="postgresql@15"
+        [pd]="podman"
+    )
+    ;;
+esac
 
 ##########################################################
 # pueue settings
@@ -155,54 +136,80 @@ upp() {
 # OX_OXIDE[bkceb]=${OX_BACKUP}/conda/conda-base.txt
 
 ##########################################################
-# vscode settings
+# others settings
 ##########################################################
 
-# # OX_OXIDE[bkvs]=${OX_BACKUP}/vscode/settings.json
+# git
+OX_OXIDE[bkg]=${OX_BACKUP}/.gitconfig
+OX_OXIDE[bkgi]=${OX_BACKUP}/git/.gitignore
+# OX_OXIDE[bkesb]=${OX_BACKUP}/espanso/match/base.yml
+# vscode
+# OX_OXIDE[bkvs]=${OX_BACKUP}/vscode/settings.jsonc
 
 ##########################################################
 # common aliases
 ##########################################################
 
 # shortcuts
+alias cat="bat"
+alias ls="lsd"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
+alias du="dust"
 alias e="echo"
 alias rr="rm -rf"
 alias c="clear"
 alias own="sudo chown -R $(whoami)"
-alias shell="echo ${SHELL}"
-alias shells="cat ${SHELLS}"
 
 # tools
 alias man="tldr"
 alias hf="hyperfine"
-alias zz="z -"
 
+##########################################################
+# shell
+##########################################################
+
+# clean history
+ccc() {
+    case ${SHELL} in
+    *zsh)
+        local HISTSIZE=0 && history -p && reset && echo >"${OX_ELEMENT[zshst]}"
+        ;;
+    *bash)
+        local HISTSIZE=0 && history -c && reset && echo >"${OX_ELEMENT[bshst]}"
+        ;;
+    esac
+}
+
+# configuration
 case ${SHELL} in
 *zsh)
     # turn case sensitivity off
     zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
     # pasting with tabs doesn't perform completion
     zstyle ':completion:' insert-tab pending
-    # test
-    alias tt="hyperfine --warmup 3 --shell zsh 'source ${HOME}/.zshrc'"
-    # clean history
-    alias ccc="local HISTSIZE=0 && history -p && reset && echo > ~/.zsh_history"
     ;;
 *bash)
     # turn case sensitivity off
-    if [ ! -e ${HOME}/.inputrc ]; then
-        echo '$include /etc/inputrc' >${HOME}/.inputrc
+    if [ ! -e "${HOME}"/.inputrc ]; then
+        echo '$include /etc/inputrc' >"${HOME}"/.inputrc
     fi
-    echo 'set completion-ignore-case On' >>${HOME}/.inputrc
-    # test
-    alias tt="hyperfine --warmup 3 --shell bash 'source ${HOME}/.bash_profile'"
-    # clean history
-    alias ccc="local HISTSIZE=0 && history -p && reset && echo > ~/.bash_history"
+    echo 'set completion-ignore-case On' >>"${HOME}"/.inputrc
     ;;
 esac
+
+# test profile loading time
+tt() {
+    case ${SHELL} in
+    *zsh)
+        hyperfine --warmup 3 --shell zsh "source ${OX_ELEMENT[zs]}"
+        ;;
+    *bash)
+        hyperfine --warmup 3 --shell bash "source ${OX_ELEMENT[bs]}"
+        ;;
+    esac
+}
 
 ##########################################################
 # startup commands
@@ -215,5 +222,11 @@ export OX_STARTUP=1
 
 startup() {
     # start directory
-    cd ${HOME}/Desktop
+    cd "${HOME}"/Desktop || exit
 }
+
+##########################################################
+# notes apps
+##########################################################
+
+# OX_OXIDIAN=""

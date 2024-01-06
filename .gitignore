@@ -39,7 +39,6 @@ Temporary Items
 *.vsix
 
 # oxidizer
-backup/*
+backup
+plugins
 custom.*
-oxplugins-*
-oxplugins-*/*
