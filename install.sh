@@ -131,13 +131,6 @@ git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git "${OXIDIZER}"/
 # Editor
 ###################################################
 
-if test ! "$(command -v nvim)"; then
-    printf "⚙️ Using Vim as Default Terminal Editor"
-    export EDITOR="vi"
-else
-    export EDITOR="nvim"
-fi
-
 printf "🎉 Oxidizer installation complete!\n"
 printf "💡 Don't forget to restart your terminal and hit 'edf ox' to tweak your preferences.\n"
 printf "😀 Finally, run 'upox' function to activate the plugins. Enjoy!\n"

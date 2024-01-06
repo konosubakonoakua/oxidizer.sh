@@ -60,48 +60,40 @@ ForEach ( $pkg in $pkgs ) {
 
 Remove-Item alias:cp -Force -ErrorAction SilentlyContinue
 
-echo "Adding Oxidizer into $PROFILE..."
+$OX_SHELL = "$HOME/.bash_profile"
 
-if (!(Test-Path -Path $PROFILE)) {
-    New-Item -ItemType File -Force -Path $PROFILE
+echo "Adding Oxidizer into $OX_SHELL..."
+
+if (!(Test-Path -Path $OX_SHELL)) {
+    New-Item -ItemType File -Force -Path $OX_SHELL
 }
 
-echo '# Oxidizer' >> $PROFILE
+echo '# Oxidizer' >> $OX_SHELL
 
 if ([string]::IsNullOrEmpty($env:OXIDIZER)) {
-    if ($(uname).Contains("Windows")) {
-        echo '
-        $env:OXIDIZER = "$HOME\oxidizer"' >> $PROFILE
-    }
-    else {
-        echo '
-        $env:OXIDIZER = "$env:HOME\oxidizer"' >> $PROFILE
-    }
-    echo '. $env:OXIDIZER\oxidizer.ps1' >> $PROFILE
+    echo '
+        export OXIDIZER='${OXIDIZER}'' >> $OX_SHELL
+    echo 'source '${OXIDIZER}'/oxidizer.sh' >> $OX_SHELL
 }
 else {
-    echo ". $env:OXIDIZER\oxidizer.ps1" >> $PROFILE
+    echo "source '${OXIDIZER}'/oxidizer.sh" >> $OX_SHELL
 }
 
 echo "Adding Custom settings..."
-
-cp -R -v "$env:OXIDIZER\defaults.ps1" "$env:OXIDIZER\custom.ps1"
+cp -R -v "$env:OXIDIZER\defaults.sh" "$env:OXIDIZER\custom.sh"
 
 # load zoxide
 sed -i.bak "s|.* OX_STARTUP = .*|$Global:OX_STARTUP=1|" "$env:OXIDIZER\custom.ps1"
 # set path of oxidizer
-# sed -i.bak "s| = .*\oxidizer.ps1| = $env:OXIDIZER\oxidizer.ps1|" $PROFILE
-# echo $(cat $PROFILE | rg -o 'source .+')
+# sed -i.bak "s| = .*\oxidizer.ps1| = $env:OXIDIZER\oxidizer.ps1|" $OX_SHELL
+# echo $(cat $OX_SHELL | rg -o 'source .+')
 
 ###################################################
 # Load Plugins
 ###################################################
 
-git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git $env:OXIDIZER\plugins-pwsh
 git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git $env:OXIDIZER\plugins
 
-. $PROFILE
-
 echo "Oxidizer installation complete!"
-echo "Don't forget to restart your terminal and hit 'edf ox' to tweak your preferences.\n"
+echo "Please use it in Git Bash and hit 'edf ox' to tweak your preferences.\n"
 echo "Finally, run 'upox' function to activate the plugins. Enjoy!"
