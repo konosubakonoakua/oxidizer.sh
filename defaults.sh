@@ -55,8 +55,8 @@ OX_OXIDE[bkox]=${OX_BACKUP}/shell/custom.sh
 # OX_OXIDE[bkvi]=${OX_BACKUP}/shell/.vimrc
 
 # terminal
-case $(uname) in
-*Darwin* | *Ubuntu* | *Debian* | *WSL*)
+case $(uname -a) in
+*Darwin* | *Ubuntu* | *Debian*)
     OX_ELEMENT[wz]=${HOME}/.config/wezterm/wezterm.lua
     ;;
 *MINGW*)
@@ -91,17 +91,21 @@ declare -A OX_PROXY=(
 # brew settings
 ##########################################################
 
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_ENV_HINTS=1
-export HOMEBREW_CLEANUP_MAX_AGE_DAYS="3"
+case $(uname -a) in
+*Darwin* | *Ubuntu* | *Debian*)
+    export HOMEBREW_NO_AUTO_UPDATE=1
+    export HOMEBREW_NO_ENV_HINTS=1
+    export HOMEBREW_CLEANUP_MAX_AGE_DAYS="3"
 
-# predefined brew services
-# set the length of key <= 3
-declare -A HOMEBREW_SERVICE=(
-    [pu]="pueue"
-    [pg]="postgresql@15"
-    [pd]="podman"
-)
+    # predefined brew services
+    # set the length of key <= 3
+    declare -A HOMEBREW_SERVICE=(
+        [pu]="pueue"
+        [pg]="postgresql@15"
+        [pd]="podman"
+    )
+    ;;
+esac
 
 ##########################################################
 # pueue settings

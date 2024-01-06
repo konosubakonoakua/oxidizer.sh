@@ -9,32 +9,32 @@ export OXIDIZER=${OXIDIZER:-"${HOME}/oxidizer"}
 declare -A OX_OXYGEN=(
     [oxd]=${OXIDIZER}/defaults.sh
     [oxwz]=${OXIDIZER}/defaults/wezterm.lua
-    [oxpm]=${OXIDIZER}/oxplugins-zsh/ox-macos.sh
-    [oxpd]=${OXIDIZER}/oxplugins-zsh/ox-debians.sh
-    [oxpw]=${OXIDIZER}/oxplugins-zsh/ox-windows.sh
-    [oxpb]=${OXIDIZER}/oxplugins-zsh/ox-brew.sh
-    [oxps]=${OXIDIZER}/oxplugins-zsh/ox-scoop.sh
-    [oxpg]=${OXIDIZER}/oxplugins-zsh/ox-git.sh
-    [oxpc]=${OXIDIZER}/oxplugins-zsh/ox-conda.sh
-    [oxpbw]=${OXIDIZER}/oxplugins-zsh/ox-bitwarden.sh
-    [oxpcn]=${OXIDIZER}/oxplugins-zsh/ox-conan.sh
-    [oxpct]=${OXIDIZER}/oxplugins-zsh/ox-container.sh
-    [oxpes]=${OXIDIZER}/oxplugins-zsh/ox-espanso.sh
-    [oxpfm]=${OXIDIZER}/oxplugins-zsh/ox-formats.sh
-    [oxpjl]=${OXIDIZER}/oxplugins-zsh/ox-julia.sh
-    [oxpjn]=${OXIDIZER}/oxplugins-zsh/ox-jupyter.sh
-    [oxpnj]=${OXIDIZER}/oxplugins-zsh/ox-node.sh
-    [oxpns]=${OXIDIZER}/oxplugins-zsh/ox-notes.sh
-    [oxpnw]=${OXIDIZER}/oxplugins-zsh/ox-network.sh
-    [oxppd]=${OXIDIZER}/oxplugins-zsh/ox-podman.sh
-    [oxppu]=${OXIDIZER}/oxplugins-zsh/ox-pueue.sh
-    [oxprb]=${OXIDIZER}/oxplugins-zsh/ox-ruby.sh
-    [oxprs]=${OXIDIZER}/oxplugins-zsh/ox-rust.sh
-    [oxptl]=${OXIDIZER}/oxplugins-zsh/ox-texlive.sh
-    [oxput]=${OXIDIZER}/oxplugins-zsh/ox-utils.sh
-    [oxpvs]=${OXIDIZER}/oxplugins-zsh/ox-vscode.sh
-    [oxpwr]=${OXIDIZER}/oxplugins-zsh/ox-weather.sh
-    [oxpzj]=${OXIDIZER}/oxplugins-zsh/ox-zellij.sh
+    [oxpm]=${OXIDIZER}/plugins/ox-macos.sh
+    [oxpd]=${OXIDIZER}/plugins/ox-debians.sh
+    [oxpw]=${OXIDIZER}/plugins/ox-windows.sh
+    [oxpb]=${OXIDIZER}/plugins/ox-brew.sh
+    [oxps]=${OXIDIZER}/plugins/ox-scoop.sh
+    [oxpg]=${OXIDIZER}/plugins/ox-git.sh
+    [oxpc]=${OXIDIZER}/plugins/ox-conda.sh
+    [oxpbw]=${OXIDIZER}/plugins/ox-bitwarden.sh
+    [oxpcn]=${OXIDIZER}/plugins/ox-conan.sh
+    [oxpct]=${OXIDIZER}/plugins/ox-container.sh
+    [oxpes]=${OXIDIZER}/plugins/ox-espanso.sh
+    [oxpfm]=${OXIDIZER}/plugins/ox-formats.sh
+    [oxpjl]=${OXIDIZER}/plugins/ox-julia.sh
+    [oxpjn]=${OXIDIZER}/plugins/ox-jupyter.sh
+    [oxpnj]=${OXIDIZER}/plugins/ox-node.sh
+    [oxpns]=${OXIDIZER}/plugins/ox-notes.sh
+    [oxpnw]=${OXIDIZER}/plugins/ox-network.sh
+    [oxppd]=${OXIDIZER}/plugins/ox-podman.sh
+    [oxppu]=${OXIDIZER}/plugins/ox-pueue.sh
+    [oxprb]=${OXIDIZER}/plugins/ox-ruby.sh
+    [oxprs]=${OXIDIZER}/plugins/ox-rust.sh
+    [oxptl]=${OXIDIZER}/plugins/ox-texlive.sh
+    [oxput]=${OXIDIZER}/plugins/ox-utils.sh
+    [oxpvs]=${OXIDIZER}/plugins/ox-vscode.sh
+    [oxpwr]=${OXIDIZER}/plugins/ox-weather.sh
+    [oxpzj]=${OXIDIZER}/plugins/ox-zellij.sh
 )
 
 ##########################################################
@@ -52,19 +52,6 @@ declare -A OX_OXIDE
 # Load Plugins
 ##########################################################
 
-# load system plugin
-case $(uname -a) in
-*Darwin*)
-    . "${OX_OXYGEN[oxpm]}"
-    ;;
-*Ubuntu* | *Debian* | *WSL*)
-    . "${OX_OXYGEN[oxpd]}"
-    ;;
-*MINGW*)
-    . "${OX_OXYGEN[oxpw]}"
-    ;;
-esac
-
 # load custom plugins
 declare -a OX_PLUGINS
 
@@ -78,14 +65,21 @@ for plugin in "${OX_PLUGINS[@]}"; do
     fi
 done
 
-declare -a OX_CORE_PLUGINS
-if [[ $(uname) = "Darwin" || $(uname) = "Linux" ]]; then
-    OX_CORE_PLUGINS=(oxpb oxput oxpnw)
-else
-    OX_CORE_PLUGINS=(oxps oxput oxpnw)
-fi
-
 # load core plugins
+declare -a OX_CORE_PLUGINS
+
+case $(uname -a) in
+*Darwin*)
+    OX_CORE_PLUGINS=(oxpm oxpb oxput oxpnw)
+    ;;
+*Ubuntu* | *Debian* | *WSL*)
+    OX_CORE_PLUGINS=(oxpd oxpb oxput oxpnw)
+    ;;
+*MINGW*)
+    OX_CORE_PLUGINS=(oxpw oxpb oxput oxpnw)
+    ;;
+esac
+
 for core_plugin in "${OX_CORE_PLUGINS[@]}"; do
     . ${OX_OXYGEN[$core_plugin]}
 done
@@ -122,12 +116,12 @@ upox() {
     git fetch origin master
     git reset --hard origin/master
 
-    if [ ! -d "${OXIDIZER}"/oxplugins-zsh ]; then
+    if [ ! -d "${OXIDIZER}"/plugins ]; then
         printf "\n\nCloning Oxidizer Plugins...\n"
-        git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git
+        git clone --depth=1 https://github.com/ivaquero/plugins.git
     else
         printf "\n\nUpdating Oxidizer Plugins...\n"
-        cd "${OXIDIZER}"/oxplugins-zsh || exit
+        cd "${OXIDIZER}"/plugins || exit
         git fetch origin main
         git reset --hard origin/main
     fi

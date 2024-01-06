@@ -39,14 +39,19 @@ ForEach ( $bucket in $scoopBuckets ) {
 $pkgs = cat "$env:OXIDIZER\defaults\Scoopfile.txt"
 
 ForEach ( $pkg in $pkgs ) {
-    if (Get-Command $pkg -ErrorAction SilentlyContinue) {
+    Switch ($pkg) {
+        ripgrep { $cmd = "rg" }
+        zoxide { $cmd = "z" }
+        Default { $cmd = $pkg }
+    }
+    if (Get-Command $cmd -ErrorAction SilentlyContinue) {
         echo "$pkg Already Installed"
     }
     else {
         echo "Installing $pkg"
         scoop install $pkg
     }
-    scoop install ripgrep uutils-coreutils scoop-completion posh-git psreadline dark
+    scoop install scoop-completion psreadline dark innounp
 }
 
 ###################################################
@@ -92,15 +97,10 @@ sed -i.bak "s|.* OX_STARTUP = .*|$Global:OX_STARTUP=1|" "$env:OXIDIZER\custom.ps
 # Load Plugins
 ###################################################
 
-git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git $env:OXIDIZER\oxplugins-pwsh
-git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git $env:OXIDIZER\oxplugins-zsh
+git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git $env:OXIDIZER\plugins-pwsh
+git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git $env:OXIDIZER\plugins
 
 . $PROFILE
-
-if (Get-Command code -ErrorAction SilentlyContinue) {
-    scoop install vscode
-    reg import "C:\Scoop\apps\vscode\current\install-associations.reg"
-}
 
 echo "Oxidizer installation complete!"
 echo "Don't forget to restart your terminal and hit 'edf ox' to tweak your preferences.\n"

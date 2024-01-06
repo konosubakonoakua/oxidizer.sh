@@ -45,11 +45,20 @@ brew tap "homebrew/bundle"
 
 printf "📦 Installing essential Oxidizer toolchains...\n"
 
-cat "${OXIDIZER}"/defaults/Brewfile.txt | while read -r pkg; do
-    if test ! "$(command -v "$pkg")"; then
+cat ${OXIDIZER}/defaults/Brewfile.txt | while read -r pkg; do
+    case $pkg in
+    ripgrep)
+        cmd='rg'
+        ;;
+    zoxide)
+        cmd='z'
+        ;;
+    *)
+        cmd=$pkg
+        ;;
+    esac
+    if test ! "$(command -v $cmd)"; then
         brew install "$pkg"
-    else
-        echo "$pkg Already Installed"
     fi
 done
 
@@ -116,7 +125,7 @@ sed -i.bak "s|.* OX_STARTUP=.*|export OX_STARTUP=1|" "${OXIDIZER}"/custom.sh
 # Load Plugins
 ###################################################
 
-git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git "${OXIDIZER}"/oxplugins-zsh
+git clone --depth=1 https://github.com/ivaquero/oxplugins-zsh.git "${OXIDIZER}"/plugins
 
 ###################################################
 # Editor

@@ -10,27 +10,27 @@ if ([string]::IsNullOrEmpty($env:OXIDIZER)) {
 $Global:OX_OXYGEN = @{
     'oxd' = "$env:OXIDIZER\defaults.ps1"
     'oxwz' = "$env:OXIDIZER\defaults\wezterm.lua"
-    'oxps' = "$env:OXIDIZER\oxplugins-pwsh\ox-scoop.ps1"
-    'oxpw' = "$env:OXIDIZER\oxplugins-pwsh\ox-windows.ps1"
-    'oxpg' = "$env:OXIDIZER\oxplugins-pwsh\ox-git.ps1"
-    'oxpc' = "$env:OXIDIZER\oxplugins-pwsh\ox-conda.ps1"
-    'oxpbw' = "$env:OXIDIZER\oxplugins-pwsh\ox-bitwarden.ps1"
-    'oxpcn' = "$env:OXIDIZER\oxplugins-pwsh\ox-conan.ps1"
-    'oxpdk' = "$env:OXIDIZER\oxplugins-pwsh\ox-docker.ps1"
-    'oxpes' = "$env:OXIDIZER\oxplugins-pwsh\ox-espanso.ps1"
-    'oxpfm' = "$env:OXIDIZER\oxplugins-pwsh\ox-formats.ps1"
-    'oxpjl' = "$env:OXIDIZER\oxplugins-pwsh\ox-julia.ps1"
-    'oxpjn' = "$env:OXIDIZER\oxplugins-pwsh\ox-jupyter.ps1"
-    'oxpnj' = "$env:OXIDIZER\oxplugins-pwsh\ox-node.ps1"
-    'oxpns' = "$env:OXIDIZER\oxplugins-pwsh\ox-notes.ps1"
-    'oxpnw' = "$env:OXIDIZER\oxplugins-pwsh\ox-network.ps1"
-    'oxppu' = "$env:OXIDIZER\oxplugins-pwsh\ox-pueue.ps1"
-    'oxprb' = "$env:OXIDIZER\oxplugins-pwsh\ox-ruby.ps1"
-    'oxprs' = "$env:OXIDIZER\oxplugins-pwsh\ox-rust.ps1"
-    'oxptl' = "$env:OXIDIZER\oxplugins-pwsh\ox-texlive.ps1"
-    'oxput' = "$env:OXIDIZER\oxplugins-pwsh\ox-utils.ps1"
-    'oxpvs' = "$env:OXIDIZER\oxplugins-pwsh\ox-vscode.ps1"
-    'oxpwr' = "$env:OXIDIZER\oxplugins-pwsh\ox-weather.ps1"
+    'oxps' = "$env:OXIDIZER\plugins-pwsh\ox-scoop.ps1"
+    'oxpw' = "$env:OXIDIZER\plugins-pwsh\ox-windows.ps1"
+    'oxpg' = "$env:OXIDIZER\plugins-pwsh\ox-git.ps1"
+    'oxpc' = "$env:OXIDIZER\plugins-pwsh\ox-conda.ps1"
+    'oxpbw' = "$env:OXIDIZER\plugins-pwsh\ox-bitwarden.ps1"
+    'oxpcn' = "$env:OXIDIZER\plugins-pwsh\ox-conan.ps1"
+    'oxpdk' = "$env:OXIDIZER\plugins-pwsh\ox-docker.ps1"
+    'oxpes' = "$env:OXIDIZER\plugins-pwsh\ox-espanso.ps1"
+    'oxpfm' = "$env:OXIDIZER\plugins-pwsh\ox-formats.ps1"
+    'oxpjl' = "$env:OXIDIZER\plugins-pwsh\ox-julia.ps1"
+    'oxpjn' = "$env:OXIDIZER\plugins-pwsh\ox-jupyter.ps1"
+    'oxpnj' = "$env:OXIDIZER\plugins-pwsh\ox-node.ps1"
+    'oxpns' = "$env:OXIDIZER\plugins-pwsh\ox-notes.ps1"
+    'oxpnw' = "$env:OXIDIZER\plugins-pwsh\ox-network.ps1"
+    'oxppu' = "$env:OXIDIZER\plugins-pwsh\ox-pueue.ps1"
+    'oxprb' = "$env:OXIDIZER\plugins-pwsh\ox-ruby.ps1"
+    'oxprs' = "$env:OXIDIZER\plugins-pwsh\ox-rust.ps1"
+    'oxptl' = "$env:OXIDIZER\plugins-pwsh\ox-texlive.ps1"
+    'oxput' = "$env:OXIDIZER\plugins-pwsh\ox-utils.ps1"
+    'oxpvs' = "$env:OXIDIZER\plugins-pwsh\ox-vscode.ps1"
+    'oxpwr' = "$env:OXIDIZER\plugins-pwsh\ox-weather.ps1"
 }
 
 ##########################################################
@@ -43,14 +43,10 @@ $Global:OX_ELEMENT = @{
 }
 
 $Global:OX_OXIDE = @{}
-$Global:OX_APPHOME = @{}
 
 ##########################################################
 # Load Plugins
 ##########################################################
-
-# load system plugin
-. $Global:OX_OXYGEN.oxpw
 
 # load custom plugins
 . $Global:OX_ELEMENT.ox
@@ -65,7 +61,7 @@ ForEach ($plugin in $Global:OX_PLUGINS) {
 }
 
 # load core plugins
-$Global:OX_CORE_PLUGINS = @('oxps', 'oxput', 'oxpnw')
+$Global:OX_CORE_PLUGINS = @('oxpw', 'oxps', 'oxput', 'oxpnw')
 
 ForEach ($core_plugin in $Global:OX_CORE_PLUGINS) {
     . $Global:OX_OXYGEN.$($core_plugin)
@@ -82,22 +78,6 @@ $Global:OX_OXIDE.bkps = "$env:OX_BACKUP\shell\Profile.ps1"
 # Oxidizer Management
 ##########################################################
 
-# initialize Oxidizer
-function iiox {
-    echo "Installing Required packages...`n"
-    $pkgs = cat "$env:OXIDIZER\defaults\Scoopfile.txt"
-    ForEach ( $pkg in $pkgs ) {
-        if (Get-Command $pkg -ErrorAction SilentlyContinue) {
-            echo "$pkg Already Installed"
-        }
-        else {
-            echo "Installing $pkg"
-            scoop install $pkg
-        }
-        scoop install ripgrep
-    }
-}
-
 # update Oxidizer
 function upox {
     cd $env:OXIDIZER
@@ -105,12 +85,12 @@ function upox {
     git fetch origin master
     git reset --hard origin/master
 
-    if (!(Test-Path -Path "$env:OXIDIZER\oxplugins-pwsh")) {
+    if (!(Test-Path -Path "$env:OXIDIZER\plugins-pwsh")) {
         echo "`n`nCloning Oxidizer Plugins...`n"
-        git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git
+        git clone --depth=1 https://github.com/ivaquero/oxplugins-pwsh.git $env:OXIDIZER\plugins-pwsh
     }
     else {
-        cd "$env:OXIDIZER\oxplugins-pwsh"
+        cd "$env:OXIDIZER\plugins-pwsh"
         echo "`n`nUpdating Oxidizer Plugins...`n"
         git fetch origin main
         git reset --hard origin/main
@@ -146,8 +126,6 @@ if ($Global:OX_STARTUP) {
 ##########################################################
 # Extras
 ##########################################################
-
-Import-Module posh-git
 
 Import-Module PSReadLine
 Set-PSReadLineKeyHandler -Key Tab -Function Complete
