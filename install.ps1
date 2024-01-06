@@ -70,8 +70,8 @@ Write-Output '# Oxidizer' >> $OX_SHELL
 
 if ([string]::IsNullOrEmpty($env:OXIDIZER)) {
     Write-Output '
-        export OXIDIZER='${OXIDIZER}'' >> $OX_SHELL
-    Write-Output 'source '${OXIDIZER}'/oxidizer.sh' >> $OX_SHELL
+        export OXIDIZER=${HOME}/oxidizer' >> $OX_SHELL
+    Write-Output 'source ${OXIDIZER}/oxidizer.sh' >> $OX_SHELL
 }
 else {
     Write-Output "source '${OXIDIZER}'/oxidizer.sh" >> $OX_SHELL
