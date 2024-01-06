@@ -113,7 +113,9 @@ fi
 echo "${append_str}" >>"${OX_SHELL}"
 
 printf "⚙️ Adding Custom settings..."
-cp "${OXIDIZER}"/defaults.sh "${OXIDIZER}/"custom.sh
+if [[ ! -f "${OXIDIZER}/"custom.sh ]]; then
+    cp "${OXIDIZER}"/defaults.sh "${OXIDIZER}/"custom.sh
+fi
 
 # load zoxide
 sed -i.bak "s|.* OX_STARTUP=.*|export OX_STARTUP=1|" "${OXIDIZER}"/custom.sh

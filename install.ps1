@@ -78,7 +78,10 @@ else {
 }
 
 Write-Output "Adding Custom settings..."
-Copy-Item -R -v "$env:OXIDIZER\defaults.sh" "$env:OXIDIZER\custom.sh"
+
+if (!(Test-Path -Path "$env:OXIDIZER\custom.sh")) {
+    Copy-Item -R -v "$env:OXIDIZER\defaults.sh" "$env:OXIDIZER\custom.sh"
+}
 
 # load zoxide
 sed -i.bak "s|.* OX_STARTUP = .*|$Global:OX_STARTUP=1|" "$env:OXIDIZER\custom.ps1"
