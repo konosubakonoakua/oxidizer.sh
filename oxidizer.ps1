@@ -48,6 +48,9 @@ $Global:OX_OXIDE = @{}
 # Load Plugins
 ##########################################################
 
+# load system plugin
+. $Global:OX_OXYGEN.oxw
+
 # load custom plugins
 . $Global:OX_ELEMENT.ox
 
@@ -61,7 +64,7 @@ ForEach ($plugin in $Global:OX_PLUGINS) {
 }
 
 # load core plugins
-$Global:OX_CORE_PLUGINS = @('oxpw', 'oxps', 'oxput', 'oxpnw')
+$Global:OX_CORE_PLUGINS = @('oxps', 'oxput', 'oxpnw')
 
 ForEach ($core_plugin in $Global:OX_CORE_PLUGINS) {
     . $Global:OX_OXYGEN.$($core_plugin)
