@@ -52,7 +52,7 @@ $env:scoop_mirror = 1
 
 > For Cmder users, you need to remove the `-Options ReadOnly` from `Set-Item -Path function:\prompt -Value $Prompt -Options ReadOnly` in the last line of `%CMDER_ROOT%\vendor\profile.ps1`.
 
-After installation, you might personalize your preference in `custom.sh` or `custom.ps1`, check [defaults.sh](https://github.com/ivaquero/oxidizer/blob/master/defaults.sh) or [defaults.ps1](https://github.com/ivaquero/oxidizer/blob/master/defaults.ps1). Open `custom.sh` or `custom.ps1` by following command
+After installation, you might personalize your preference in `custom.sh`, check [defaults.sh](https://github.com/ivaquero/oxidizer/blob/master/defaults.sh). Open `custom.sh` or `custom.ps1` by following command
 
 ```bash
 edf ox
@@ -120,7 +120,9 @@ Oxidizer is designed to be extensible, you can personalize `OX_PLUGINS` in `cust
 
 Of course, you are allowed to write your own plugins, see [Writing A Plugin](https://github.com/ivaquero/oxidizer/blob/master/docs/plugins.md) for details.
 
-The plugins are hosted in [OxPlugins-Zsh](https://github.com/ivaquero/oxplugins-zsh) and [OxPlugins-PowerShell](https://github.com/ivaquero/oxplugins-pwsh)
+The plugins are hosted in [OxPlugins](https://github.com/ivaquero/oxplugins-zsh)
+
+> [OxPlugins-PowerShell](https://github.com/ivaquero/oxplugins-pwsh) has stopped maintenance.
 
 |                      Plugin                       | Linux | macOS | Windows | Autoload? |
 | :-----------------------------------------------: | :---: | :---: | :-----: | :-------: |

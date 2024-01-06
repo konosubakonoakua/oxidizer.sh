@@ -42,7 +42,7 @@ $env:OXIDIZER = "$HOME\oxidizer"
 
 > 对于 Cmder 用户，你需要删除`%CMDER_ROOT%\vendor\profile.ps1`的最后一行`Set-Item -Path function:\prompt -Value $Prompt -Options ReadOnly`中的`-Options ReadOnly`。
 
-安装之后，您可以在`custom.sh`或`custom.ps1`中个性化您的系统环境（请参考[defaults.sh](https://github.com/ivaquero/oxidizer/blob/master/defaults.sh)或[defaults.ps1](https://github.com/ivaquero/oxidizer/blob/master/defaults.ps1)），通过一下命令打开
+安装之后，您可以在`custom.sh`中个性化您的系统环境（请参考[defaults.sh](https://github.com/ivaquero/oxidizer/blob/master/defaults.sh)，通过一下命令打开
 
 ```sh
 edf ox
@@ -106,7 +106,9 @@ Oxidizer 起初主要为非管理员用户设计，用于快速搭建跨平台�
 
 ### 2.5. 插件总结
 
-插件位于 [OxPlugins-Zsh](https://github.com/ivaquero/oxplugins-zsh)和[OxPlugins-PowerShell](https://github.com/ivaquero/oxplugins-pwsh)
+插件位于 [OxPlugins-Zsh](https://github.com/ivaquero/oxplugins-zsh)
+
+> [OxPlugins-PowerShell](https://github.com/ivaquero/oxplugins-pwsh) 已停止维护。
 
 |                       插件                        | Linux | macOS | Windows | 自动加载？ |
 | :-----------------------------------------------: | :---: | :---: | :-----: | :--------: |
